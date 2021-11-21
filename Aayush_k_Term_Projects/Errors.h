@@ -36,8 +36,7 @@ public:
     /// @param a_emsg: error to add to the list
     /// 
     static void RecordError( std::string a_emsg ) { m_ErrorMsgs.push_back( a_emsg ); }
-
-
+    
     /// 
     /// @brief DisplayAllErrors Displays all the collected error message.
     /// 
@@ -47,6 +46,6 @@ public:
 
 private:
 
-    static std::vector<std::string> m_ErrorMsgs;  // list of all the error messages record 
+    static std::vector<std::string> m_ErrorMsgs;  // list of all the error messages record    
 };
 #endif

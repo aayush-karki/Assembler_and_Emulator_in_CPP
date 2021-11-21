@@ -25,17 +25,17 @@
     ///     label/location need for the particular Op code
     /// 
         // ======================= Op Code used in only assemble  =======================
-        OP_ORG = 0,            ///< usage: ORG 100 \n define origin. \n 
+2)      OP_ORG = 0,            ///< usage: ORG 100 \n define origin. \n 
                         ///         The operand specifies the address at which the
                         ///         translation of the next instruction will be generated \n
                         ///         Here, next intruction starts at location 100
-        OP_DC = 0,             ///< usage: Addr1 DC 5 \n Defines constant. \n 
+3)      OP_DC = 0,             ///< usage: Addr1 DC 5 \n Defines constant. \n 
                         ///         The constant is a decimal integer placed in the operand field \n
                         ///         Here, c(Addr1) = 5
         OP_DS = 0,             ///< usage: Addr1 DS 3 \n Defines storage. \n 
                         ///         The operand specifies the number of words of storage to be set aside \n
                         ///         Here, Addr1 points to the start of a array of length 3
-        OP_END = 0,             ///< usage: END \n Indicates that there are no additional statements to translate.
+   >>>  OP_END = 0,             ///< usage: END \n Indicates that there are no additional statements to translate.
         
         // ======== Op Code used in both assemble and machine level language ==================
         OP_ADD = 1,        ///< usage: ADD Addr1 Addr2 \n Addr1 <-- c(Addr1) + c(Addr2)
@@ -43,7 +43,7 @@
         OP_MULT = 3,       ///< usage: MULT Addr1 Addr2 \n Addr1 <-- c(Addr1)* c(Addr2)
         OP_DIV = 4,        ///< usage: DIV Addr1 Addr2 \n Addr1 <-- c(Addr1) / c(Addr2)
         OP_COPY = 5,       ///< usage: COPY Addr1 Addr2 \n Addr1 <-- c(Addr2)
-        OP_READ = 7,       ///< usage: READ Addr1 \n Read Addr 1 A line is read and
+2)      OP_READ = 7,       ///< usage: READ Addr1 \n Read Addr 1 A line is read and
                         ///         record the number found there in Addr1
         OP_WRITE = 8,      ///< usage: WRITE Addr1 \n c(Addr1) is displayed
         OP_B = 9,          ///< usage: B Addr1 \n Go to Addr1 for next instruction
@@ -52,3 +52,4 @@
         OP_BP = 12,        ///< usage: BP Addr1 Addr2 go To Addr1 if c(Addr2) > 0
         OP_HALT = 13      ///< usage: HALT \n Terminate execution. The Addr1 and Addr2 are ignored
         
+

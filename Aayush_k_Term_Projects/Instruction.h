@@ -5,7 +5,6 @@
 #pragma once
 
 #include <unordered_map>
-
 #include "Errors.h"
 
 ///
@@ -47,7 +46,8 @@ public:
         ST_MachineLanguage, 	///< A machine language instruction.
         ST_AssemblerInstr,  	///< Assembler Language instruction.
         ST_Comment,          	///< Comment or blank line
-        ST_End                  ///< end instruction.
+        ST_End,                 ///< end instruction.
+        ST_Error                ///< error dectected in instruction.
     };
 
     ///
@@ -109,6 +109,18 @@ public:
     ///
     inline const std::string GetOrgiInst() { return m_Instruction; }
 
+    /// 
+    /// @brief Getter function.
+    /// 
+    /// @returns GetErrorFlagReport returns the 
+    /// 
+    /// @return GetErrorFlagReport returns value stored in error Flag
+    /// 
+    const std::string GetErrorMessage()
+    {
+        return m_ErrorMessage;
+    }
+
     // ===================== private functions ===================
 private:
 
@@ -138,7 +150,7 @@ private:
     /// 
     /// @param a_string: string to which the test is done on
     /// 
-    /// @return IsNum returns true if the argument 
+    /// @returns IsNum returns true if the argument 
     ///         string is a digit, else false 
     ///    
     inline const bool IsNum(std::string a_string)
@@ -154,20 +166,20 @@ private:
     /// 
     /// @param a_string: string to which the test is done on
     /// 
-    /// @return IsOpCode returns true if the argument 
+    /// @returns IsOpCode returns true if the argument 
     ///         string is found in the opCodeTable, else false 
     /// 
     const bool IsOpCode(std::string a_string) 
     {
         return opCodeTable.find( AllUpperCase( a_string ) ) != opCodeTable.end();
     }
-
     
-    /// @brief  AllUpperCase capitalises the passes string argument
+    ///
+    ///  @brief  AllUpperCase capitalises the passes string argument
     ///
     /// @param a_string: string to which the test is done on
     /// 
-    /// @return AllUpperCase returns a uppercased string
+    /// @returns AllUpperCase returns a uppercased string
     ///     
     std::string AllUpperCase(std::string a_string)
     {
@@ -175,9 +187,17 @@ private:
         return a_string;
     }
 
+    ///
+    ///  @brief  SetFundamentalMemVar sets the member varible unless there is a Invalid syntax
+    ///
+    /// @param a_indivisualInstruction: is the extraxted words form the line
+    /// 
+    void SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction );
+
     // ================ private variables ============================
 private:
-    
+    // =========== Fundamental Values ====================
+
     std::string m_Instruction;  // The original instruction.
     
                                 // The elemements of a instruction
@@ -186,11 +206,11 @@ private:
     std::string m_Operand1;     // The first operand. 
     std::string m_Operand2;     // The second operand.
 
-    std::pair<bool, std::string> m_ErrorFlag;             // m_ErrorFlag.first == true if there is error in the input
-                                                        // m_ErrorFlag.second containst the type of error
 
     // ===========  Derived values ===========
     Instruction::InstructionType m_Type; // The type of instruction.
+    
+    std::string m_ErrorMessage;    // Containst the error message
     
     // The numerical value of the op code for machine language equivalents.
     int m_NumOpCode;     

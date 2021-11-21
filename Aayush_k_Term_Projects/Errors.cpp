@@ -4,6 +4,8 @@
 // inializing the static member variables
 std::vector<std::string> Errors::m_ErrorMsgs;
 
+
+
 void Errors::DisplayAllErrors()
 {
 	std::vector<std::string>::iterator currMessage = m_ErrorMsgs.begin();
@@ -14,5 +16,6 @@ void Errors::DisplayAllErrors()
 		std::cout << *currMessage << std::endl;
 		++currMessage;
 	}
-
 }
+
+

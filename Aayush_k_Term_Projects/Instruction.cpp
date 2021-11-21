@@ -34,67 +34,42 @@ Instruction::InstructionType Instruction::ParseInstruction( std::string a_line )
     }
 
     // check if the instruction is machine level
-    if ( IsNum( indivisualInstruction.at( 0 ) ) )
+    // check by seeing if the vector size is 2 and all are int
+    // else the inst is assembly
+    if( indivisualInstruction.size() == 2 )
     {
-        m_Type = Instruction::InstructionType::ST_MachineLanguage;
-        
-        // here a error ropering is necessary for if 
-
-        ///@todo comlete for machine language instruction
-        /*
-        m_Label = indivisualInstruction.at(0); // saving the location
-
-        // validating second entry in the vector is also a number
-        
-        */
-        return m_Type;
-    }
-    
-    // ============= setting the member variable===============
-    
-    // temp array to smartly set the member variable despite the size of indivisualInstruction
-    std::string* memberVarArr[4] = { &m_Label, &m_OpCode, &m_Operand1, &m_Operand2 };
-    
-    // checking the size, is == 1 then it should be halt or end
-    // assign it to m_opCode, later validate the inputs
-    if (indivisualInstruction.size() == 1 && IsOpCode( indivisualInstruction.at( 0 ) ) )
-    {
-        m_OpCode = indivisualInstruction.at( 0 ); // we later validae
-    }
-    // checking if the second entry in indivisualInstruction vector is Op code
-    // and the size of vector is 2, or 3, or 4
-    // if yes label should be present
-    else if( indivisualInstruction.size() > 1 && indivisualInstruction.size() <= 4 &&
-            IsOpCode( indivisualInstruction.at( 1 ) ) )
-    {
-        for ( unsigned int i = 0; i < indivisualInstruction.size(); ++i)
+        if(IsNum( indivisualInstruction.at( 0 )) && IsNum( indivisualInstruction.at( 1 ) ) )
         {
-            *( memberVarArr[i] ) = indivisualInstruction.at( i );
+            m_Type = Instruction::InstructionType::ST_MachineLanguage;
+        
+            // here a error ropering is necessary for if 
+
+            ///@todo comlete for machine language instruction
+            /*
+            * handel machine language instruction
+            m_Label = indivisualInstruction.at(0); // saving the location
+
+            // validating second entry in the vector is also a number
+        
+            */
+            return m_Type;
         }
     }
-    // checking if the first entry in indivisualInstruction vector is Op code
-    //  and the size of vector is 2, or 3
-    // if yes label should not be present
-    else if ( indivisualInstruction.size() > 1 && indivisualInstruction.size() <= 3 &&
-        IsOpCode( indivisualInstruction.at( 0 ) ) )
+    
+    // setting the member variable
+    SetFundamentalMemVar( indivisualInstruction );
+    
+    // checking if invalid syntax was detected
+    if( m_Type == Instruction::InstructionType::ST_Error )
     {
-        for ( unsigned int i = 0; i < indivisualInstruction.size(); ++i)
-        {
-            *( memberVarArr[i + 1] ) = indivisualInstruction.at( i );
-        }
+        return m_Type;    
     }
-    // else error
-    else
-    {
-        // flaging error     
-        m_ErrorFlag.first = true;
-        m_ErrorFlag.second = "Invalid Syntax"; // further diagnoses is needed
 
-        // skip all the processing for this line
-        m_Type = Instruction::InstructionType::ST_Comment;
+    // checking if OpCode was END
+    if( m_Type == Instruction::InstructionType::ST_End )
+    {
         return m_Type;
     }
-    
     
     // ================== setting derived member variable ===================
     // getting m_NumOpcode
@@ -108,8 +83,7 @@ Instruction::InstructionType Instruction::ParseInstruction( std::string a_line )
     else
     {
         // flag error
-        m_ErrorFlag.first = true;
-        m_ErrorFlag.second = "Invalid Operand Code"; // further diagnoses is needed
+        m_ErrorMessage = "Illegal Operation Code";                                                
     }
     
     // getting m_IsNumericOperand1
@@ -120,16 +94,8 @@ Instruction::InstructionType Instruction::ParseInstruction( std::string a_line )
     {
         m_Operand1Value = std::stoi( m_Operand1 );
     }
-
-    // checking for type of intrustion
-    if ( AllUpperCase( m_OpCode ) == "END" )
-    {
-        m_Type = Instruction::InstructionType::ST_End;
-    }
-    else
-    {
-        m_Type = Instruction::InstructionType::ST_AssemblerInstr;
-    }
+    
+    m_Type = Instruction::InstructionType::ST_AssemblerInstr;
 
 	return m_Type;
 }
@@ -160,10 +126,7 @@ void Instruction::ClearMemberVariables()
     m_Operand1 = "";  
     m_Operand2 = "";
     m_Instruction = "";
-
-    // setting errorFlag to default state
-    m_ErrorFlag = std::make_pair( false, "" );
-
+    m_ErrorMessage = "";
 
     // setting all int variable to 0 
     m_NumOpCode = 0;
@@ -174,4 +137,65 @@ void Instruction::ClearMemberVariables()
 
     // setting all Instruction::InstructionType variable to ST_Comment 
     m_Type = Instruction::InstructionType::ST_Comment;
+}
+
+void Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction )
+{
+    // temp array to smartly set the member variable despite the size of a_indivisualInstruction
+    std::string* memberVarArr[4] = { &m_Label, &m_OpCode, &m_Operand1, &m_Operand2 };
+
+    // checking the size,  valid size is < 4 for label, opCode, operand1, operand2
+    if( a_indivisualInstruction.size() > 4 )
+    {
+        m_ErrorMessage = "Extra statement elements";
+
+        m_Type = Instruction::InstructionType::ST_Error;
+    }
+    // if == 1 then it should be halt or end
+    // assign it to m_opCode, later validate the inputs
+    else if ( a_indivisualInstruction.size() == 1 && IsOpCode( a_indivisualInstruction.at( 0 ) ) )
+    {
+        m_OpCode = a_indivisualInstruction.at( 0 );
+
+        if( AllUpperCase( m_OpCode ) == "END" )
+        {
+            m_Type = Instruction::InstructionType::ST_End;
+        }
+        
+    }
+    // checking if the second entry in a_indivisualInstruction vector is Op code
+    // and the size of vector is 2, or 3, or 4
+    // if yes label should be present
+    else if( IsOpCode( a_indivisualInstruction.at( 1 ) ) )
+    {
+        for( unsigned int i = 0; i < a_indivisualInstruction.size(); ++i )
+        {
+            *( memberVarArr[i] ) = a_indivisualInstruction.at( i );
+        }
+    }
+    // checking if the first entry in a_indivisualInstruction vector is Op code
+    //  and the size of vector is 2, or 3
+    // if yes label should not be present
+    else if( IsOpCode( a_indivisualInstruction.at( 0 ) ) )
+    {
+        for( unsigned int i = 0; i < a_indivisualInstruction.size(); ++i )
+        {
+            *( memberVarArr[i + 1] ) = a_indivisualInstruction.at( i );
+        }
+    }
+    // else flag error
+    else
+    {
+        if( IsOpCode( a_indivisualInstruction.at( 2 ) ) )
+        {
+            m_ErrorMessage = "Invalid Statement--Operation Code should be at the start of the statement or followed by a label";
+        }
+        else
+        {
+            m_ErrorMessage = "Missing Operation Code";
+        }
+
+        m_Type = Instruction::InstructionType::ST_Error;
+    }
+
 }

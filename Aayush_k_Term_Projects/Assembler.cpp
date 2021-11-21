@@ -46,8 +46,8 @@ void Assembler::PassI( )
 	    }
         // If the instruction has a label, record it and its location in the
         // symbol table.
-        if( m_inst.IsLabel( ) ) {
-
+        if( m_inst.IsLabel( ) ) 
+        {
             m_symtab.AddSymbol( m_inst.GetLabel( ), loc );
         }
         // Compute the location of the next instruction.
@@ -113,6 +113,10 @@ void Assembler::PassII()
             continue;
         }
 
+        // chekcing for if there is any flagged error when extracting input
+        // if(st == Instruction::InstructionType::ST_Error)
+
+
         /*
         // If the instruction has a label, record it and its location in the
         // symbol table.
@@ -123,4 +127,3 @@ void Assembler::PassII()
         */
     }
 }
-
