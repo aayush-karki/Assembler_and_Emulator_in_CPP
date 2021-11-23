@@ -56,46 +56,45 @@ Instruction::InstructionType Instruction::ParseInstruction( std::string a_line )
         }
     }
     
-    // setting the member variable
-    SetFundamentalMemVar( indivisualInstruction );
+    // setting the instruction as ST_AssemblerInstr
+    m_Type = Instruction::InstructionType::ST_AssemblerInstr;
     
-    // checking if invalid syntax was detected
-    if( m_Type == Instruction::InstructionType::ST_Error )
+    // setting the member variable
+    if( !SetFundamentalMemVar( indivisualInstruction ) )
     {
-        return m_Type;    
+        // error was flaged
+        return m_Type;
     }
 
-    // checking if OpCode was END
+    // checking if instruction was END
     if( m_Type == Instruction::InstructionType::ST_End )
     {
         return m_Type;
     }
+
+    // validating m_Label
+    if( !ValidateSymSyntax( m_Label ) && m_Label !=  "" )
+    {
+        // error was flaged
+        return m_Type;
+    }
     
     // ================== setting derived member variable ===================
-    // getting m_NumOpcode
-    // checking if there is a valid OpCode
-    if ( IsOpCode( m_OpCode ) )
-    {
-        // getting the op code position in the table
-        std::unordered_map<std::string, int>::const_iterator opCodePos = opCodeTable.find( AllUpperCase( m_OpCode ) );
-        m_NumOpCode = opCodePos->second;
-    }
-    else
-    {
-        // flag error
-        m_ErrorMessage = "Illegal Operation Code";                                                
-    }
-    
-    // getting m_IsNumericOperand1
-    m_IsNumericOperand1 = IsNum( m_Operand1 );
+    // setting numeric equivalent of operation code
+    SetNumOpCode();
 
-    // getting m_Operand1Value if operand1 is a number
-    if ( m_IsNumericOperand1 )
+    // checking if the first operand is a number and seting it if true
+    SetNumOperand1();
+
+    // checking if the second operand is a number and seting it if true
+    SetNumOperand2();
+
+    // validating if the syntax is correct for the given opCode
+    if( !ValidateOpCodeSyntax() )
     {
-        m_Operand1Value = std::stoi( m_Operand1 );
+        return m_Type;
     }
-    
-    m_Type = Instruction::InstructionType::ST_AssemblerInstr;
+
 
 	return m_Type;
 }
@@ -139,7 +138,7 @@ void Instruction::ClearMemberVariables()
     m_Type = Instruction::InstructionType::ST_Comment;
 }
 
-void Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction )
+bool Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction )
 {
     // temp array to smartly set the member variable despite the size of a_indivisualInstruction
     std::string* memberVarArr[4] = { &m_Label, &m_OpCode, &m_Operand1, &m_Operand2 };
@@ -150,6 +149,8 @@ void Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualIn
         m_ErrorMessage = "Extra statement elements";
 
         m_Type = Instruction::InstructionType::ST_Error;
+
+        return false;
     }
     // if == 1 then it should be halt or end
     // assign it to m_opCode, later validate the inputs
@@ -196,6 +197,126 @@ void Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualIn
         }
 
         m_Type = Instruction::InstructionType::ST_Error;
+
+        return false;
     }
+
+    return true;
+}
+
+void Instruction::SetNumOpCode()
+{
+    // getting the op code position in the table
+    std::unordered_map<std::string, int>::const_iterator opCodePos = opCodeTable.find( AllUpperCase( m_OpCode ) );
+    m_NumOpCode = opCodePos->second;
+}
+
+void Instruction::SetNumOperand1()
+{
+    // checking if first operand is a number or not
+    m_IsNumericOperand1 = IsNum( m_Operand1 );
+
+    // getting m_Operand1Value if operand1 is a number
+    if( m_IsNumericOperand1 )
+    {
+        m_Operand1Value = std::stoi( m_Operand1 );
+    }
+}
+
+void Instruction::SetNumOperand2()
+{
+    // checking if first operand is a number or not
+    m_IsNumericOperand1 = IsNum( m_Operand2 );
+
+    // getting m_Operand1Value if operand1 is a number
+    if( m_IsNumericOperand1 )
+    {
+        m_Operand1Value = std::stoi( m_Operand2 );
+    }
+}
+
+bool Instruction::ValidateSymSyntax( std::string a_Symbol )
+{
+
+    // checking for length -> which should be max 10
+    if( a_Symbol.size() > 10 )
+    {
+        m_ErrorMessage = "Nameing Error--Maximum length a symbol can be is 10";
+        m_Type = Instruction::InstructionType::ST_Error;
+        return false;
+    }
+
+    // checking if first character is a letter or not
+    if( !std::isalpha( a_Symbol.at( 0 ) ) )
+    {
+        m_ErrorMessage = "Nameing Error--First character of a symbol must be a alphabet";
+        m_Type = Instruction::InstructionType::ST_Error;
+        return false;
+    }
+
+    // checking if the symbol is made out of only albphabet and number 
+    if( !std::all_of( a_Symbol.begin(), a_Symbol.end(), std::isalnum ) )
+    {
+        m_ErrorMessage = "Nameing Error--Symbol must be composed of only alphabets and digits";
+        m_Type = Instruction::InstructionType::ST_Error;
+        return false;
+    }
+
+    return true; // all requirement passed
+}
+
+bool Instruction::ValidateOpCodeSyntax()
+{
+    /*
+    * 
+    * labels:
+    *   opCodes which must have a label are DC and DS
+    *   rest may have a label which we do not check for as it has already been validated
+    * 
+    * Operand1:
+    *   opCodes which cannot have operand1 are END and Halt, other must have a operand1
+    *   opCodes which may have a numberic value or label for Operand1 are  ORG, DC, and DS
+    *   rest must have a label
+    *  
+    * Operand2:
+    *   opCodes which may have a numberic value or label for Operand2 are  ADD, SUB, MULT, and DIV
+    *   opCodes which must have a label are COPY, BM, BZ, and BP
+    *   rest cannot have a Operand2
+    *       
+    */
+
+    switch( m_NumOpCode )
+    {
+        // ORG
+        case (100):
+             
+            // checking for operand 1
+            // check if op1 is a number and its length > 5
+            if( m_IsNumericOperand1 && m_Operand1.size() > 5 )
+            {
+                m_ErrorMessage = "Invalid Syntax--Operand length cannot be more than 5 digit";
+                m_Type = Instruction::InstructionType::ST_Error;
+                return false;
+            }
+            // operand1 is label so check for label
+            else if( !ValidateSymSyntax( m_Operand1 ) )
+            {
+                return false;
+            }
+            
+            // checking for operand 2
+            if( m_Operand2 != "" )
+            {
+                m_ErrorMessage = "Extra Statement Element--Operation code ORG does not need operand 2";
+                m_Type = Instruction::InstructionType::ST_Error;
+                return false;
+            }
+            break; 
+
+        default:
+            break;
+    }
+    
+    return true;
 
 }

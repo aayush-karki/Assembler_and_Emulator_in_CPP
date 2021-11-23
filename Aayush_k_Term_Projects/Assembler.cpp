@@ -113,6 +113,11 @@ void Assembler::PassII()
             continue;
         }
 
+        // todo: if geting Orginal Opcode is ORG, DC or DS and their OPerand 1 is a label 
+        //      check if that label points to a constant
+        // todo: if geting Orginal Opcode is ADD, SUB, MULT, or DIV their OPerand 2 is a label 
+        //      check if that label points to a constant
+
         // chekcing for if there is any flagged error when extracting input
         // if(st == Instruction::InstructionType::ST_Error)
 

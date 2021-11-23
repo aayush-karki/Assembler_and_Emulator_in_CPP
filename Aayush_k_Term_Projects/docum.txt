@@ -32,7 +32,7 @@
 3)      OP_DC = 0,             ///< usage: Addr1 DC 5 \n Defines constant. \n 
                         ///         The constant is a decimal integer placed in the operand field \n
                         ///         Here, c(Addr1) = 5
-        OP_DS = 0,             ///< usage: Addr1 DS 3 \n Defines storage. \n 
+3)      OP_DS = 0,             ///< usage: Addr1 DS 3 \n Defines storage. \n 
                         ///         The operand specifies the number of words of storage to be set aside \n
                         ///         Here, Addr1 points to the start of a array of length 3
    >>>  OP_END = 0,             ///< usage: END \n Indicates that there are no additional statements to translate.

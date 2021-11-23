@@ -21,8 +21,6 @@ class Instruction {
 
 public:
 
-    // todo: add a function to clean the variable after each loop/or before parsing 
-
     /// 
     /// @brief Constructor for the Instruction class. 
     /// 
@@ -116,10 +114,7 @@ public:
     /// 
     /// @return GetErrorFlagReport returns value stored in error Flag
     /// 
-    const std::string GetErrorMessage()
-    {
-        return m_ErrorMessage;
-    }
+    const std::string GetErrorMessage() { return m_ErrorMessage; }
 
     // ===================== private functions ===================
 private:
@@ -156,8 +151,7 @@ private:
     inline const bool IsNum(std::string a_string)
     {
         // std::all_of checks for all the element in a container
-        return !a_string.empty() &&
-            std::all_of( a_string.begin(), a_string.end(), std::isdigit );
+        return std::all_of( a_string.begin(), a_string.end(), std::isdigit );
     }
 
     /// 
@@ -175,7 +169,7 @@ private:
     }
     
     ///
-    ///  @brief  AllUpperCase capitalises the passes string argument
+    /// @brief  AllUpperCase capitalises the passes string argument
     ///
     /// @param a_string: string to which the test is done on
     /// 
@@ -188,11 +182,63 @@ private:
     }
 
     ///
-    ///  @brief  SetFundamentalMemVar sets the member varible unless there is a Invalid syntax
+    /// @brief  SetFundamentalMemVar sets the member varible unless there is a Invalid syntax
     ///
     /// @param a_indivisualInstruction: is the extraxted words form the line
+    ///
+    ///  @return ValidateSymSyntax returns false if error was found
     /// 
-    void SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction );
+    bool SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction );
+
+    ///
+    /// @brief setter function to set the Numeric equivalent of Operation code
+    /// 
+    void SetNumOpCode();
+
+    ///
+    /// @brief setter function to set numiric first operand
+    /// 
+    /// checks if the operand1 is a number if it is converst it into 
+    ///     integer and stores it into m_Operand1Value member variable
+    /// 
+    void SetNumOperand1();
+
+    ///
+    /// @brief setter function to set numiric second operand
+    /// 
+    /// checks if the operand2 is a number if it is converst it into 
+    ///     integer and stores it into m_Operand2Value member variable
+    /// 
+    void SetNumOperand2();
+
+    /// 
+    /// @brief ValidateSymSyntax checks if a symbol meets the requirement
+    /// 
+    /// If the symbol does not meet the requirement it set the error
+    /// 
+    /// @param a_Symbol symbol to check the requirements on
+    /// 
+    /// @return ValidateSymSyntax returns false if error was found
+    ///
+    bool ValidateSymSyntax(std::string a_Symbol);
+
+    /// 
+    /// @brief ValidateOpCodeSyntax calls a correspoing validating opCode syntax function
+    /// @todo fix this see if fucntion makes sense
+    /// 
+    /// @return ValidateSymSyntax returns false if error was found
+    /// 
+    /// 
+    bool ValidateOpCodeSyntax();
+
+    /// 
+    /// @brief ValidateOpCodeSyntax calls a correspoing validating opCode syntax function
+    /// @todo fix this see if fucntion makes sense
+    /// 
+    /// @return ValidateSymSyntax returns false if error was found
+    /// 
+    /// 
+    bool ValidateNumericOperandSyntax();
 
     // ================ private variables ============================
 private:
@@ -215,8 +261,11 @@ private:
     // The numerical value of the op code for machine language equivalents.
     int m_NumOpCode;     
 
-    bool m_IsNumericOperand1;   // == true if the operand is numeric.
+    bool m_IsNumericOperand1;   // == true if the operand1 is numeric.
     int m_Operand1Value;   // The value of the operand1 if it is numeric.
+
+    bool m_IsNumericOperand2;   // == true if the operand2 is numeric.
+    int m_Operand2Value;   // The value of the operand2 if it is numeric.
 
     // The value of the operand2 if it is numeric, 
     // only used if machine language instruction
