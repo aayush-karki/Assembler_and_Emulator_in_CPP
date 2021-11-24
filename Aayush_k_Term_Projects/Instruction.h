@@ -231,15 +231,6 @@ private:
     /// 
     bool ValidateOpCodeSyntax();
 
-    /// 
-    /// @brief ValidateOpCodeSyntax calls a correspoing validating opCode syntax function
-    /// @todo fix this see if fucntion makes sense
-    /// 
-    /// @return ValidateSymSyntax returns false if error was found
-    /// 
-    /// 
-    bool ValidateNumericOperandSyntax();
-
     // ================ private variables ============================
 private:
     // =========== Fundamental Values ====================
@@ -266,10 +257,6 @@ private:
 
     bool m_IsNumericOperand2;   // == true if the operand2 is numeric.
     int m_Operand2Value;   // The value of the operand2 if it is numeric.
-
-    // The value of the operand2 if it is numeric, 
-    // only used if machine language instruction
-    int m_Operand2Value;
 
     // note assemble only intrusction are multiple of 100
     // so that when dividing the code number by 100 the remender

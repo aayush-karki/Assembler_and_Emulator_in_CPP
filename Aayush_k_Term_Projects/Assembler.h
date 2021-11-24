@@ -56,9 +56,6 @@ public:
     /// @brief Run emulator on the translation.
     /// 
     void RunProgramInEmulator() {};
-
-    void EnializeErrorTypes();
-
     
 private:
 
