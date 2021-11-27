@@ -20,8 +20,17 @@ int main(int argc, char* argv[])
     // Display the symbol table.
     assem.DisplaySymbolTable();
 
-    // Output the translation.
+    // @todo delete me
+    assem.DisplayDeclaredConstTab();
+
+    // generate the translation.
     assem.PassII();
+
+    // display error messages if any
+    Errors::DisplayAllErrors();
+
+    // Display the machine Instruction table.
+    assem.DisplayMachineInstTable();
 
     // Run the emulator on theVC5000 program that was generated in Pass II.
     assem.RunProgramInEmulator();

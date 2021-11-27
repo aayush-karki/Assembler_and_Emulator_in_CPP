@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include <unordered_map>
 #include "Errors.h"
 
 ///
@@ -98,7 +97,55 @@ public:
     /// @return GetOpCodeNum returns location of the 
     ///         Numeric OpCode 
     ///
-    inline const int GetOpCodeNum(){ return m_NumOpCode % 100; }
+    inline const int GetOpCodeNum(){ return m_NumOpCode; }
+
+    ///
+    /// @brief getter function to access the content 
+    ///         stored in of operand1
+    /// 
+    /// @return GetOperand1 returns content stored in of operand1
+    ///
+    inline const std::string GetOperand1(){ return m_Operand1; }
+
+    ///
+    /// @brief getter function to access the content 
+    ///         stored in of operand2
+    /// 
+    /// @return GetOperand2 returns content stored in of operand2
+    ///
+    inline const std::string GetOperand2(){ return m_Operand2; }
+
+    ///
+    /// @brief getter function to access the numerical 
+    ///         value of operand 1
+    /// 
+    /// @return GetNumOperand1 returns numeric value of operand1 
+    ///
+    inline const int GetNumOperand1(){ return m_Operand1Value; }
+
+    ///
+    /// @brief getter function to access the numerical 
+    ///         value of operand 2
+    /// 
+    /// @return GetNumOperand2 returns numeric value of operand2 
+    ///
+    inline const int GetNumOperand2(){ return m_Operand2Value; }
+
+    ///
+    /// @brief IsNumOperand1 check to see if operand1 is numeric
+    /// 
+    /// @return IsNumOperand1 returns true if Operand 1 is numeric
+    ///         else returns false
+    ///
+    inline const bool IsNumOperand1(){ return m_IsNumericOperand1; }
+
+    ///
+    /// @brief IsNumOperand2 check to see if operand2 is numeric
+    /// 
+    /// @return IsNumOperand2 returns true if Operand 2 is numeric
+    ///         else returns false
+    ///
+    inline const bool IsNumOperand2(){ return m_IsNumericOperand2; }
 
     ///
     /// @brief getter function to access the orginal instruction
@@ -258,9 +305,10 @@ private:
     bool m_IsNumericOperand2;   // == true if the operand2 is numeric.
     int m_Operand2Value;   // The value of the operand2 if it is numeric.
 
-    // note assemble only intrusction are multiple of 100
-    // so that when dividing the code number by 100 the remender
-    // will be the actual code number
+    /// @note assemble only intrusction are multiple of 100
+    ///     so that when dividing the code number by 100 the remender
+    ///     will be the actual code number
+    
     // opCode lookup table 
     const std::unordered_map<std::string, int> opCodeTable
     {

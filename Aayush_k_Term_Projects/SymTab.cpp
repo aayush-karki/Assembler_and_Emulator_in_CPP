@@ -4,13 +4,16 @@
 #include "stdafx.h"
 #include "SymTab.h"
 
-void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc )
+void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter )
 {
     // If the symbol is already in the symbol table, record it as multiply defined.
     std::map<std::string, int>::iterator st = m_symbolTable.find( a_symbol );
     if( st != m_symbolTable.end() ) {
 
-        st->second = multiplyDefinedSymbol;
+        // report the error
+        std::string errorMessage = "Line--" + a_LineCounter;
+        errorMessage.append( "--ERROR--Multiple label defined" );
+        Errors::RecordError( errorMessage );
         return;
     }
     // Record a the  location in the symbol table.
@@ -24,12 +27,13 @@ void SymbolTable::DisplaySymbolTable()
 
     std::cout << "Symbol Table:" << std::endl << std::endl;
 
-    // formating the table
+    // formating the table and printing the table headign
     std::cout << std::left;
     std::cout << std::setw( MAX_SYMBOL_LENGTH + 1 ) << "Symbol# "
         << std::setw( MAX_SYMBOL_LENGTH + 1 ) << "Symbol"
         << " Location" << std::endl;
 
+    // printing the values
     while (currSymbolIte != m_symbolTable.end())
     {
         std::cout << " " << std::setw( 6 ) << symIndex << "\t    "
@@ -47,5 +51,20 @@ void SymbolTable::DisplaySymbolTable()
     std::string enter;
     std::getline( std::cin, enter );
 
+}
+
+bool SymbolTable::LookupSymbol( const std::string& a_symbol, int& a_loc )
+{
+    // finding the symbol
+    std::map<std::string, int>::iterator currSymbolIte = m_symbolTable.find(a_symbol);
+
+    if( currSymbolIte == m_symbolTable.end() )
+    {
+        return false;
+    }
+
+    a_loc = currSymbolIte->second;
+
+    return true;
 }
 

@@ -283,12 +283,11 @@ bool Instruction::ValidateOpCodeSyntax()
     * 
     * Operand1:
     *   opCodes which cannot have operand1 are END and Halt, other must have a operand1
-    *   opCodes which may have a numberic value or label for Operand1 are  ORG, DC, and DS
+    *   opCodes which can only have a numberic value for Operand1 are  ORG, DC, and DS
     *   rest must have a label as Operand1
     *  
     * Operand2:
-    *   opCodes which may have a numberic value or label for Operand2 are  ADD, SUB, MULT, and DIV
-    *   opCodes which must have a label are COPY, BM, BZ, and BP
+    *   opCodes which must have a label are ADD, SUB, MULT, DIV, COPY, BM, BZ, and BP
     *   rest cannot have a Operand2
     *       
     */
@@ -321,16 +320,18 @@ bool Instruction::ValidateOpCodeSyntax()
     {
         // operand1 can a numeric value or a label
          
-        // if it is a numberic value, its length should not be > 5
-        if( m_IsNumericOperand1 && m_Operand1.size() > 5 )
+        // if it is not a numberic value
+        if( !m_IsNumericOperand1 )
         {
-            m_ErrorMessage = "Invalid Syntax--Operand 1 length cannot be more than 5 digit";
+            m_ErrorMessage = "Invalid Syntax--Operand 1 can only have a numeric value";
             m_Type = Instruction::InstructionType::ST_Error;
             return false;
         }
-        // else operand1 is label so check for valid label syntax
-        else if( !ValidateSymSyntax( m_Operand1 ) )
+        // its length should not be > 5
+        if( m_Operand1.size() > 5 )
         {
+            m_ErrorMessage = "Invalid Syntax--Operand 1 length cannot be more than 5 digit";
+            m_Type = Instruction::InstructionType::ST_Error;
             return false;
         }
     }
@@ -341,7 +342,7 @@ bool Instruction::ValidateOpCodeSyntax()
         // checking if it has a numeric value, if == true then error
         if( m_IsNumericOperand1 )
         {
-            m_ErrorMessage = "Invalid Syntax--Operand 1 can only have a label";
+            m_ErrorMessage = "Invalid Syntax--Operand 1 to large for memory. Its length cannot be more than 5 digit";
             m_Type = Instruction::InstructionType::ST_Error;
             return false;
         }
@@ -353,8 +354,8 @@ bool Instruction::ValidateOpCodeSyntax()
     }
 
     // ========================= checking for operand2 =========================
-    // for COPY, BM, BZ, and BP
-    if( m_NumOpCode == 5 || (m_NumOpCode >= 10 && m_NumOpCode <= 12) )
+    // for ADD, SUB, MULTI, DIV, COPY, BM, BZ, and BP
+    if( (m_NumOpCode>=1 && m_NumOpCode <= 5) || (m_NumOpCode >= 10 && m_NumOpCode <= 12) )
     {
         // operand1 can only be a label
         // checking if it has a numeric value, 
@@ -371,29 +372,12 @@ bool Instruction::ValidateOpCodeSyntax()
             return false;
         }
     }
-    // for ADD, SUB, MULTI, and DIV
-    else if( m_NumOpCode >= 1 && m_NumOpCode <= 4 )
-    {
-        // operand2 can be a numeric value or a label
-        // if it is a numberic value, its length should not be > 5
-        if( m_IsNumericOperand2 && m_Operand2.size() > 5 )
-        {
-            m_ErrorMessage = "Invalid Syntax--Operand 2 length cannot be more than 5 digit";
-            m_Type = Instruction::InstructionType::ST_Error;
-            return false;
-        }
-        // else operand2 is label so check for valid label syntax
-        else if( !ValidateSymSyntax( m_Operand2 ) )
-        {
-            return false;
-        }
-    }
-    // for everthing rest, operand 2 should be empty
+    // for everthing else, operand 2 should be empty
     else
     {
-        if( m_Operand1 != "" )
+        if( m_Operand2 != "" )
         {
-            m_ErrorMessage = "Extra Statement Element--Operation code does not need operand 1";
+            m_ErrorMessage = "Extra Statement Element--Operation code does not need operand 2";
             m_Type = Instruction::InstructionType::ST_Error;
             return false;
         }

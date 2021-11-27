@@ -3,6 +3,8 @@
 ///
 #pragma once
 
+#include "Errors.h"
+
 // This class is our symbol table.
 class SymbolTable {
 
@@ -23,15 +25,23 @@ public:
     /// @param a_symbol lable name to be added in the list
     /// @param a_loc location that the label points to
     /// 
-    void AddSymbol( const std::string &a_symbol, int a_loc );
+    void AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter );
 
     /// 
     /// @brief DisplaySymbolTable Display the symbol table to the screen.
     /// 
     void DisplaySymbolTable();
 
-    // Lookup a symbol in the symbol table.
-    bool LookupSymbol(const std::string &a_symbol, int& a_loc) {};
+    /// 
+    /// @brief Lookup a symbol in the symbol table.
+    /// 
+    /// 
+    /// @param a_symbol address of symbol to lookup
+    /// @param a_loc stores VC1960 memory location of symbol if found
+    /// 
+    /// @returns LookupSymbol returns true is symbol is found in table else returns false 
+    /// 
+    bool LookupSymbol(const std::string &a_symbol, int& a_loc);
 
 private:
 
