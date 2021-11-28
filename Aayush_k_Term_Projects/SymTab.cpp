@@ -4,16 +4,14 @@
 #include "stdafx.h"
 #include "SymTab.h"
 
-void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter )
+void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst )
 {
     // If the symbol is already in the symbol table, record it as multiply defined.
     std::map<std::string, int>::iterator st = m_symbolTable.find( a_symbol );
     if( st != m_symbolTable.end() ) {
 
         // report the error
-        std::string errorMessage = "Line--" + a_LineCounter;
-        errorMessage.append( "--ERROR--Multiple label defined" );
-        Errors::RecordError( errorMessage );
+        Errors::RecordError( Errors::ErrorTypes::ERROR_MultipleLabel, a_LineCounter, a_orgiInst );
         return;
     }
     // Record a the  location in the symbol table.

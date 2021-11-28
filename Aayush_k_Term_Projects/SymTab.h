@@ -24,8 +24,12 @@ public:
     ///
     /// @param a_symbol lable name to be added in the list
     /// @param a_loc location that the label points to
+    /// @param a_LineCounter current line in the file, 
+    ///         needed for error reporting
+    /// @param a_orgiInst orginal Assembly instruction in current line, 
+    ///         needed for error reporting 
     /// 
-    void AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter );
+    void AddSymbol( const std::string& a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst );
 
     /// 
     /// @brief DisplaySymbolTable Display the symbol table to the screen.
@@ -34,7 +38,6 @@ public:
 
     /// 
     /// @brief Lookup a symbol in the symbol table.
-    /// 
     /// 
     /// @param a_symbol address of symbol to lookup
     /// @param a_loc stores VC1960 memory location of symbol if found

@@ -37,6 +37,8 @@ public:
     /// on line by line basis and finds any label and 
     /// their corresponding memory location adding them to symbol table
     /// 
+    /// @note responsible for reporting multi defined label
+    /// 
     void PassI( );
 
     /// 
@@ -56,6 +58,11 @@ public:
     /// @brief DesplayDeclaredConstTab Displays all the declared Constant number along with their lablels
     /// 
     void DisplayDeclaredConstTab();
+
+    /// 
+    /// @brief DisplayDeclaredVarMemSizeTab Displays all the declared variable memory along with their lablels
+    /// 
+    void DisplayDeclaredMemVarTab();
     
     /// 
     /// @brief Displays the translated machine instruction in the machine instruction table.
@@ -69,37 +76,8 @@ public:
 
     // ================ private member funciton ============================
 private:
-    /// 
-    /// @brief ValidateOperand1Lab checks to see if Label in Operand1 points to a constant
-    /// 
-    /// ValidateOperand1Lab only checks if operand 1 of ORG, DC or DS is a label 
-    ///     and if it is it checkes if it points to a constant
-    /// 
-    /// If the the Label does not point to a declared constant number
-    ///     it reports a error
-    /// 
-    /// @param a_LineCounter current line number, necessary to falg error reports
-    /// 
-    /// @returns ValidateOperand1Lab returns true if it does else false
-    /// 
-    bool ValidateOperand1Lab( int a_LineCounter );
-
-    /// 
-    /// @brief ValidateOperand2Lab checks to see if Label in Operand2 points to a constant
-    /// 
-    /// ValidateOperand2Lab only checks if operand 1 of  ADD, SUB, MULT, or DIV is a label 
-    ///     and if it is it checkes if it points to a constant
-    /// 
-    /// If the the Label does not point to a declared constant number
-    ///     it reports a error
-    /// 
-    /// @param a_LineCounter current line number, necessary to falg error reports
-    /// 
-    /// @returns ValidateOperand2Lab returns true if it does else false
-    /// 
-    bool ValidateOperand2Lab( int a_LineCounter );
-
-    /// 
+    
+   /// 
    /// @brief SmartFillContent filles in any need 0 before apending the num to translated content
    /// 
    /// 
@@ -114,6 +92,23 @@ private:
    /// @returns ValidateOperand2Lab returns true if it does else false
    /// 
     void SmartFillContent( std::string& a_TranslatedContent, int a_ToAppendNum, int a_LengthToFill = 5 );
+    
+    /// 
+    /// @brief Lookup a symbol in the declared constant table.
+    /// 
+    /// @param a_symbol address of symbol to lookup
+    /// 
+    /// @returns LookupSymbol returns true is symbol is found in table else returns false 
+    /// 
+    bool LookupDeclaredConst( const std::string& a_symbol );
+    /// 
+    /// @brief Lookup a symbol in the declared variable memory table.
+    /// 
+    /// @param a_symbol address of symbol to lookup
+    /// 
+    /// @returns LookupSymbol returns true is symbol is found in table else returns false 
+    /// 
+    bool LookupDeclaredVarMem( const std::string& a_symbol );
 
     // ================ private variables ============================
 private:
@@ -125,6 +120,11 @@ private:
     Emulator m_emul;        // Emulator object
 
     // table to store all the declared Constant number along with their lablels
-    std::unordered_map<std::string, int> m_declaredConstTab; 
+    // stores all DC instruction label and Operand1 value
+    std::unordered_map<std::string, int> m_declaredConstTab;
+
+    // table to store all the declared variable's memory size along with their lablels
+    // stores all DS instruction label and Operand1 value
+    std::unordered_map<std::string, int> m_declaredMemVarTab;
 };
 

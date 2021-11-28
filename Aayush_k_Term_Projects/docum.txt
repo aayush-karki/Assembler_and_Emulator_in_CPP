@@ -53,3 +53,89 @@
         OP_HALT = 13      ///< usage: HALT \n Terminate execution. The Addr1 and Addr2 are ignored
         
 
+In assembler.cpp -> passII->after         
+        // it is assembly code
+        else
+        {  
+            // validating if Opcode is ORG, DC or DS 
+            // and if their Operand 1 is a label it points to a constant number
+            ValidateOperand1Lab( lineCounter );
+
+            // if Opcode is ADD, SUB, MULT, or DIV then if their Operand 2 is a label
+            // check if that label points to a constant
+            ValidateOperand2Lab( lineCounter );
+
+In assemble.h -> in private function definetion
+    /// 
+    /// @brief ValidateOperand1Lab checks to see if Label in Operand1 points to a constant
+    /// 
+    /// ValidateOperand1Lab only checks if operand 1 of ORG, DC or DS is a label 
+    ///     and if it is it checkes if it points to a constant
+    /// 
+    /// If the the Label does not point to a declared constant number
+    ///     it reports a error
+    /// 
+    /// @param a_LineCounter current line number, necessary to falg error reports
+    /// 
+    /// @returns ValidateOperand1Lab returns true if it does else false
+    /// 
+    bool ValidateOperand1Lab( int a_LineCounter );
+
+    /// 
+    /// @brief ValidateOperand2Lab checks to see if Label in Operand2 points to a constant
+    /// 
+    /// ValidateOperand2Lab only checks if operand 1 of  ADD, SUB, MULT, or DIV is a label 
+    ///     and if it is it checkes if it points to a constant
+    /// 
+    /// If the the Label does not point to a declared constant number
+    ///     it reports a error
+    /// 
+    /// @param a_LineCounter current line number, necessary to falg error reports
+    /// 
+    /// @returns ValidateOperand2Lab returns true if it does else false
+    /// 
+    bool ValidateOperand2Lab( int a_LineCounter );
+
+In Assemble.cpp -> at the end of the file
+
+bool Assembler::ValidateOperand1Lab(int a_LineCounter )
+{
+    // if Opcode is ORG, DC or DS and if their Operand 1
+    // is a label it points to a constant number
+    if( ( m_inst.GetOpCodeNum() >= 100 && m_inst.GetOpCodeNum() <= 300 ) &&
+        !m_inst.IsNumOperand1() )
+    {
+        // checking if the label present in the declaredConstantTable
+        if( m_declaredConstTab.find( m_inst.GetOperand1() ) == m_declaredConstTab.end() )
+        {
+            // label does not exist in declared Constant table
+            // report the error
+            std::string errorMessage = "Line--" + a_LineCounter;
+            errorMessage.append( "--ERROR--Operand 1 does not point to a label which stores constant number" );
+            Errors::RecordError( errorMessage );
+            return false;
+        }
+    }
+    return true; // no error
+}
+
+bool Assembler::ValidateOperand2Lab( int a_LineCounter )
+{
+    // if Opcode is ADD, SUB, MULT, or DIV then if their Operand 2 is a label
+    // check if that label points to a constant
+    if( ( m_inst.GetOpCodeNum() >= 1 && m_inst.GetOpCodeNum() <= 4 ) &&
+        !m_inst.IsNumOperand2() )
+    {
+        // checking if the label present in the declaredConstantTable
+        if( m_declaredConstTab.find( m_inst.GetOperand2() ) == m_declaredConstTab.end() )
+        {
+            // label does not exist in declared Constant table
+            // report the error
+            std::string errorMessage = "Line--" + a_LineCounter;
+            errorMessage.append( "--ERROR--Operand 2 does not point to a label which stores constant number" );
+            Errors::RecordError( errorMessage );
+            return false;
+        }
+    }
+    return true; // no error
+}

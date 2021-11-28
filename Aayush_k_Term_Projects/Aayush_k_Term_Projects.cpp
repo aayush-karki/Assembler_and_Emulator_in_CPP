@@ -14,14 +14,20 @@ int main(int argc, char* argv[])
 {
     Assembler assem(argc, argv);
 
+    // inializing error
+    Errors::InitErrorReporting();
+
     // Establish the location of the labels:
     assem.PassI();
 
     // Display the symbol table.
-    assem.DisplaySymbolTable();
+    //assem.DisplaySymbolTable();
 
     // @todo delete me
-    assem.DisplayDeclaredConstTab();
+    //assem.DisplayDeclaredConstTab();
+
+    // @todo delete me
+    //assem.DisplayDeclaredMemVarTab();
 
     // generate the translation.
     assem.PassII();

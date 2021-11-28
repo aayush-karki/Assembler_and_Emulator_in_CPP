@@ -161,7 +161,7 @@ public:
     /// 
     /// @return GetErrorFlagReport returns value stored in error Flag
     /// 
-    const std::string GetErrorMessage() { return m_ErrorMessage; }
+    const Errors::ErrorTypes GetErrorMsgType() { return m_ErrorMsgType; }
 
     // ===================== private functions ===================
 private:
@@ -294,7 +294,7 @@ private:
     // ===========  Derived values ===========
     Instruction::InstructionType m_Type; // The type of instruction.
     
-    std::string m_ErrorMessage;    // Containst the error message
+    Errors::ErrorTypes m_ErrorMsgType;    // Containst the error message
     
     // The numerical value of the op code for machine language equivalents.
     int m_NumOpCode;     

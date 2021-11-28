@@ -34,7 +34,7 @@ void MachineInstructionTable::DisplayMachineInstTable()
 {
 	std::vector<Stuct_MachineInstruction>::iterator currInstIte = m_machineInstTab.begin();
 
-	std::cout << "Declared Constant Table:" << std::endl << std::endl;
+	std::cout << "Translation of Program:" << std::endl << std::endl;
 
 	// formating the table and printing the table headign
 	std::cout << std::left;
@@ -54,13 +54,17 @@ void MachineInstructionTable::DisplayMachineInstTable()
 		{
 			std::cout << " ";
 		} 
-		std::cout << "\t    " << std::setw( 15 + 1 );
+		std::cout << "\t" << std::setw( 15 + 1 );
 		
 		if( currInstIte->m_Content != GetDefaultContent() )
 		{
 			std::cout << currInstIte->m_Content;
 		}
-		std::cout << " " << currInstIte->m_AssembInst << std::endl;
+		else
+		{
+			std::cout << " ";
+		}
+		std::cout << currInstIte->m_AssembInst << std::endl;
 		currInstIte++;
 	}
 
