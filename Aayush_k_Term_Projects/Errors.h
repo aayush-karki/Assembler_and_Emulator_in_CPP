@@ -4,10 +4,6 @@
 #ifndef _ERRORS_H
 #define _ERRORS_H
 
-#include <string>
-#include <vector>
-
-
 ///
 /// @class Errors  "Errors.h"
 /// @brief Class to manage error reporting.
@@ -32,7 +28,7 @@ public:
     
     enum class ErrorTypes
     {
-        ERROR_DEFAULT,
+        ERROR_InvalidInstruction,
         ERROR_MissingEnd,
         ERROR_EndNotLast,
         ERROR_MachineLangInAssemLang,
@@ -56,16 +52,13 @@ public:
         ERROR_InsufficentMemory
     };
 
-    static void RecordError( Errors::ErrorTypes a_errorType, int a_LineCounter, std::string a_OrgiInst );
-    
     ///  
     /// @brief RecordErrorRecords an error message
     ///
     /// @param a_emsg: error to add to the list
     /// 
-    static void RecordError( std::string a_emsg ) { m_ErrorMsgs.push_back( a_emsg ); }
-
-
+    static void RecordError( Errors::ErrorTypes a_errorType, int a_LineCounter, std::string a_OrgiInst );
+    
     /// 
     /// @brief DisplayAllErrors Displays all the collected error message.
     /// 
@@ -74,6 +67,21 @@ public:
     static void DisplayAllErrors();
 
     static std::string LookUpErrorMsgs( Errors::ErrorTypes  a_errorType);
+
+
+    ///
+    /// @brief getter function to access the first element in error message
+    /// 
+    /// @return GetErrorMessageBegin returns a pointer to begining of the vector
+    ///
+    static const std::vector<std::string>::iterator GetErrorMessageBegin(){ return m_ErrorMsgs.begin(); }
+
+    ///
+    /// @brief getter function to access the end of in error message
+    /// 
+    /// @return GetDefaultContent returns a pointer to end of the vector
+    ///
+    static const std::vector<std::string>::iterator GetErrorMessageEnd(){ return m_ErrorMsgs.end(); }
 
 
 private:

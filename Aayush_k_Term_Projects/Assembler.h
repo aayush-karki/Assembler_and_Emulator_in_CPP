@@ -101,7 +101,8 @@ private:
     /// @returns LookupSymbol returns true is symbol is found in table else returns false 
     /// 
     bool LookupDeclaredConst( const std::string& a_symbol );
-    /// 
+    
+    ///  
     /// @brief Lookup a symbol in the declared variable memory table.
     /// 
     /// @param a_symbol address of symbol to lookup
@@ -109,6 +110,26 @@ private:
     /// @returns LookupSymbol returns true is symbol is found in table else returns false 
     /// 
     bool LookupDeclaredVarMem( const std::string& a_symbol );
+    
+    ///  
+    /// @brief TranslateInstruction translates the given assembly instruction as much
+    ///     as possible
+    /// 
+    /// @param a_TranslatedInstruction: address of string where the translated instruction
+    ///         is stored
+    /// @param a_loc current loca
+    /// 
+    void TranslateInstruction( int a_Loc, int a_LineCounter );
+
+    ///
+    /// @brief ComputeNextLoc computes next location
+    /// 
+    /// @param a_loc address of loction variable
+    /// @param a_LineCounter address of lineCounter variable
+    /// @param a_insufficentMemory address of variable that signifiy if there
+    ///         insufficent memory error was flaged or not 
+    /// 
+    void ComputeNextLoc( int& a_loc, int& a_LineCounter, bool& a_insufficentMemory);
 
     // ================ private variables ============================
 private:

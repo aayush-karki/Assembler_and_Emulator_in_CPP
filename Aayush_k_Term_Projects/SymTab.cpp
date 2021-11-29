@@ -41,7 +41,7 @@ void SymbolTable::DisplaySymbolTable()
         currSymbolIte++;
     }
 
-    std::cout << std::setfill('_') << std::setw(50) << " " << std::endl << std::endl;
+    std::cout << std::setfill('_') << std::setw(90) << " " << std::endl << std::endl;
     std::cout << std::setfill( ' ' );
 
     std::cout << "Press Enter to Continue" << std::endl;

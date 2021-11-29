@@ -33,19 +33,23 @@ void MachineInstructionTable::AddMachineIntr( std::string a_AssembInst, int a_Lo
 void MachineInstructionTable::DisplayMachineInstTable()
 {
 	std::vector<Stuct_MachineInstruction>::iterator currInstIte = m_machineInstTab.begin();
+	int currLineNum = 0;
 
 	std::cout << "Translation of Program:" << std::endl << std::endl;
 
 	// formating the table and printing the table headign
-	std::cout << std::left;
-	std::cout << std::setw( 10 + 1 ) << "Location "
-		<< std::setw( 15 + 1 ) << "Content"
-		<< "  Orignal Statement" << std::endl;
+	std::cout << std::left; 
+	std::cout << std::setw( 7 ) << "Line "
+		<< std::setw( 9 ) << "Location "
+		<< std::setw( 14 ) << "  Content"
+		<< "Orignal Statement" << std::endl;
 
 	// printing the values
 	while( currInstIte != m_machineInstTab.end() )
 	{
-		std::cout << " " << std::setw( 6 );
+		++currLineNum;
+		std::cout <<" " << std::setw(6) << currLineNum << "   ";
+		std::cout << std::setw( 6 );
 		if( currInstIte->m_Location != GetDefaultLocation() )
 		{
 			std::cout << currInstIte->m_Location;
@@ -54,7 +58,7 @@ void MachineInstructionTable::DisplayMachineInstTable()
 		{
 			std::cout << " ";
 		} 
-		std::cout << "\t" << std::setw( 15 + 1 );
+		std::cout << std::setw( 15 );
 		
 		if( currInstIte->m_Content != GetDefaultContent() )
 		{
@@ -68,7 +72,7 @@ void MachineInstructionTable::DisplayMachineInstTable()
 		currInstIte++;
 	}
 
-	std::cout << std::setfill( '_' ) << std::setw( 50 ) << " " << std::endl << std::endl;
+	std::cout << std::setfill( '_' ) << std::setw( 90 ) << " " << std::endl << std::endl;
 	std::cout << std::setfill( ' ' );
 
 	std::cout << "Press Enter to Continue" << std::endl;

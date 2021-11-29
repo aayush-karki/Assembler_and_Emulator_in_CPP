@@ -81,6 +81,20 @@ public:
     ///
     inline const std::string GetDefaultContent(){ return DEFAULT_CONTENT; }
 
+    ///
+    /// @brief getter function to access the first element in machine instruction table
+    /// 
+    /// @return GetDefaultContent returns a pointer to begining of the table
+    ///
+    inline const std::vector<Stuct_MachineInstruction>::iterator GetMachineInstTabBegin(){ return m_machineInstTab.begin(); }
+
+    ///
+    /// @brief getter function to access the end of in machine instruction table
+    /// 
+    /// @return GetDefaultContent returns a pointer to end of the table
+    ///
+    inline const std::vector<Stuct_MachineInstruction>::iterator GetMachineInstTabEnd(){ return m_machineInstTab.end(); }
+
 private:
         
     std::vector<Stuct_MachineInstruction> m_machineInstTab; // stores all the translated intruction in as a pointer

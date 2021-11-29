@@ -112,6 +112,42 @@ void Assembler::PassII()
         // Parse the line and get the instruction type.
         Instruction::InstructionType st = m_inst.ParseInstruction( line );
 
+        // check if there were any error while parseing the instruction
+        if( st == Instruction::InstructionType::ST_Error )
+        {
+            std::vector<Errors::ErrorTypes>::iterator currErrorPtr = m_inst.GetErrorMsgTypeBegin();
+
+            while(currErrorPtr != m_inst.GetErrorMsgTypeEnd() )
+            {
+                Errors::RecordError(*currErrorPtr, lineCounter, m_inst.GetOrgiInst() );
+                ++currErrorPtr;
+            }
+
+            // checking if error was found in fundamental variable
+            if( m_inst.IsErrorFundVar() )
+            {
+                if( m_inst.IsErrorOpCode() )
+                {
+                    m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, "????????????" );
+                }
+                else
+                {
+                    std::string content;
+
+                    // insering op code into the content
+                    SmartFillContent( content, m_inst.GetOpCodeNum() % 100, 2 );
+
+                    // inserting error value of operand1 and operand2
+                    content.append( "??????????" );
+
+                    m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, content );
+                }
+                // computing next loc
+                ComputeNextLoc( loc, lineCounter, insufficentMemory );
+                continue;
+            }
+        }
+
         // record if the line is a comment and then continue to next line.
         if( st == Instruction::InstructionType::ST_Comment )
         {
@@ -119,13 +155,6 @@ void Assembler::PassII()
             m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst() );
             continue;
         }
-
-        // check if there were any error while parseing the instruction
-        else if( st == Instruction::InstructionType::ST_Error )
-        {
-            Errors::RecordError( m_inst.GetErrorMsgType(), lineCounter, m_inst.GetOrgiInst() );
-        }
-
         // checking if the end is the last statement and report an error if it isn't.
         else if( st == Instruction::InstructionType::ST_End )
         {
@@ -140,154 +169,18 @@ void Assembler::PassII()
             // END statement is not the last statement.
             Errors::RecordError( Errors::ErrorTypes::ERROR_EndNotLast, lineCounter, m_inst.GetOrgiInst() );
         }
-
         // record error if the line is a machine instruction
         else if( st == Instruction::InstructionType::ST_MachineLanguage )
         {
             Errors::RecordError( Errors::ErrorTypes::ERROR_MachineLangInAssemLang, lineCounter, m_inst.GetOrgiInst() );
         }
-
         // it is assembly code
         else
-        {           
-            std::string translatedContent; // translating the intruction into machine readable form
-            
-            int opCodeNum = m_inst.GetOpCodeNum(); // getting the opCodeNum of current instruction
-
-            // preparing to add to the machine instruction table
-             
-            // for ORG, DS does not have content 
-            if ( opCodeNum == 100 || opCodeNum  == 300 )
-            {
-                // adding it to the  machine inst table
-                m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc );
-            }
-            // for operation code DC, content is 00|00000|operand1Val
-            else if( opCodeNum == 200 )
-            {
-                // so first 2 digit of content should be 00 
-                SmartFillContent( translatedContent, 0, 2 );
-
-                // for DC the value of operand1 is stored in operand 2
-                SmartFillContent( translatedContent, m_inst.GetNumOperand1(), 10);
-
-                // adding it to the  machine inst table
-                m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc,  translatedContent  );
-            }
-            // for halt content is 13|00000|00000
-            else if( opCodeNum == 13 )
-            {
-                // it is halt and its content only has starting 13
-                // adding it to the  machine inst table
-                m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, "130000000000" );
-            }
-            else
-            {
-                // everything else has content 
-                // where operand1 is label
-                //       operand2 is label or empty
-                // content has opCode|operand1|operand2
-                
-                // ============= apending the opcode to the content ============= 
-                SmartFillContent( translatedContent, opCodeNum, 2 );
-                
-                // ============= appending operand 1 to the content ============= 
-                // operand 1 can only be label
-                // but operand 1 of ADD, SUB, MULT, DIV, COPY, READ, and WRITE should point to memory variable
-
-                // getting the label stored in operand 1
-                std::string label = m_inst.GetOperand1();
-                
-                // getting the location that label points to
-                int labelLoc;
-
-                if( !m_symtab.LookupSymbol( label, labelLoc ) )
-                {
-                    // label not found
-                    Errors::RecordError( Errors::ErrorTypes::ERROR_UndefinedLabel, lineCounter, m_inst.GetOrgiInst() );
-
-                    // @todo retun statement here 
-                }
-                else
-                {
-                    // for B, BM, BZ, and BP operand 1 does not have to be memory variable
-                    if( opCodeNum >= 9 && opCodeNum <= 12 )
-                    {
-                        SmartFillContent( translatedContent, labelLoc );
-                    }
-                    // for ADD, SUB, MULT, DIV, COPY, READ, and WRITE
-                    else
-                    {
-                        // checking if label points to memory variable
-                        if( LookupDeclaredConst( label ) || LookupDeclaredVarMem( label ) )
-                        {
-                            SmartFillContent( translatedContent, labelLoc );
-                        }
-                        else
-                        {
-                            Errors::RecordError( Errors::ErrorTypes::ERROR_NotLabelConst, lineCounter, m_inst.GetOrgiInst() );
-                        }
-                    }
-
-                }
-
-                // =============  appending operand 2 to the content ============= 
-                // operand 2 can be label which points to a memory variable or empty
-                if( m_inst.GetOperand2() == "" )
-                {
-                    // empty, append 00000
-                    SmartFillContent( translatedContent, 0 );
-                }
-                else
-                {
-                    // it is a label and it should point to memory variable
-                     
-                    // getting the label stored in operand 2
-                    std::string label2 = m_inst.GetOperand2();
-
-                    // getting the location that label points to
-                    int label2Loc;
-
-                    if( !m_symtab.LookupSymbol( label2, label2Loc ) )
-                    {
-                        // label not found
-                        Errors::RecordError( Errors::ErrorTypes::ERROR_UndefinedLabel, lineCounter, m_inst.GetOrgiInst() );
-
-                        // @todo retun statement here 
-                    }
-                    else
-                    {
-                        if( LookupDeclaredConst( label2 ) || LookupDeclaredVarMem( label2 ) )
-                        {
-                            SmartFillContent( translatedContent, label2Loc );
-                        }
-                        else
-                        {
-                            Errors::RecordError( Errors::ErrorTypes::ERROR_NotLabelConst, lineCounter, m_inst.GetOrgiInst() );
-                        }
-                    }
-
-                }
-                // adding it to the  machine inst table
-                m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, translatedContent );
-            }
-
-        }
-
-        // @todo: delete me
-        std::cout << m_inst.GetOrgiInst() << std::endl;
-
-        // Compute the location of the next instruction.
-        loc = m_inst.LocationNextInstruction( loc );
-
-        // checking for storage
-        if( loc > Emulator::MEMSZ && !insufficentMemory )
         {
-            // insufficent memory
-            Errors::RecordError( Errors::ErrorTypes::ERROR_InsufficentMemory, lineCounter, m_inst.GetOrgiInst() );
-            insufficentMemory = true;
+            TranslateInstruction( loc, lineCounter );
         }
         
+        ComputeNextLoc( loc, lineCounter, insufficentMemory );
     }
 }
 
@@ -356,8 +249,6 @@ void Assembler::DisplayDeclaredMemVarTab()
     std::getline( std::cin, enter );
 }
 
-
-
 void Assembler::SmartFillContent( std::string &a_TranslatedContent,int a_ToAppendNum, int a_LengthToFill)
 {
     std::string toAppend = std::to_string( a_ToAppendNum );
@@ -403,4 +294,178 @@ bool Assembler::LookupDeclaredVarMem( const std::string& a_symbol )
         return false;
     }
     return true;
+}
+
+void Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
+{
+    std::string translatedContent;  // stores translating the intruction into machine readable form
+
+    int opCodeNum = m_inst.GetOpCodeNum(); // getting the opCodeNum of current instruction
+
+    // preparing to add to the machine instruction table
+    
+    // there is always an op code
+    SmartFillContent( translatedContent, opCodeNum %100, 2 );
+
+    // checking if both operand 1 and  operand 2 have error
+    if( m_inst.IsErrorOperand1() && m_inst.IsErrorOperand2() )
+    {
+        translatedContent.append( "??????????" );
+        m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent );
+        return;
+    }
+   
+    // for ORG, DS does not have content 
+    if( opCodeNum == 100 || opCodeNum == 300 )
+    {
+        // checking for error
+        if( m_inst.IsErrorOperand1() )
+        {
+            m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "00?????00000" );
+        }
+        else
+        {
+            m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc );
+        }
+    }
+    // for operation code DC, content is 00|00000|operand1Val
+    else if( opCodeNum == 200 )
+    {
+        // checking error
+        if( m_inst.IsErrorOperand1() )
+        {
+            translatedContent.append ("?????00000") ;
+        }
+        else
+        {
+            //no error
+            // for DC the value of operand1 is stored in operand 2
+            SmartFillContent( translatedContent, m_inst.GetNumOperand1(), 10 );
+        }
+
+        // adding it to the  machine inst table
+        m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent );
+        return;
+    }
+    // for halt content is 13|00000|00000
+    else if( opCodeNum == 13 )
+    {
+        // checking error
+        if( m_inst.IsErrorOperand1() )
+        {
+            m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "13?????00000" );
+        }
+        else
+        {
+            // it is halt and its content only has starting 13
+            // adding it to the  machine inst table
+            m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "130000000000" );
+        }
+    }
+    else
+    {
+        // everything else has content -> opCode|operand1|operand2
+        // where operand1 is label 
+        //       operand2 is label that points to memory variable i.e. DC or DS or empty
+
+        // ============= appending operand 1 to the content ============= 
+        // operand 1 can only be label
+        // but operand 1 of ADD, SUB, MULT, DIV, COPY, READ, and WRITE should point to memory variable
+
+        // getting the label stored in operand 1
+        std::string label = m_inst.GetOperand1();
+
+        // getting the location that label points to
+        int labelLoc;
+        // checking if error
+        if( m_inst.IsErrorOperand1() )
+        {
+            translatedContent.append( "?????" );
+        }
+        else if( !m_symtab.LookupSymbol( label, labelLoc ) )
+        {
+            // label not found
+            Errors::RecordError( Errors::ErrorTypes::ERROR_UndefinedLabel, a_LineCounter, m_inst.GetOrgiInst() );
+            translatedContent.append( "?????" );
+        }
+        else
+        {
+            // for B, BM, BZ, and BP operand 1 does not have to be memory variable
+            if( opCodeNum >= 9 && opCodeNum <= 12 )
+            {
+                SmartFillContent( translatedContent, labelLoc );
+            }
+            // for ADD, SUB, MULT, DIV, COPY, READ, and WRITE
+            else
+            {
+                // checking if label points to memory variable
+                if( LookupDeclaredConst( label ) || LookupDeclaredVarMem( label ) )
+                {
+                    SmartFillContent( translatedContent, labelLoc );
+                }
+                else
+                {
+                    Errors::RecordError( Errors::ErrorTypes::ERROR_NotLabelConst, a_LineCounter, m_inst.GetOrgiInst() );
+                    translatedContent.append( "?????" );
+                }
+            }
+        }
+
+        // =============  appending operand 2 to the content ============= 
+        // operand 2 can be label which points to a memory variable or empty
+        if( m_inst.IsErrorOperand2() )
+        {
+            translatedContent.append( "?????" );
+        }
+        else if( m_inst.GetOperand2() == "" )
+        {
+            // empty, append 00000
+            SmartFillContent( translatedContent, 0 );
+        }
+        else
+        {
+            // it is a label and it should point to memory variable
+
+            // getting the label stored in operand 2
+            std::string label2 = m_inst.GetOperand2();
+
+            // getting the location that label points to
+            int label2Loc;
+
+            if( !m_symtab.LookupSymbol( label2, label2Loc ) )
+            {
+                // label not found
+                Errors::RecordError( Errors::ErrorTypes::ERROR_UndefinedLabel, a_LineCounter, m_inst.GetOrgiInst() );
+                translatedContent.append( "?????" );
+            }
+            else
+            {
+                if( LookupDeclaredConst( label2 ) || LookupDeclaredVarMem( label2 ) )
+                {
+                    SmartFillContent( translatedContent, label2Loc );
+                }
+                else
+                {
+                    Errors::RecordError( Errors::ErrorTypes::ERROR_NotLabelConst, a_LineCounter, m_inst.GetOrgiInst() );
+                    translatedContent.append( "?????" );
+                }
+            }
+        }
+        // adding it to the  machine inst table
+        m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent);
+    }
+}
+
+void Assembler::ComputeNextLoc( int& a_loc, int& a_LineCounter, bool& a_insufficentMemory )
+{
+    // Compute the location of the next instruction.
+    a_loc = m_inst.LocationNextInstruction( a_loc );
+
+    // checking for storage
+    if( a_loc > Emulator::MEMSZ && !a_insufficentMemory)
+    {
+        // insufficent memory
+        Errors::RecordError( Errors::ErrorTypes::ERROR_InsufficentMemory, a_LineCounter, m_inst.GetOrgiInst() );
+        a_insufficentMemory = true;
+    }
 }

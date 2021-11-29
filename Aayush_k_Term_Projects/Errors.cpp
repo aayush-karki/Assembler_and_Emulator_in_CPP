@@ -27,7 +27,13 @@ void Errors::DisplayAllErrors()
 	std::vector<std::string>::iterator currMessage = m_ErrorMsgs.begin();
 	int errorNum = 1;
 
-	std::cout << "Error List" << std::endl << std::endl;
+	// checking if error message is empty
+	if( currMessage == m_ErrorMsgs.end() )
+	{
+		return;
+	}
+
+	std::cout << "Error List:" << std::endl << std::endl;
 
 	// printing
 	while( currMessage != m_ErrorMsgs.end() )
@@ -44,6 +50,10 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 {
 	switch( a_errorType )
 	{
+		case ( Errors::ErrorTypes::ERROR_InvalidInstruction ):
+		{
+			return std::string( "--\n   ERROR--Invalid Instruction" );
+		}
 		case ( Errors::ErrorTypes::ERROR_MissingEnd ):
 		{
 			return std::string( "--\n   ERROR--End of File reached.Missing END statement");

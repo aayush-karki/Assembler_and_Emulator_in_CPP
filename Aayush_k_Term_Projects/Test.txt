@@ -1,0 +1,157 @@
+;============= Error Testing =============
+
+; testing all the error Types
+        end             ; end not eof  
+120 130000000000        ; machine code in assemby code 
+hello read notLabel     ; undefined label in Operand 1
+hello write x           ; multiple label defined
+add x,b,a               ; extra statement element no label
+aaa add x,b,a           ; extra statement element with label
+lab0,b read a           ; op code position
+aa x,b                  ; missing op code
+dc 5                    ; mising label
+end x                   ; extra operand 1
+read read a,b           ; extra operand 2
+org x                   ; operand 1 should be a number
+add 5,x                 ; operand 1 should be a label
+add x,5                 ; operand 2 should be a label
+newConst dc 999999      ; operand 1 length is more than 5
+notNewConst dc 10       ; label length is more than 10
+1constant dc 5          ; first char of label is not a alphabet
+nextCon$t dc 20         ; label is not composed of only alphaNumerical 
+;vec      ds      99999 ; insufficent memory
+asdasd                  ; invalid opcode
+
+
+; ============= testing op code syntax =============
+
+; testing for ORG
+lab org 100             ; valid 
+org 105                 ; valid 
+org 1000 1000           ; invalid should not have operand2
+lab1 y org 410          ; invalid opcode pos
+;org 100000              ; is valid but gives insuffecent memory error
+
+; testing for DC
+lab2 DC 100             ; valid 
+DC 105                  ; invalid should have a label 
+lab3 DC 1000 1000       ; invalid should not have operand2
+lab4 y DC 410           ; invalid opcode pos
+DC 100000               ; invalid operand 1 larger 
+
+
+; testing for DS
+lab5 DS 100             ; valid 
+DS 105                  ; invalid should have a label 
+lab6 D7 1000 1000       ; invalid should not have operand2
+lab7 y DS 410           ; invalid opcode pos
+;lab8 DS 100000          ; is valid but gives insuffecent memory error
+
+; testing for END
+END                     ; give NOT last statement error
+;rest tests are at the end of file
+
+; testing for ADD, SUB, MULTI, DIV, and COPY
+; they have same opcode syntax
+lab9 AdD y,x            ; valid
+add y,x                 ; valid 
+add 100,x               ; invalid should point to a mem var
+add y,hi                ; invalid should point to a mem var
+add hi,y                ; invalid should point to a mem var
+add x,100               ; invalid should point to a mem var
+lab11 add y             ; invalid should point to a mem var
+add                     ; invalid should have extra statement
+
+lab10 SuB y,x           ; valid
+sub y,x                 ; valid 
+lab12 sub y,hi          ; invalid should point to a mem var
+sub hi,y                ; invalid should point to a mem var
+sub 100,x               ; invalid should point to a mem var
+sub x,100               ; invalid should point to a mem var
+sub y                   ; invalid should have operand 2
+sub                     ; invalid should have extra statement
+
+lab13 MulT y,x          ; valid
+mult y,x                ; valid 
+lab14 mult y,hi         ; invalid should point to a mem var
+mult 100,x              ; invalid should point to a mem var
+mult x,100              ; invalid should point to a mem var
+mult hi,y               ; invalid should point to a mem var
+mult y                  ; invalid should have operand 2
+mult                    ; invalid should have extra statement
+
+lab15 DiV y,x           ; valid
+Div y,x                 ; valid 
+lab16 Div y,hi          ; invalid should point to a mem var
+div 100,x               ; invalid should point to a mem var
+div x,100               ; invalid should point to a mem var
+Div hi,y                ; invalid should point to a mem var
+Div y                   ; invalid should have operand 2
+Div                     ; invalid should have extra statement
+
+lab17 CopY y,x          ; valid
+CopY y,x                ; valid 
+copy 100,x              ; invalid should point to a mem var
+copy x,100              ; invalid should point to a mem var
+lab18 CopY y,hi         ; invalid should point to a mem var
+Copy hi,y               ; invalid should point to a mem var
+Copy y                  ; invalid should have operand 2
+CopY                    ; invalid should have extra statement
+
+; testing for Read and Write
+; they have same opcode syntax
+lab19 ReaD y            ; valid
+read y                  ; valid 
+lab20 read hi           ; invalid should point to a mem var
+read y x                ; invalid should not have operand 2
+read                    ; invalid should have extra statement
+
+lab21 wrItE y           ; valid
+write y                 ; valid 
+lab22 write hi          ; invalid should point to a mem var
+write y x               ; invalid should not have operand 2
+write                   ; invalid should have extra statement
+
+;Testing for B
+lab23 B y               ; valid
+b hi                    ; valid 
+b y                     ; valid 
+lab24 B hi              ; valid
+lab25 B hi y            ; invalid should not have operand 2
+B y x                   ; invalid should not have operand 2
+B                       ; invalid should have extra statement
+
+;Testing for BM, MZ, and BP
+lab26 Bm hi y           ; valid 
+Bm y x                  ; valid
+bm y hi                 ; invalid operand 2 should point to mem var
+lab27 BM y              ; invalid should  have operand 2
+lab28 Bm hi             ; invalid should  have operand 2
+bm hi                   ; invalid should  have operand 2
+Bm                      ; invalid should have extra statement
+
+lab29 Bz hi y           ; valid 
+Bz y x                  ; valid
+bz y hi                 ; invalid operand 2 should point to mem var
+lab30 Bz y              ; invalid should  have operand 2
+lab31 Bz hi             ; invalid should  have operand 2
+bz hi                   ; invalid should  have operand 2
+Bz                      ; invalid should have extra statement
+
+lab32 BP hi y           ; valid 
+Bp y x                  ; valid
+bp y hi                 ; invalid operand 2 should point to mem var
+lab33 Bp y              ; invalid should  have operand 2
+lab34 Bp hi             ; invalid should  have operand 2
+bp hi                   ; invalid should  have operand 2
+Bp                      ; invalid should have extra statement
+
+; testing for halt
+halt                    ; valid
+lab35 halt              ; valid
+halt x                  ; invlaid should not hvae operand 1
+halt x y                ; invlaid should not hvae operand 2
+
+
+        end     100     ; invalid should not have operand2
+lab100000 end           ; valid

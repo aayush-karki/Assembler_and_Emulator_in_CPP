@@ -67,11 +67,12 @@ Instruction::InstructionType Instruction::ParseInstruction( std::string a_line )
     m_Type = Instruction::InstructionType::ST_AssemblerInstr;
     
     // setting the member variable
-    if( !SetFundamentalMemVar( indivisualInstruction ) )
+    if( !SetFundamentalVar( indivisualInstruction ) )
     {
-        // error was flaged
+        m_ErrorFundVar = true;
         return m_Type;
     }
+    
 
     // checking if instruction was END
     if( m_Type == Instruction::InstructionType::ST_End )
@@ -82,25 +83,28 @@ Instruction::InstructionType Instruction::ParseInstruction( std::string a_line )
     // validating m_Label
     if( m_Label !=  "" && !ValidateSymSyntax( m_Label ) )
     {
-        // error was flaged
-        return m_Type;
+        m_ErroLabelSyn = true;
     }
     
     // ================== setting derived member variable ===================
+    
     // setting numeric equivalent of operation code
     SetNumOpCode();
 
     // chekcing if operand 1 is empty 
-    if( m_Operand1 != "" )
+    if( m_Operand1 != ""  )
     {
-        // checking if the first operand is a number and seting it if true
+        
+        // checking if the first operand is a number 
+        // and if == true extracting it
         SetNumOperand1();
     }
 
     // chekcing if operand 2 is empty 
-    if( m_Operand2 != "" )
+    if( m_Operand2 != "")
     {
-        // checking if the second operand is a number and seting it if true
+        // checking if the second operand is a number
+        // and if == true extracting it
         SetNumOperand2();
     }
 
@@ -136,20 +140,27 @@ void Instruction::ClearMemberVariables()
     m_Operand1 = "";  
     m_Operand2 = "";
     m_Instruction = "";
-    m_ErrorMsgType = Errors::ErrorTypes::ERROR_DEFAULT;
+
+    // resizing the vector to 0
+    m_ErrorMsgType.resize(0);
 
     // setting all int variable to 0 
     m_NumOpCode = 0;
     m_Operand1Value = 0;  
 
     // setting all bool variable to false 
-    m_IsNumericOperand1 = false;
+    m_IsNumericOperand1 = false; 
+    m_ErroLabelSyn = false;
+    m_ErrorOpCode = false;
+    m_ErrorOperand1 = false;
+    m_ErrorOperand2 = false;
+    m_ErrorFundVar = false;
 
     // setting all Instruction::InstructionType variable to ST_Comment 
     m_Type = Instruction::InstructionType::ST_Comment;
 }
 
-bool Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction )
+bool Instruction::SetFundamentalVar( std::vector<std::string>& a_indivisualInstruction )
 {
     // temp array to smartly set the member variable despite the size of a_indivisualInstruction
     std::string* memberVarArr[4] = { &m_Label, &m_OpCode, &m_Operand1, &m_Operand2 };
@@ -158,24 +169,55 @@ bool Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualIn
     if( a_indivisualInstruction.size() > 4 )
     {
         // flaging error
-        m_ErrorMsgType = Errors::ErrorTypes::ERROR_ExtraStatEle;
+        m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_ExtraStatEle);
         m_Type = Instruction::InstructionType::ST_Error;
-
-        return false;
+        
+        int instSize = a_indivisualInstruction.size();
+        while( instSize != 4 )
+        {
+            a_indivisualInstruction.pop_back();
+            --instSize;
+        }
     }
+
     // if == 1 then it should be halt or end
     // assign it to m_opCode, later validate the inputs
-    else if ( a_indivisualInstruction.size() == 1 && IsOpCode( a_indivisualInstruction.at( 0 ) ) )
+    if ( a_indivisualInstruction.size() == 1 )
     {
-        m_OpCode = a_indivisualInstruction.at( 0 );
+        if( IsOpCode( a_indivisualInstruction.at( 0 ) ) )
+        {
+            m_OpCode = a_indivisualInstruction.at( 0 );
 
-        if( AllUpperCase( m_OpCode ) == "END" )
-        {
-            m_Type = Instruction::InstructionType::ST_End;
+            if( AllUpperCase( m_OpCode ) == "END" )
+            {
+                m_Type = Instruction::InstructionType::ST_End;
+            }
+            else if( AllUpperCase( m_OpCode ) != "HALT" )
+            {
+                // setting up its value
+                SetNumOpCode();
+
+                m_ErrorOperand1 = true;
+                m_ErrorOperand2 = true;
+            
+                m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_MissingOperand );
+                m_Type = Instruction::InstructionType::ST_Error;
+                return false;
+            }
         }
-        else if( AllUpperCase( m_OpCode ) != "HALT" )
+        else
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_MissingOperand;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidInstruction );
+            m_Type = Instruction::InstructionType::ST_Error;
+
+            // setting up its value
+            m_ErroLabelSyn = true;
+            m_ErrorOpCode = true;
+            m_ErrorOperand1 = true;
+            m_ErrorOperand2 = true;
+
+            m_Type = Instruction::InstructionType::ST_Error;
+
             return false;
         }
     }
@@ -197,8 +239,11 @@ bool Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualIn
         // if the size is 4 then error, extra statement element
         if( a_indivisualInstruction.size() == 4 )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_ExtraStatEle;
-            return false;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_ExtraStatEle );
+            m_Type = Instruction::InstructionType::ST_Error;
+
+            // removing the last element so that we can traslate as much as possible
+            a_indivisualInstruction.pop_back(); 
         }
 
         for( unsigned int i = 0; i < a_indivisualInstruction.size(); ++i )
@@ -209,14 +254,20 @@ bool Instruction::SetFundamentalMemVar( std::vector<std::string>& a_indivisualIn
     // else flag error
     else
     {
-        if( IsOpCode( a_indivisualInstruction.at( 2 ) ) )
+        if( a_indivisualInstruction.size() > 2 && IsOpCode( a_indivisualInstruction.at( 2 ) ) )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_OpCodePos;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_OpCodePos );
         }
         else
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_MissingOpCode;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_MissingOpCode );
         }
+
+        // setting up its value
+        m_ErroLabelSyn = true;
+        m_ErrorOpCode = true;
+        m_ErrorOperand1 = true;
+        m_ErrorOperand2 = true;
 
         m_Type = Instruction::InstructionType::ST_Error;
 
@@ -262,7 +313,7 @@ bool Instruction::ValidateSymSyntax( std::string a_Symbol )
     // checking for length -> which should be max 10
     if( a_Symbol.size() > 10 )
     {
-        m_ErrorMsgType = Errors::ErrorTypes::ERROR_InvalidSymSyntaxLen;
+        m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidSymSyntaxLen );
         m_Type = Instruction::InstructionType::ST_Error;
         return false;
     }
@@ -271,7 +322,7 @@ bool Instruction::ValidateSymSyntax( std::string a_Symbol )
     // checking if first character is a letter or not
     if( !std::isalpha( a_Symbol.at( 0 ) ) )
     {
-        m_ErrorMsgType = Errors::ErrorTypes::ERROR_InvalidSymSyntaxfirstChar;
+        m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidSymSyntaxfirstChar );
         m_Type = Instruction::InstructionType::ST_Error;
         return false;
     }
@@ -279,7 +330,7 @@ bool Instruction::ValidateSymSyntax( std::string a_Symbol )
     // checking if the symbol is made out of only albphabet and number 
     if( !std::all_of( a_Symbol.begin(), a_Symbol.end(), std::isalnum ) )
     {
-        m_ErrorMsgType = Errors::ErrorTypes::ERROR_InvalidSymSyntaxComposition;
+        m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidSymSyntaxComposition );
         m_Type = Instruction::InstructionType::ST_Error;
         return false;
     }
@@ -287,7 +338,7 @@ bool Instruction::ValidateSymSyntax( std::string a_Symbol )
     return true; // all requirement passed
 }
 
-bool Instruction::ValidateOpCodeSyntax()
+void Instruction::ValidateOpCodeSyntax()
 {
     /*
     *  Opearation Code syntax requiremnet 
@@ -308,51 +359,60 @@ bool Instruction::ValidateOpCodeSyntax()
     */
 
     // ========================= checking for label ========================= 
-    // for DC and DS
+    // for DC and DS should always have a label
     if ( (m_NumOpCode == 200 || m_NumOpCode == 300) && m_Label == "" )
     {
         // label is absent
         // set error
-        m_ErrorMsgType = Errors::ErrorTypes::ERROR_MissingLabel;
+        m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_MissingLabel );
         m_Type = Instruction::InstructionType::ST_Error;
-        return false;
+        m_ErroLabelSyn = true;
     }
     
     // ========================= checking for operand1 ========================= 
-    // for END and Halt
+    
+    // for END and Halt, operand 1 should be empty
+    // we do not check for operand 2 because if operand 1 is not present 
+    // operand 2 can not be present
     if( m_NumOpCode == 400 || m_NumOpCode == 13 )
     {
-        // operand 1 should be empty
         if( m_Operand1 != "" )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_ExtraOperand1;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_ExtraOperand1 );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand1 = true;
+        }
+        if( m_Operand2 != "" )
+        {
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_ExtraOperand2 );
+            m_Type = Instruction::InstructionType::ST_Error;
+            m_ErrorOperand2 = true;
         }
 
         // checking if opcode was end
+        // checking this here if label was suppled with END op code
         if( m_NumOpCode == 400 )
         {
             m_Type = Instruction::InstructionType::ST_End;
         }
+        return;
     }
-    //  for ORG, DC, and DS  
+    //  for ORG, DC, and DS,  // operand1 should have a numeric value
     else if( m_NumOpCode >= 100 && m_NumOpCode <= 300 )
     {
-        // operand1 should have a numeric value
         // if it is not a numberic value
         if( !m_IsNumericOperand1 )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_NotNumOperand1;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_NotNumOperand1 );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand1 = true;
         }
         // its length should not be > 5
         if( m_Operand1.size() > 5 )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_InvalidOperand1Len;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidOperand1Len );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand1 = true;
         }
     }
     // rest must have a label as Operand1
@@ -362,14 +422,15 @@ bool Instruction::ValidateOpCodeSyntax()
         // checking if it has a numeric value, if == true then error
         if( m_IsNumericOperand1 )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_NotLabelOperand1;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_NotLabelOperand1 );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand1 = true;
+
         }
         // check for valid label syntax
         else if( !ValidateSymSyntax( m_Operand1 ) )
         {
-            return false;
+            m_ErrorOperand1 = true;
         }
     }
 
@@ -380,22 +441,22 @@ bool Instruction::ValidateOpCodeSyntax()
         // operand2 can only be a label
         if( m_Operand2 == "" )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_MissingOperand;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_MissingOperand );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand2 = true;
         }
         // checking if it has a numeric value, 
         // if == true error
         else if( m_IsNumericOperand2 )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_NotLabelOperand2;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_NotLabelOperand2 );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand2 = true;
         }
         // check for valid label syntax
         else if( !ValidateSymSyntax( m_Operand2 ) )
         {
-            return false;
+            m_ErrorOperand2 = true;
         }
     }
     // for everthing else, operand 2 should be empty
@@ -403,11 +464,11 @@ bool Instruction::ValidateOpCodeSyntax()
     {
         if( m_Operand2 != "" )
         {
-            m_ErrorMsgType = Errors::ErrorTypes::ERROR_ExtraOperand2;
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_ExtraOperand2 );
             m_Type = Instruction::InstructionType::ST_Error;
-            return false;
+            m_ErrorOperand2 = true;
         }
     }
 
-    return true; // no error found
+    return;
 }

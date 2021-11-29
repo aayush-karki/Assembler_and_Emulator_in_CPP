@@ -1,74 +1,15 @@
-;Error Testing
-; testing all the error Types
-        end             ; end not eof  
-120 130000000000        ; machine code in assemby code 
-hello read notLabel     ; undefined label in Operand 1
-hello write x           ; multiple label defined
-;add x,b,a               ; extra statement element no label
-aaa add x,b,a           ; extra statement element with label
-x,b read a              ; op code position
-aa x,b                  ; missing op code
-dc god                  ; mising label
-end x                   ; extra operand 1
-read read a,b           ; extra operand 2
-org x                   ; operand 1 should be a number
-add 5,x                 ; operand 1 should be a label
-add x,5                 ; operand 2 should be a label
-newConst dc 999999      ; operand 1 length is more than 5
-notNewConst dc 10       ; label length is more than 10
-1constant dc 5          ; first char of label is not a alphabet
-nextCon$t dc 20         ; label is not composed of only alphaNumerical 
-;vec      ds      99999  ; insufficent memory
-
-; testing op code syntax
-
-; testing for ORG
-lab org 100             ; valid 
-org 105                 ; valid 
-org 1000 1000           ; invalid should not have operand2
-lab1 y org 410          ; invalid opcode pos
-;org 100000              ; is valid but gives insuffecent memory error
-
-; testing for DC
-lab2 DC 100             ; valid 
-DC 105                  ; invalid should have a label 
-lab3 DC 1000 1000       ; invalid should not have operand2
-lab4 y DC 410          ; invalid opcode pos
-
-; testing for DS
-lab5 DS 100             ; valid 
-DS 105                  ; invalid should have a label 
-lab6 D7 1000 1000       ; invalid should not have operand2
-lab7 y DS 410           ; invalid opcode pos
-;lab8 DS 100000          ; is valid but gives insuffecent memory error
-
-; testing for END
-;END                     ; give NOT last statement error
-;rest tests are at the end of file
-
-; testing for ADD, SUB, MULTI, DIV, and COPY
-; they have same opcode syntax
-lab9 AdD y,x            ; valid
-add y,x                 ; valid 
-add y                   ; invalid should have operand 2
-add y,hi                ; invalid should point to a mem var
-;add                     ; invalid should have extra statement
-
-; typical output
 ;this is a test
-;       org    100  ; this is commented cause already used above
+        org    100
 hi     read    x;comment immediately after statement       
 hay  copy   y, x ; This is the another comment.
         WRITE    x; to show that operation codes are case insensitive
-        bp      hi y; shows we don't have to have everything line up.
+          bp      hi y; shows we don't have to have everything line up.
         halt
 
 ;test
 x      dc      5
 y      ds      1
-z      ds      999
+z      ds      99
 b      dc      555
 a      dc      100
-
-        end     100     ; invalid should not have operand2
-lab100000 end           ; valid
+        end

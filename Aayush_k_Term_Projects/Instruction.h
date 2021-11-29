@@ -155,13 +155,58 @@ public:
     inline const std::string GetOrgiInst() { return m_Instruction; }
 
     /// 
-    /// @brief Getter function.
+    /// @brief Getter function to get start of error message type.
     /// 
-    /// @returns GetErrorFlagReport returns the 
     /// 
-    /// @return GetErrorFlagReport returns value stored in error Flag
+    /// @return GetErrorMsgTypeBegin returns pointer to start of ErrorMessageType
     /// 
-    const Errors::ErrorTypes GetErrorMsgType() { return m_ErrorMsgType; }
+    std::vector<Errors::ErrorTypes>::iterator GetErrorMsgTypeBegin() { return m_ErrorMsgType.begin(); }
+
+    /// 
+    /// @brief Getter function to get end of error message type.
+    /// 
+    /// 
+    /// @return GetErrorMsgTypeEnd returns pointer to end of ErrorMessageType
+    /// 
+    std::vector<Errors::ErrorTypes>::iterator GetErrorMsgTypeEnd() { return m_ErrorMsgType.end(); }
+
+    ///
+    /// @brief getter function
+    /// 
+    /// @return IsErrorLabelSyn returns true if error was found for label
+    ///
+    inline const bool IsErrorLabelSyn(){ return m_ErroLabelSyn; }
+
+    ///
+    /// @brief getter function
+    /// 
+    /// @return IsErrorLabelSyn returns true if error was found for op code
+    ///
+    inline const bool IsErrorOpCode(){ return m_ErrorOpCode; }
+
+    ///
+    /// @brief getter function
+    /// 
+    /// @return IsErrorOperand1 returns true if error was found for operand 1
+    ///
+    inline const bool IsErrorOperand1(){ return m_ErrorOperand1; }
+
+    ///
+    /// @brief getter function
+    /// 
+    /// @return IsErrorOperand2 returns true if error was found for operand 1
+    ///
+    inline const bool IsErrorOperand2(){ return m_ErrorOperand2; }
+
+    ///
+    /// @brief getter function
+    /// 
+    /// If this is true, then instruction is already translated
+    /// @see  SetFundamentalVar(), error case 2 and case 3 
+    /// 
+    /// @return IsErrorFundVar returns true if error was found for Fundamental variable
+    ///
+    inline const bool IsErrorFundVar(){ return m_ErrorFundVar; }
 
     // ===================== private functions ===================
 private:
@@ -229,13 +274,22 @@ private:
     }
 
     ///
-    /// @brief  SetFundamentalMemVar sets the member varible unless there is a Invalid syntax
+    /// @brief  SetFundamentalVar sets the member varible unless there is a Invalid syntax
     ///
+    /// Error Cases:
+    ///     case 1: if extra statement element error was detected it deletes the extra statement element
+    ///         while flaging the error
+    ///     case 2: if only opcode was suppled, with the exception of END and HALT it set the corresponding
+    ///         numerical equivalent of the opcode and  error signifier of set operand1 and operand2 to true
+    ///         while flaging the error and set the numerical equivalent of the opCode
+    ///     case3: if any other error was found it sets error signifier of label, opCode, operand1 and
+    ///         operand2 to true while flaging the error
+    /// 
     /// @param a_indivisualInstruction: is the extraxted words form the line
     ///
-    ///  @return ValidateSymSyntax returns false if error was found
+    /// @return ValidateSymSyntax returns false in error case 2 and 3; else true
     /// 
-    bool SetFundamentalMemVar( std::vector<std::string>& a_indivisualInstruction );
+    bool SetFundamentalVar( std::vector<std::string>& a_indivisualInstruction );
 
     ///
     /// @brief setter function to set the Numeric equivalent of Operation code
@@ -270,13 +324,9 @@ private:
     bool ValidateSymSyntax(std::string a_Symbol);
 
     /// 
-    /// @brief ValidateOpCodeSyntax calls a correspoing validating opCode syntax function
-    /// @todo fix this see if fucntion makes sense
+    /// @brief ValidateOpCodeSyntax checks if the instruction syntax was vaild or not
     /// 
-    /// @return ValidateSymSyntax returns false if error was found
-    /// 
-    /// 
-    bool ValidateOpCodeSyntax();
+    void ValidateOpCodeSyntax();
 
     // ================ private variables ============================
 private:
@@ -290,11 +340,18 @@ private:
     std::string m_Operand1;     // The first operand. 
     std::string m_Operand2;     // The second operand.
 
+    // error indicators
+    std::vector<Errors::ErrorTypes> m_ErrorMsgType;    // Contains the error message
+
+    bool m_ErroLabelSyn;    // == true if error in labelsyntax
+    bool m_ErrorOpCode;     // == true if error in opCode
+    bool m_ErrorOperand1;   // == true if error in Operand1
+    bool m_ErrorOperand2;   // == true if error in Operand2
+    bool m_ErrorFundVar;    // == true if error was found in fundamental variables
 
     // ===========  Derived values ===========
     Instruction::InstructionType m_Type; // The type of instruction.
     
-    Errors::ErrorTypes m_ErrorMsgType;    // Containst the error message
     
     // The numerical value of the op code for machine language equivalents.
     int m_NumOpCode;     

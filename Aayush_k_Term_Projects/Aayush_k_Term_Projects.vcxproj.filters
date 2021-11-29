@@ -72,5 +72,6 @@
   <ItemGroup>
     <Text Include="Prog.txt" />
     <Text Include="docum.txt" />
+    <Text Include="Test.txt" />
   </ItemGroup>
 </Project>

@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     assem.PassI();
 
     // Display the symbol table.
-    //assem.DisplaySymbolTable();
+    assem.DisplaySymbolTable();
 
     // @todo delete me
     //assem.DisplayDeclaredConstTab();
