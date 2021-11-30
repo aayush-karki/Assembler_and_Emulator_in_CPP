@@ -4,8 +4,6 @@
 // inializing the static member variables
 std::vector<std::string> Errors::m_ErrorMsgs;
 
-
-
 void Errors::RecordError( Errors::ErrorTypes a_errorType, int a_LineCounter, std::string a_OrgiInst )
 {
 	std::string errorMessage = "Line--" + std::to_string( a_LineCounter ) +"--\"";

@@ -18,7 +18,9 @@
 /// The elements of an instruction.
 class Instruction {
 
+
 public:
+    // ============================= public member functions ============================
 
     /// 
     /// @brief Constructor for the Instruction class. 
@@ -173,13 +175,6 @@ public:
     ///
     /// @brief getter function
     /// 
-    /// @return IsErrorLabelSyn returns true if error was found for label
-    ///
-    inline const bool IsErrorLabelSyn(){ return m_ErroLabelSyn; }
-
-    ///
-    /// @brief getter function
-    /// 
     /// @return IsErrorLabelSyn returns true if error was found for op code
     ///
     inline const bool IsErrorOpCode(){ return m_ErrorOpCode; }
@@ -208,8 +203,8 @@ public:
     ///
     inline const bool IsErrorFundVar(){ return m_ErrorFundVar; }
 
-    // ===================== private functions ===================
 private:
+    // ===================== private functions ===================
 
     /// 
     /// @brief ClearMemberVariables cleans all non-constant member variable.
@@ -276,14 +271,23 @@ private:
     ///
     /// @brief  SetFundamentalVar sets the member varible unless there is a Invalid syntax
     ///
+    /// This funciton detects error in input and deals them according to the error cases.
+    /// 
     /// Error Cases:
+    /// 
     ///     case 1: if extra statement element error was detected it deletes the extra statement element
     ///         while flaging the error
+    /// 
     ///     case 2: if only opcode was suppled, with the exception of END and HALT it set the corresponding
     ///         numerical equivalent of the opcode and  error signifier of set operand1 and operand2 to true
     ///         while flaging the error and set the numerical equivalent of the opCode
+    /// 
     ///     case3: if any other error was found it sets error signifier of label, opCode, operand1 and
-    ///         operand2 to true while flaging the error
+    ///         operand2 to true depending to what caused the error while flaging the error 
+    ///         and tries to continue translation
+    /// 
+    /// @note SetFundamentalVar only sets he fundamental variable, it does not validate the input
+    ///     validation is done by ValidateOpCodeSyntax()
     /// 
     /// @param a_indivisualInstruction: is the extraxted words form the line
     ///
@@ -328,8 +332,10 @@ private:
     /// 
     void ValidateOpCodeSyntax();
 
-    // ================ private variables ============================
+
 private:
+    // ================ private variables ============================
+
     // =========== Fundamental Values ====================
 
     std::string m_Instruction;  // The original instruction.
@@ -343,13 +349,12 @@ private:
     // error indicators
     std::vector<Errors::ErrorTypes> m_ErrorMsgType;    // Contains the error message
 
-    bool m_ErroLabelSyn;    // == true if error in labelsyntax
     bool m_ErrorOpCode;     // == true if error in opCode
     bool m_ErrorOperand1;   // == true if error in Operand1
     bool m_ErrorOperand2;   // == true if error in Operand2
     bool m_ErrorFundVar;    // == true if error was found in fundamental variables
 
-    // ===========  Derived values ===========
+    // ==============  Derived values ==============
     Instruction::InstructionType m_Type; // The type of instruction.
     
     
@@ -362,7 +367,7 @@ private:
     bool m_IsNumericOperand2;   // == true if the operand2 is numeric.
     int m_Operand2Value;   // The value of the operand2 if it is numeric.
 
-    /// @note assemble only intrusction are multiple of 100
+    /// @note assemble only intruction are multiple of 100
     ///     so that when dividing the code number by 100 the remender
     ///     will be the actual code number
     
