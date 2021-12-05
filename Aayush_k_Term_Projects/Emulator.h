@@ -35,11 +35,17 @@ public:
     /// 
     bool RunProgram( );
 
+private:
+    // ==================================== private function =====================================
+
+
+    bool ReadFromUser( std::string& a_userInput, int a_currAddr );
 
 private:
     // ==================================== private variables =====================================
 
     std::vector<long long> m_memory;  	// Memory for the VC1620
+    const int m_START_ADDRESS = 100;
 };
 
 #endif

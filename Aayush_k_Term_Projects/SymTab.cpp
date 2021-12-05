@@ -11,7 +11,7 @@ void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineC
     if( st != m_symbolTable.end() ) {
 
         // report the error
-        Errors::RecordError( Errors::ErrorTypes::ERROR_MultipleLabel, a_LineCounter, a_orgiInst );
+        Errors::RecordError( Errors::ErrorTypes::ERROR_MultipleLabel, "Line", a_LineCounter, a_orgiInst );
         return;
     }
     // Record a the  location in the symbol table.

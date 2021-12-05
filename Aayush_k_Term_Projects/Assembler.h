@@ -63,7 +63,7 @@ public:
     /// @brief DisplayDeclaredVarMemSizeTab Displays all the declared variable memory along with their lablels
     /// 
     void DisplayDeclaredMemVarTab();
-    
+
     /// 
     /// @brief Displays the translated machine instruction in the machine instruction table.
     /// 
@@ -72,7 +72,15 @@ public:
     /// 
     /// @brief Run emulator on the translation.
     /// 
-    void RunProgramInEmulator() {};
+    void RunProgramInEmulator();
+
+    ///
+    /// @brief InsertInstToEmulator inserts all the machine instruction stored in
+    ///          machine Instruction table into the emulator
+    /// 
+    /// @return false 
+    /// 
+    bool InsertInstToEmulator();
 
     // ================ private member funciton ============================
 private:

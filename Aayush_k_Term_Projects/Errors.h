@@ -30,6 +30,7 @@ public:
     {
         ERROR_InvalidInstruction,
         ERROR_MissingEnd,
+        ERROR_MissingHalt,
         ERROR_EndNotLast,
         ERROR_MachineLangInAssemLang,
         ERROR_UndefinedLabel,
@@ -49,7 +50,11 @@ public:
         ERROR_InvalidSymSyntaxLen,
         ERROR_InvalidSymSyntaxfirstChar,
         ERROR_InvalidSymSyntaxComposition,
-        ERROR_InsufficentMemory
+        ERROR_InsufficentMemory,
+        ERROR_InvalidLoc,
+        ERROR_InvalidInputSyn,
+        ERROR_InvalidInputLen,
+        ERROR_InvalidInputRange
     };
 
     ///  
@@ -57,7 +62,7 @@ public:
     ///
     /// @param a_emsg: error to add to the list
     /// 
-    static void RecordError( Errors::ErrorTypes a_errorType, int a_LineCounter, std::string a_OrgiInst );
+    static void RecordError( Errors::ErrorTypes a_errorType, std::string a_instIndicator, int a_LineCounter, std::string a_OrgiInst );
     
     /// 
     /// @brief DisplayAllErrors Displays all the collected error message.

@@ -29,9 +29,14 @@ public:
     {
         int m_Location;         ///> stroes the location of where the instruciton is in VC1620's memory
                                 ///> is the index for m_memory
-        std::string m_Content;    ///> contents that is to be stored in m_memory at index m_location, 
-                                ///         needs to be converted to long long
+        std::string m_Content;  ///> contents that is to be stored in m_memory at index m_location, 
+                                ///>        needs to be converted to long long
         std::string m_AssembInst; ///> copy of orginal Assembly instrction that was used to translate the
+        
+        // only for org
+        bool m_isOrg;           ///> ==true if current opcode is ORG
+        int m_nextLoc;          ///> store the number stored in operand1 if opcode is ORG
+
         /// 
         /// @brief constructor
         /// 
@@ -48,6 +53,7 @@ public:
             m_Content = "";
             m_AssembInst = "";
         }
+
     };
 
     // ====================== end of Stuct_MachineInstruction and its related funcitons ====================

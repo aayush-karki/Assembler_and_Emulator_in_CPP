@@ -4,9 +4,10 @@
 // inializing the static member variables
 std::vector<std::string> Errors::m_ErrorMsgs;
 
-void Errors::RecordError( Errors::ErrorTypes a_errorType, int a_LineCounter, std::string a_OrgiInst )
+void Errors::RecordError( Errors::ErrorTypes a_errorType, std::string a_instIndicator, int a_LineCounter, std::string a_OrgiInst )
 {
-	std::string errorMessage = "Line--" + std::to_string( a_LineCounter ) +"--\"";
+	std::string errorMessage = a_instIndicator;
+	errorMessage.append(" " + std::to_string(a_LineCounter) + "--\"");
 	
 	// Missing end does not have a instruction to show
 	if( a_errorType != Errors::ErrorTypes::ERROR_MissingEnd )
@@ -54,7 +55,11 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		}
 		case ( Errors::ErrorTypes::ERROR_MissingEnd ):
 		{
-			return std::string( "--\n   ERROR--End of File reached.Missing END statement");
+			return std::string( "--\n   ERROR--End of File reached.Missing END statement" );
+		}
+		case ( Errors::ErrorTypes::ERROR_MissingHalt ):
+		{
+			return std::string( "--\n   ERROR--Missing HALT instruction" );
 		}
 		case ( Errors::ErrorTypes::ERROR_EndNotLast ):
 		{
@@ -134,9 +139,25 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		}
 		case ( Errors::ErrorTypes::ERROR_InsufficentMemory ):
 		{
-			return std::string( "--\n   ERROR-- Insufficent Memory" );
+			return std::string( "--\n   ERROR--Insufficent Memory" );
 		}
+		case ( Errors::ErrorTypes::ERROR_InvalidLoc ):
+		{
+			return std::string( "--\n   ERROR--Invalid location while inserting into emulator" );
+		}
+		case ( Errors::ErrorTypes::ERROR_InvalidInputSyn ):
+		{
+			return std::string( "--\n   ERROR--Invalid input--Input can only have digits" );
+		}
+		case ( Errors::ErrorTypes::ERROR_InvalidInputLen ):
+		{
+			return std::string( "--\n   ERROR--Invalid input--Maximun length of the input is 10 digits, not considering the sign" );
+		}
+		case ( Errors::ErrorTypes::ERROR_InvalidInputRange ):
+		{
+			return std::string( "--\n   ERROR--Invalid input--Input range is (+/-)2147483647" );
+		}
+
 	}
 }
-
 
