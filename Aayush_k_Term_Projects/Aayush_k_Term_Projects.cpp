@@ -1,18 +1,29 @@
 /*
  * Assembler main program.
  */
+ /*****************************************************************/
+///
+/// @brief  this file contains the main which executes the assembler program and emulator program
+/// 
+/// This assembler and emulator for the VC1620 computer. 
+/// @note this is similar to the IBM 1620 that was popular in the 1960s.
+/// 
+/// @author Aayush Karki
+/// 
+/// @date  December
+///  
+/**********************************************************************/
 
-
-// todo: add author and date in every function documentation
+ // todo: add author and date in every function documentation
 
 #include "stdafx.h"     // This must be present if you use precompiled headers which you will use. 
 #include <stdio.h>
 
 #include "Assembler.h"
 
-int main(int argc, char* argv[])
+int main( int argc, char* argv[] )
 {
-    Assembler assem(argc, argv);
+    Assembler assem( argc, argv );
 
     // inializing error
     Errors::InitErrorReporting();
@@ -28,7 +39,7 @@ int main(int argc, char* argv[])
     {
         // display error messages if any
         Errors::DisplayAllErrors();
-        
+
         // Display the machine Instruction table for reference.
         assem.DisplayMachineInstTable();
         return -1;
