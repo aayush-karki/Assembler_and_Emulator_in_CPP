@@ -47,7 +47,7 @@ public:
     /// Pass II is responsible for translating the assemble code to machine 
     /// code. It also report error if any. 
     /// 
-    void PassII();
+    bool PassII();
 
     /// 
     /// @brief Display the symbols in the symbol table.
@@ -127,7 +127,7 @@ private:
     ///         is stored
     /// @param a_loc current loca
     /// 
-    void TranslateInstruction( int a_Loc, int a_LineCounter );
+    bool TranslateInstruction( int a_Loc, int a_LineCounter );
 
     ///
     /// @brief ComputeNextLoc computes next location

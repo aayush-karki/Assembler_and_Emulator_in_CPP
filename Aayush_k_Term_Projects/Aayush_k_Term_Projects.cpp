@@ -23,17 +23,16 @@ int main(int argc, char* argv[])
     // Display the symbol table.
     assem.DisplaySymbolTable();
 
-    // @todo delete me
-    //assem.DisplayDeclaredConstTab();
-
-    // @todo delete me
-    //assem.DisplayDeclaredMemVarTab();
-
     // generate the translation.
-    assem.PassII();
-
-    // display error messages if any
-    Errors::DisplayAllErrors();
+    if( !assem.PassII() )
+    {
+        // display error messages if any
+        Errors::DisplayAllErrors();
+        
+        // Display the machine Instruction table for reference.
+        assem.DisplayMachineInstTable();
+        return -1;
+    }
 
     // Display the machine Instruction table.
     assem.DisplayMachineInstTable();
