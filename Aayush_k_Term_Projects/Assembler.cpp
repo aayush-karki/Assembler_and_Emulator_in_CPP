@@ -2,10 +2,10 @@
 #include "Assembler.h"
 #include "Errors.h"
 
-Assembler::Assembler( int argc, char *argv[] )
-: m_facc( argc, argv )
+Assembler::Assembler( int argc, char *argv[] ):
+	m_facc( argc, argv )
 {
-    // Nothing else to do here at this point.
+	m_noError = true;
 }
 
 Assembler::~Assembler( )
@@ -122,21 +122,18 @@ void Assembler::PassII()
         // check if there were any error while parseing the instruction
         if( st == Instruction::InstructionType::ST_Error )
         {
+			m_noError = false;
             std::vector<Errors::ErrorTypes>::iterator currErrorPtr = m_inst.GetErrorMsgTypeBegin();
 
             while(currErrorPtr != m_inst.GetErrorMsgTypeEnd() )
             {
                 Errors::RecordError(*currErrorPtr, "Line", lineCounter, m_inst.GetOrgiInst() );
-				m_noError = false;
-
                 ++currErrorPtr;
             }
 
-            // checking if error was found in fundamental variable
+            // checking if error was found in fundamental variable to append it ot the instruction table
             if( m_inst.IsErrorFundVar() )
             {
-				m_noError = false;
-
                 if( m_inst.IsErrorOpCode() )
                 {
                     m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, "????????????" );
@@ -153,6 +150,7 @@ void Assembler::PassII()
 
                     m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, content );
                 }
+
                 // computing next loc
                 ComputeNextLoc( loc, lineCounter, insufficentMemory );
                 continue;
@@ -184,8 +182,8 @@ void Assembler::PassII()
         // record error if the line is a machine instruction
         else if( st == Instruction::InstructionType::ST_MachineLanguage )
         {
-            Errors::RecordError( Errors::ErrorTypes::ERROR_MachineLangInAssemLang, "Line", lineCounter, m_inst.GetOrgiInst() );
 			m_noError = false;
+            Errors::RecordError( Errors::ErrorTypes::ERROR_MachineLangInAssemLang, "Line", lineCounter, m_inst.GetOrgiInst() );
         }
         // it is assembly code
         else

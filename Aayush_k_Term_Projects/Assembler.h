@@ -46,20 +46,16 @@ public:
     /// 
     /// @author Aayush Karki
     /// 
-    /// @date  November 06, 2021 
+    /// @date  November 10, 2021 
     /// 
-    Assembler(int argc, char* argv[]):
-        m_facc(argc, argv)
-    {
-        m_noError = true;
-    }
+	Assembler(int argc, char* argv[]);
     
     /// 
     /// @brief Destructor
     /// 
     /// @author Aayush Karki
     /// 
-    /// @date  November 06, 2021 
+	/// @date  November 10, 2021 
     /// 
     ~Assembler( );
 
@@ -70,61 +66,89 @@ public:
     /// on line by line basis and finds any label and 
     /// their corresponding memory location adding them to symbol table
     /// 
-    /// @note responsible for reporting multi defined label
+    /// @note responsible for reporting multi defined label error but is displayed
+	///		after PassII
     /// 
     /// @author Aayush Karki
     /// 
-    /// @date  November 06, 2021 
+	/// @date  November 10, 2021 
     /// 
     void PassI( );
 
     /// 
-    /// @brief Pass II - generate a translation
+    /// @brief Pass II generates a translation for the assembey code
     /// 
-    /// Pass II is responsible for translating the assemble code to machine 
-    /// code. It also report error if any. 
+    /// Pass II is responsible for translating as much of the assemble code to machine 
+    ///		code as possible. It also report error if any.
+	/// 
+	/// @author Aayush Karki
+    /// 
+    /// @date  November 25, 2021 
     /// 
     void PassII();
 
     /// 
-    /// @brief Display the symbols in the symbol table.
+    /// @brief DisplaySymbolTable displays the symbols in the symbol table.
+	/// 
+	/// @author Aayush Karki
+    /// 
+	/// @date  November 10, 2021 
     /// 
     void DisplaySymbolTable() { m_symtab.DisplaySymbolTable(); }
     
     /// 
     /// @brief DesplayDeclaredConstTab Displays all the declared Constant number along with their lablels
+	/// 
+	/// @author Aayush Karki
+    /// 
+	/// @date  November 25, 2021 
     /// 
     void DisplayDeclaredConstTab();
 
     /// 
     /// @brief DisplayDeclaredVarMemSizeTab Displays all the declared variable memory along with their lablels
+    ///
+	/// @author Aayush Karki
     /// 
+	/// @date  November 25, 2021 
+	///  
     void DisplayDeclaredMemVarTab();
 
     /// 
     /// @brief Displays the translated machine instruction in the machine instruction table.
     /// 
+	/// @author Aayush Karki
+    /// 
+	/// @date  November 28, 2021
+	/// 
     void DisplayMachineInstTable() { m_machInstTab.DisplayMachineInstTable(); }
 
     /// 
-    /// @brief Run emulator on the translation.
+    /// @brief inserts and runs the emulator on the translation.
     /// 
+	/// @author Aayush Karki
+    /// 
+	/// @date  December 03, 2021
+	/// 
     void RunProgramInEmulator();
 
     ///
-    /// @brief InsertInstToEmulator inserts all the machine instruction stored in
-    ///          machine Instruction table into the emulator
+    /// @brief InsertInstToEmulator inserts all the translated machine instruction 
+	///			into the emulator
     /// 
-    /// @return false 
+	/// @author Aayush Karki
+    /// 
+	/// @date  December 03, 2021
     /// 
     void InsertInstToEmulator();
+
+	bool GetNoError() { return m_noError; }
 
     // ================ private member funciton ============================
 private:
     
    /// 
-   /// @brief SmartFillContent filles in any need 0 before apending the num to translated content
-   /// 
+   /// @brief SmartFillContent fills in any need 0 before apending the num to translated content
    /// 
    /// @note for DC the value of operand1 is stored in operand 2, so the a_lengthToFill is 10
    /// @note for every thing the value of operand1 and operand1  is 5 long. So, the a_lengthToFill is 5
@@ -136,33 +160,66 @@ private:
    /// 
    /// @returns ValidateOperand2Lab returns true if it does else false
    /// 
+   /// @author Aayush Karki
+   /// 
+   /// @date  December 03, 2021
+   /// 
     void SmartFillContent( std::string& a_TranslatedContent, int a_ToAppendNum, int a_LengthToFill = 5 );
     
     /// 
     /// @brief Lookup a symbol in the declared constant table.
     /// 
+	/// This is used to validate if the lable used as operand1 
+	///		for ADD, SUB, MULT, DIV, COPY, READ, and WRITE
+	///		should point to memory variable 
+	/// 
+	/// @see LookupDeclaredVarMem() 
+	/// 
+	/// @note memory varialble are declared using opcode DC or DS
+	/// 
     /// @param a_symbol address of symbol to lookup
     /// 
-    /// @returns LookupSymbol returns true is symbol is found in table else returns false 
+    /// @returns LookupSymbol returns true is symbol is found in table else returns false
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  December 03, 2021
     /// 
     bool LookupDeclaredConst( const std::string& a_symbol );
     
     ///  
     /// @brief Lookup a symbol in the declared variable memory table.
-    /// 
+	/// 
+	/// This is used to validate if the lable used as operand1 
+	///		for ADD, SUB, MULT, DIV, COPY, READ, and WRITE
+	///		should point to memory variable
+	///  
+    /// @see LookupDeclaredConst() 
+	/// 
+	/// @note memory varialble are declared using opcode DC or DS
+	/// 
     /// @param a_symbol address of symbol to lookup
     /// 
     /// @returns LookupSymbol returns true is symbol is found in table else returns false 
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  December 03, 2021
     /// 
     bool LookupDeclaredVarMem( const std::string& a_symbol );
     
     ///  
     /// @brief TranslateInstruction translates the given assembly instruction as much
-    ///     as possible
+    ///     as possible.
+	/// 
+	/// 
     /// 
-    /// @param a_TranslatedInstruction: address of string where the translated instruction
-    ///         is stored
-    /// @param a_loc current loca
+	/// @param a_loc current location
+	/// @param a_LineCounter current line
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  December 03, 2021
     /// 
     void TranslateInstruction( int a_Loc, int a_LineCounter );
 

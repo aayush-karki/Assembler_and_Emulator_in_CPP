@@ -30,7 +30,9 @@ int main( int argc, char* argv[] )
     assem.DisplaySymbolTable();
 
     // generate the translation.
-    if( !assem.PassII() )
+	assem.PassII();
+
+	if(!assem.GetNoError() )
     {
         // display error messages if any
         Errors::DisplayAllErrors();
