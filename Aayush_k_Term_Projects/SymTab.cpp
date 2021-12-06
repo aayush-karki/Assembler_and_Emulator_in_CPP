@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "SymTab.h"
 
-void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst )
+bool SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst )
 {
     // If the symbol is already in the symbol table, record it as multiply defined.
     std::map<std::string, int>::iterator st = m_symbolTable.find( a_symbol );
@@ -12,10 +12,12 @@ void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineC
 
         // report the error
         Errors::RecordError( Errors::ErrorTypes::ERROR_MultipleLabel, "Line", a_LineCounter, a_orgiInst );
-        return;
+        return false;
     }
     // Record a the  location in the symbol table.
     m_symbolTable[a_symbol] = a_loc;
+
+    return true;
 }
 
 void SymbolTable::DisplaySymbolTable()

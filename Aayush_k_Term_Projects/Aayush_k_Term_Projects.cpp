@@ -1,20 +1,15 @@
-/*
- * Assembler main program.
- */
- /*****************************************************************/
+/*****************************************************************/
 ///
-/// @brief  this file contains the main which executes the assembler program and emulator program
+/// @brief  This file contains the main which executes the assembler program and emulator program
 /// 
 /// This assembler and emulator for the VC1620 computer. 
-/// @note this is similar to the IBM 1620 that was popular in the 1960s.
+/// This is similar to the IBM 1620 that was popular in the 1960s.
 /// 
 /// @author Aayush Karki
 /// 
-/// @date  December
+/// @date  December 05, 2021
 ///  
 /**********************************************************************/
-
- // todo: add author and date in every function documentation
 
 #include "stdafx.h"     // This must be present if you use precompiled headers which you will use. 
 #include <stdio.h>

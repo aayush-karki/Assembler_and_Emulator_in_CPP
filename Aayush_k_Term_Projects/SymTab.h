@@ -29,7 +29,7 @@ public:
     /// @param a_orgiInst orginal Assembly instruction in current line, 
     ///         needed for error reporting 
     /// 
-    void AddSymbol( const std::string& a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst );
+    bool AddSymbol( const std::string& a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst );
 
     /// 
     /// @brief DisplaySymbolTable Display the symbol table to the screen.

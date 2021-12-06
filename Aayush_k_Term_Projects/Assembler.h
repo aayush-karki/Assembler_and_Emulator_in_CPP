@@ -1,3 +1,16 @@
+/*****************************************************************/
+/// 
+/// @file Assembler.h 
+/// 
+/// @brief  This file is a header file for Assembler class.
+///
+/// @author Aayush Karki
+/// 
+/// @date  December 06, 2021
+///  
+/**********************************************************************/
+
+
 // 
 // Assembler class. This is a container for all the components 
 // 
@@ -11,22 +24,42 @@
 
 ///
 /// @class Assembler "Assemble.h"
+/// 
 /// @brief This is a container for all the components 
-///         that make up the assembler.
-///
+///         that make up the assembler and runs an emulator on it.
+/// 
+/// @author Aayush Karki
+/// 
+/// @date  November 06, 2021 
+/// 
 class Assembler {
 
 public:
     /// 
-    /// @brief Constructor  
-    /// @note we are passing argc and argv to the file access constructor.
-    /// @see main program. 
+    /// @brief Constructor  for the Assemble object
     /// 
-    Assembler( int argc, char *argv[] );
+    /// @note we are passing command line argument from the user in to the constructor
+    /// @note argc should be 2 else it will be raised by the file access class raise an error
+    /// 
+    /// @param argc number of elemets passed to the program + 1
+    /// @param argv pointer to the binary of the program and file containting the assembly code
+    /// 
+    /// @author Aayush Karki
+    /// 
+    /// @date  November 06, 2021 
+    /// 
+    Assembler(int argc, char* argv[]):
+        m_facc(argc, argv)
+    {
+        m_noError = true;
+    }
     
     /// 
-    /// @brief Destructor currently does nothing. 
-    /// You might need to add something as you develope this project.
+    /// @brief Destructor
+    /// 
+    /// @author Aayush Karki
+    /// 
+    /// @date  November 06, 2021 
     /// 
     ~Assembler( );
 
@@ -39,6 +72,10 @@ public:
     /// 
     /// @note responsible for reporting multi defined label
     /// 
+    /// @author Aayush Karki
+    /// 
+    /// @date  November 06, 2021 
+    /// 
     void PassI( );
 
     /// 
@@ -47,7 +84,7 @@ public:
     /// Pass II is responsible for translating the assemble code to machine 
     /// code. It also report error if any. 
     /// 
-    bool PassII();
+    void PassII();
 
     /// 
     /// @brief Display the symbols in the symbol table.
@@ -80,7 +117,7 @@ public:
     /// 
     /// @return false 
     /// 
-    bool InsertInstToEmulator();
+    void InsertInstToEmulator();
 
     // ================ private member funciton ============================
 private:
@@ -127,7 +164,7 @@ private:
     ///         is stored
     /// @param a_loc current loca
     /// 
-    bool TranslateInstruction( int a_Loc, int a_LineCounter );
+    void TranslateInstruction( int a_Loc, int a_LineCounter );
 
     ///
     /// @brief ComputeNextLoc computes next location
@@ -141,6 +178,8 @@ private:
 
     // ================ private variables ============================
 private:
+
+    bool m_noError; // tracks error
 
     FileAccess m_facc;	    // File Access object
     SymbolTable m_symtab;   // Symbol table object
