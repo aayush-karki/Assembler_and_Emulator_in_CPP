@@ -6,8 +6,9 @@
 /// This is similar to the IBM 1620 that was popular in the 1960s.
 /// 
 /// @author Aayush Karki
+/// @author Victor Miller
 /// 
-/// @date  December 05, 2021
+/// @date  November 10, 2021
 ///  
 /**********************************************************************/
 

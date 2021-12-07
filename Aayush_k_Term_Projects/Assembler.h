@@ -40,7 +40,8 @@ public:
     /// @param argc number of elemets passed to the program + 1
     /// @param argv pointer to the binary of the program and file containting the assembly code
     /// 
-    /// @author Aayush Karki
+	/// @author Aayush Karki
+	/// @author Victor Miller
     /// 
     /// @date  November 10, 2021 
     /// 
@@ -49,7 +50,7 @@ public:
     /// 
     /// @brief Destructor
     /// 
-    /// @author Aayush Karki
+	/// @author Victor Miller
     /// 
 	/// @date  November 10, 2021 
     /// 
@@ -65,7 +66,8 @@ public:
     /// @note responsible for reporting multi defined label error but is displayed
 	///		after PassII
     /// 
-    /// @author Aayush Karki
+	/// @author Aayush Karki
+	/// @author Victor Miller
     /// 
 	/// @date  November 10, 2021 
     /// 

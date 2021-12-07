@@ -5,8 +5,7 @@
 /// @brief  This file is a header file for Emulator class.
 /// 
 /// It contains all of the declaration of the member funciton of emulator class.
-/// It contains all of the defination of  the member funciton of emulator class 
-///		who might/are quality as inline funcitons.
+/// It contains all of the inline funcitons defination of  the member funciton of emulator class 
 ///
 /// @author Aayush Karki
 /// 
@@ -42,7 +41,7 @@ public:
     const static int MEMSZ = 100000; ///> The size of the memory of the VC1620.
     
     /// 
-    /// @brief Constructor inializes the memory.
+    /// @brief constructor, inializes the memory.
     /// 
 	/// It resizes the memory to the size defined by MEMSZ 
 	///		and sets each to have the value of 0.
@@ -61,7 +60,7 @@ public:
     /// 
 	/// InsertMemory checks for valid location
 	/// 
-    /// @param a_location index of VC1620 memory, where the intruction or data should be stored
+    /// @param a_location index of VC1620 memory where the intruction or data should be stored
     /// @param a_contents intruction and data that needs to be stored in the memory 
     /// 
     /// @returns true if successfull

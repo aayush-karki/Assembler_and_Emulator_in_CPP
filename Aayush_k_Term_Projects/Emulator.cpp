@@ -1,16 +1,17 @@
 /*************************************************************************************/
 /// 
-/// @file Emulator.xpp 
+/// @file Emulator.cpp 
 /// 
-/// @brief  This file is a .cpp file for Emulator class.
+/// @brief  This file is a source file for Emulator class.
 /// 
-/// It contains all of the defination of of the member funciton.
+/// It contains all of the defination  of the member funciton.
 ///
 /// @author Aayush Karki
 /// 
 /// @date  December 03, 2021
 ///
 /*************************************************************************************/
+
 #include "stdafx.h"
 #include "Emulator.h"
 #include "Errors.h"
@@ -190,7 +191,8 @@ bool Emulator::ReadFromUser(std::string &a_userInput, int a_currAddr)
     // chekcing if the string can successfully convert in to an int
     // valid input is (+/-)2147483647
     
-    // chekcing for length of the string, max is 10 cause int can only handel (+/-)999,999,999,999
+    // checking for length of the string, max is 12 cause word of VC1600 
+	// memory can only handel 12 digits; which is be (+/-)999,999,999,999
     if( a_userInput.size() > 12 )
     {
         Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputRange, "Loc", 

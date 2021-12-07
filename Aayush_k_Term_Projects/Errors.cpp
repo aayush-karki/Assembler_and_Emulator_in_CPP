@@ -1,3 +1,18 @@
+/*************************************************************************************/
+/// 
+/// @file Errors.cpp 
+/// 
+/// @brief  This file is a source file for Errors class.
+/// 
+/// It contains all of the defination of  the member funciton.
+/// It also contains the defination of the static member variable
+///
+/// @author Aayush Karki
+/// 
+/// @date  November 11, 2021 
+///
+/*************************************************************************************/
+
 #include "stdafx.h"
 #include "Errors.h"
 
@@ -34,7 +49,7 @@ void Errors::DisplayAllErrors()
 
 	std::cout << "Error List:" << std::endl << std::endl;
 
-	// printing
+	// printing all error message
 	while( currMessage != m_ErrorMsgs.end() )
 	{
 		std::cout << errorNum << ") " << *currMessage << std::endl << std::endl;
@@ -47,6 +62,7 @@ void Errors::DisplayAllErrors()
 
 std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 {
+	// a massive switch to get the error message associated with each error type
 	switch( a_errorType )
 	{
 		case ( Errors::ErrorTypes::ERROR_InvalidInstruction ):

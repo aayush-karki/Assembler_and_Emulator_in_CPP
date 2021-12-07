@@ -28,6 +28,10 @@ public:
     ///         needed for error reporting
     /// @param a_orgiInst orginal Assembly instruction in current line, 
     ///         needed for error reporting 
+	/// 
+	/// @author Aayush Karki
+	/// @author Victor Miller
+	/// 
     /// 
     bool AddSymbol( const std::string& a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst );
 
