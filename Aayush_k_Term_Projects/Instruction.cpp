@@ -114,7 +114,7 @@ int Instruction::LocationNextInstruction( int a_loc )
 
 void Instruction::ClearMemberVariables()
 {
-    // setting all the string member variables to ""
+    // setting all the string member variables to ""ERROR_MissingOpCode
     m_Label = "";
     m_OpCode = ""; 
     m_Operand1 = "";  
@@ -193,7 +193,7 @@ bool Instruction::SetFundamentalVar( std::vector<std::string>& a_indivisualInstr
         else
         {
             // opcode is absent, reporting error
-            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidInstruction );
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_MissingOpCode );
             m_Type = Instruction::InstructionType::ST_Error;
                         
             m_ErrorOpCode = true;

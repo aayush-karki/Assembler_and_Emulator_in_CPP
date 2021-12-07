@@ -4,16 +4,12 @@
 /// 
 /// @brief  This file is a header file for Assembler class.
 ///
+/// @date  November 06, 2021 
+/// 
 /// @author Aayush Karki
 /// 
-/// @date  December 06, 2021
-///  
 /**********************************************************************/
 
-
-// 
-// Assembler class. This is a container for all the components 
-// 
 #pragma once 
 
 #include "SymTab.h"
@@ -212,7 +208,7 @@ private:
     /// @brief TranslateInstruction translates the given assembly instruction as much
     ///     as possible.
 	/// 
-	/// 
+	/// All of errors are reported 
     /// 
 	/// @param a_loc current location
 	/// @param a_LineCounter current line
@@ -226,10 +222,18 @@ private:
     ///
     /// @brief ComputeNextLoc computes next location
     /// 
+	///	ComputeNextLoc sets the a_loc value to operand1 if opCode is ORG,
+	///		adds the value in operand1 to a_loc if opCode is DS,
+	///		else it increments a_loc by 1
+	/// 
     /// @param a_loc address of loction variable
     /// @param a_LineCounter address of lineCounter variable
     /// @param a_insufficentMemory address of variable that signifiy if there
-    ///         insufficent memory error was flaged or not 
+    ///         insufficent memory error was flaged or not
+	/// 
+	/// @author Aayush Karki
+    /// 
+	/// @date  November 25, 2021  
     /// 
     void ComputeNextLoc( int& a_loc, int& a_LineCounter, bool& a_insufficentMemory);
 

@@ -149,13 +149,9 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		{
 			return std::string( "--\n   ERROR--Invalid input--Input can only have digits" );
 		}
-		case ( Errors::ErrorTypes::ERROR_InvalidInputLen ):
-		{
-			return std::string( "--\n   ERROR--Invalid input--Maximun length of the input is 10 digits, not considering the sign" );
-		}
 		case ( Errors::ErrorTypes::ERROR_InvalidInputRange ):
 		{
-			return std::string( "--\n   ERROR--Invalid input--Input range is (+/-)2147483647" );
+			return std::string( "--\n   ERROR--Invalid input--Input range is (+/-)999,999,999,999" );
 		}
 
 	}

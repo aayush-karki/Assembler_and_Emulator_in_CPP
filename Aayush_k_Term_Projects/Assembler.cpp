@@ -376,8 +376,6 @@ void Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
     // checking if both operand 1 and  operand 2 have error
     if( m_inst.IsErrorOperand1() && m_inst.IsErrorOperand2() )
     {
-		m_noError = false;
-        
         translatedContent.append( "??????????" );
         m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent );
 
@@ -390,7 +388,6 @@ void Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         // checking for error
         if( m_inst.IsErrorOperand1() )
         {
-			m_noError = false;
             m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "00?????00000" );
         }
         else

@@ -1,18 +1,35 @@
-///
+/*************************************************************************************/
 /// 
+/// @file Errors.h 
+/// 
+/// @brief  This file is a header file for Errors class.
+/// 
+/// It contains all of the declaration of the member funciton, enum of Errors class.
+/// It contains all of the defination of  the member funciton of Errors class 
+///		who might/are quality as inline funcitons.
 ///
+/// @author Aayush Karki
+///
+/// @date  November 10, 2021 
+///  
+/*************************************************************************************/
+
 #ifndef _ERRORS_H
 #define _ERRORS_H
 
 ///
 /// @class Errors  "Errors.h"
-/// @brief Class to manage error reporting.
 /// 
-/// This class deals entirely with reporting errors and
-/// continue on so that we can read thorough the whole 
-/// file and report all the errors in it.
+/// @brief Class to manage all error reporting.
 /// 
-/// @Note: all members are static so we can access them anywhere.
+/// Errors class deals entirely with reporting errors.
+/// 
+/// @Note: all members are static so that we can access them anywhere in program
+///			and report errors from anywher in the program.
+/// 
+/// @author Aayush Karki
+/// 
+/// @date  November 10, 2021 
 /// 
 class Errors {
 
@@ -22,24 +39,36 @@ public:
     /// 
     /// @brief InitErrorReporting Initializes error reports.
     ///
-    /// It cleares the vector
+    /// It cleares the lists of error messages
     /// 
     static void InitErrorReporting() { m_ErrorMsgs.clear(); }
     
+	///
+	/// @enum ErrorTypes  "Errors::ErrorTypes"
+	/// 
+	/// @brief ErrorTypes contains all type of errors that could occur during the 
+	///		execution of the program
+	/// 
+	/// @note if not implicitly mentioned, all the error used by assembler
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 10, 2021 
+	/// 
     enum class ErrorTypes
     {
-        ERROR_InvalidInstruction,
-        ERROR_MissingEnd,
-        ERROR_MissingHalt,
-        ERROR_EndNotLast,
-        ERROR_MachineLangInAssemLang,
-        ERROR_UndefinedLabel,
-        ERROR_MultipleLabel,
-        ERROR_ExtraStatEle,
-        ERROR_OpCodePos,
-        ERROR_MissingOpCode,
-        ERROR_MissingLabel,
-        ERROR_MissingOperand,
+        ERROR_InvalidInstruction,	///> when operation code in machine level code is not recognized, used by emulator
+        ERROR_MissingEnd,	///> when END instruction is missing
+        ERROR_MissingHalt,	///> when halt instruction is missing
+        ERROR_EndNotLast,	///> when there are more instruciton after END instruction
+        ERROR_MachineLangInAssemLang, ///> when machine level code is found in assembly level code
+        ERROR_UndefinedLabel, ///> when label used in operand1 or/and operand2 are not present in symbol table
+        ERROR_MultipleLabel, ///> when multiple of same label is used
+        ERROR_ExtraStatEle, ///> when there are more number of elements in an instruciton than the operation code needs
+        ERROR_OpCodePos, ///> when operation code is the third or forth element in the instruction
+        ERROR_MissingOpCode, ///> when operation code is absent
+        ERROR_MissingLabel, ///> when label is missing for intruction which shcould have instruciton
+        ERROR_MissingOperand, ///> when instruction is missing operand. used for both operand1 and operand2
         ERROR_ExtraOperand1,
         ERROR_ExtraOperand2,
         ERROR_NotNumOperand1,
@@ -53,7 +82,6 @@ public:
         ERROR_InsufficentMemory,
         ERROR_InvalidLoc,
         ERROR_InvalidInputSyn,
-        ERROR_InvalidInputLen,
         ERROR_InvalidInputRange
     };
 
