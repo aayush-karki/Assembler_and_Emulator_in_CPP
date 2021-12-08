@@ -40,7 +40,7 @@ public:
     ///
     /// It cleares the lists of error messages
     /// 
-    static void InitErrorReporting() { m_ErrorMsgs.clear(); }
+    static void InitErrorReporting() { m_ErrorMsgs.clear(); } 
     
 	///
 	/// @enum ErrorTypes  "Errors::ErrorTypes"

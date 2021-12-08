@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['symboltable_0',['SymbolTable',['../class_symbol_table.html',1,'']]]
+  ['machineinstructiontable_0',['MachineInstructionTable',['../class_machine_instruction_table.html',1,'']]]
 ];

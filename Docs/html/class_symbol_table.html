@@ -95,13 +95,15 @@ $(document).ready(function(){initNavTree('class_symbol_table.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1573b1ff30e8ce004acf8d5473d58a70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#a1573b1ff30e8ce004acf8d5473d58a70">AddSymbol</a> (const std::string &amp;a_symbol, int a_loc)</td></tr>
-<tr class="separator:a1573b1ff30e8ce004acf8d5473d58a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b1952180dcf0db9a715aef4db0ce4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">AddSymbol</a> (const std::string &amp;a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst)</td></tr>
+<tr class="memdesc:a85b1952180dcf0db9a715aef4db0ce4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">AddSymbol adds a new symbol to the symbol table.  <a href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">More...</a><br /></td></tr>
+<tr class="separator:a85b1952180dcf0db9a715aef4db0ce4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d767f82287626f857b563da0adde783"><td class="memItemLeft" align="right" valign="top"><a id="a0d767f82287626f857b563da0adde783" name="a0d767f82287626f857b563da0adde783"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DisplaySymbolTable</b> ()</td></tr>
+<tr class="memdesc:a0d767f82287626f857b563da0adde783"><td class="mdescLeft">&#160;</td><td class="mdescRight">DisplaySymbolTable Display the symbol table to the screen. <br /></td></tr>
 <tr class="separator:a0d767f82287626f857b563da0adde783"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca195d5f0ae45089761f09d014e5c06"><td class="memItemLeft" align="right" valign="top"><a id="abca195d5f0ae45089761f09d014e5c06" name="abca195d5f0ae45089761f09d014e5c06"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LookupSymbol</b> (const std::string &amp;a_symbol, int &amp;a_loc)</td></tr>
+<tr class="memitem:abca195d5f0ae45089761f09d014e5c06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#abca195d5f0ae45089761f09d014e5c06">LookupSymbol</a> (const std::string &amp;a_symbol, int &amp;a_loc)</td></tr>
+<tr class="memdesc:abca195d5f0ae45089761f09d014e5c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a symbol in the symbol table.  <a href="class_symbol_table.html#abca195d5f0ae45089761f09d014e5c06">More...</a><br /></td></tr>
 <tr class="separator:abca195d5f0ae45089761f09d014e5c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -113,14 +115,14 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>multiplyDefinedS
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Symbol table class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1573b1ff30e8ce004acf8d5473d58a70" name="a1573b1ff30e8ce004acf8d5473d58a70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1573b1ff30e8ce004acf8d5473d58a70">&#9670;&nbsp;</a></span>AddSymbol()</h2>
+<a id="a85b1952180dcf0db9a715aef4db0ce4d" name="a85b1952180dcf0db9a715aef4db0ce4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b1952180dcf0db9a715aef4db0ce4d">&#9670;&nbsp;</a></span>AddSymbol()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SymbolTable::AddSymbol </td>
+          <td class="memname">bool SymbolTable::AddSymbol </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>a_symbol</em>, </td>
@@ -129,6 +131,59 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>multiplyDefinedS
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a_loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a_LineCounter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>a_orgiInst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AddSymbol adds a new symbol to the symbol table. </p>
+<p >AddSymbol function will place the symbol "a_symbol" and its location "a_loc" in the symbol table.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_symbol</td><td>lable name to be added in the list </td></tr>
+    <tr><td class="paramname">a_loc</td><td>location that the label points to </td></tr>
+    <tr><td class="paramname">a_LineCounter</td><td>current line in the file, needed for error reporting </td></tr>
+    <tr><td class="paramname">a_orgiInst</td><td>orginal Assembly instruction in current line, needed for error reporting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Implementation of the symbol table class. This is the format I want for commenting functions. </p>
+
+</div>
+</div>
+<a id="abca195d5f0ae45089761f09d014e5c06" name="abca195d5f0ae45089761f09d014e5c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca195d5f0ae45089761f09d014e5c06">&#9670;&nbsp;</a></span>LookupSymbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SymbolTable::LookupSymbol </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>a_symbol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
           <td class="paramname"><em>a_loc</em>&#160;</td>
         </tr>
         <tr>
@@ -138,7 +193,16 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>multiplyDefinedS
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Implementation of the symbol table class. This is the format I want for commenting functions. </p>
+
+<p>Lookup a symbol in the symbol table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_symbol</td><td>address of symbol to lookup </td></tr>
+    <tr><td class="paramname">a_loc</td><td>stores VC1960 memory location of symbol if found</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>LookupSymbol returns true is symbol is found in table else returns false </dd></dl>
 
 </div>
 </div>

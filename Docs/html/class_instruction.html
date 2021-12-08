@@ -98,38 +98,18 @@ $(document).ready(function(){initNavTree('class_instruction.html',''); initResiz
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a191ca348a40cb711a9d41933b35ef18e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">InstructionType</a> { <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b">ST_MachineLanguage</a>
+<tr class="memitem:a191ca348a40cb711a9d41933b35ef18e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">InstructionType</a> { <br />
+&#160;&#160;<a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b">ST_MachineLanguage</a>
 , <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed">ST_AssemblerInstr</a>
 , <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18eac2d7e2de28c393adbdc6bcf52c6a5ab9">ST_Comment</a>
 , <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18eabae7b73bb2b60fc48b08a74936ae613c">ST_End</a>
+, <br />
+&#160;&#160;<a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18eab592df12e518a75060b2c2403f07998c">ST_Error</a>
+<br />
  }</td></tr>
 <tr class="memdesc:a191ca348a40cb711a9d41933b35ef18e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> type indicates the type of instruction we are processing. <br  />
   <a href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">More...</a><br /></td></tr>
 <tr class="separator:a191ca348a40cb711a9d41933b35ef18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a979a177c00f4eaa722d369e09613cf73"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73">OpCode</a> { <br />
-&#160;&#160;<a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a9eeb52badb613229884838847294b90d">ADD</a> = 1
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a241dd841abade20fcb27b8a9f494e1eb">SUB</a> = 2
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a36b0ca295026d76ee15df50dc4991e90">MULT</a> = 3
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a29bbf66f7f8529ec47e394fb5a36c646">DIV</a> = 4
-, <br />
-&#160;&#160;<a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73ae8606d021da140a92c7eba8d9b8af84f">COPY</a> = 5
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a3466fab4975481651940ed328aa990e4">READ</a> = 7
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73ad4b9e47f65b6e79b010582f15785867e">WRITE</a> = 8
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a9d5ed678fe57bcca610140957afab571">B</a> = 9
-, <br />
-&#160;&#160;<a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a5089fa881630360a9b3361469c1a0c5d">BM</a> = 10
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73ae45fbcf6ca3b21f17c5f355728a2fbec">BZ</a> = 11
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a96d4cdff8ed57e93e3b3d843cffe3af7">BP</a> = 12
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73abf2d798abfe8267da4f101692b6cfecd">HALT</a> = 13
-, <br />
-&#160;&#160;<a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a06f179e75bfac08c9b75c7f847f84a6b">ORG</a>
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73acf75e54791dd1f49f918345fdfe2430b">DC</a>
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73a47b79bd259e22596ffc4be2ffbbe5c5a">DS</a>
-, <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73ab1a326c06d88bf042f73d70f50197905">END</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a979a177c00f4eaa722d369e09613cf73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Op code are the intrusction that are to be performed.  <a href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73">More...</a><br /></td></tr>
-<tr class="separator:a979a177c00f4eaa722d369e09613cf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -143,19 +123,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a91e07a77007bc08898b78d02892bc187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">Instruction::InstructionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a91e07a77007bc08898b78d02892bc187">ParseInstruction</a> (std::string a_line)</td></tr>
 <tr class="memdesc:a91e07a77007bc08898b78d02892bc187"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParseInstruction Parses the line of string into its component.  <a href="class_instruction.html#a91e07a77007bc08898b78d02892bc187">More...</a><br /></td></tr>
 <tr class="separator:a91e07a77007bc08898b78d02892bc187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48b085de537d251ff604df82fa20cbe9"><td class="memItemLeft" align="right" valign="top"><a id="a48b085de537d251ff604df82fa20cbe9" name="a48b085de537d251ff604df82fa20cbe9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>LocationNextInstruction</b> (int a_loc)</td></tr>
+<tr class="memitem:a48b085de537d251ff604df82fa20cbe9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a48b085de537d251ff604df82fa20cbe9">LocationNextInstruction</a> (int a_loc)</td></tr>
+<tr class="memdesc:a48b085de537d251ff604df82fa20cbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">LocationNextInstruction Compute the location of the next instruction.  <a href="class_instruction.html#a48b085de537d251ff604df82fa20cbe9">More...</a><br /></td></tr>
 <tr class="separator:a48b085de537d251ff604df82fa20cbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a677e78eef2b4e0e1709ccc99c8e94bc7"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a677e78eef2b4e0e1709ccc99c8e94bc7">GetLabel</a> ()</td></tr>
-<tr class="memdesc:a677e78eef2b4e0e1709ccc99c8e94bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the label  <a href="class_instruction.html#a677e78eef2b4e0e1709ccc99c8e94bc7">More...</a><br /></td></tr>
-<tr class="separator:a677e78eef2b4e0e1709ccc99c8e94bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa878faa6d470bef758d307b17e56068f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aa878faa6d470bef758d307b17e56068f">IsLabel</a> ()</td></tr>
-<tr class="memdesc:aa878faa6d470bef758d307b17e56068f"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsLabel checks if a label is blank.  <a href="class_instruction.html#aa878faa6d470bef758d307b17e56068f">More...</a><br /></td></tr>
-<tr class="separator:aa878faa6d470bef758d307b17e56068f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db27cdde18078d3a8b60e7e1a16108d"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a9db27cdde18078d3a8b60e7e1a16108d">GetLabel</a> ()</td></tr>
+<tr class="memdesc:a9db27cdde18078d3a8b60e7e1a16108d"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the label  <a href="class_instruction.html#a9db27cdde18078d3a8b60e7e1a16108d">More...</a><br /></td></tr>
+<tr class="separator:a9db27cdde18078d3a8b60e7e1a16108d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9e666acd0bbcea10261c68a0a84807"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#afd9e666acd0bbcea10261c68a0a84807">IsLabel</a> () const</td></tr>
+<tr class="memdesc:afd9e666acd0bbcea10261c68a0a84807"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsLabel checks if a label is blank.  <a href="class_instruction.html#afd9e666acd0bbcea10261c68a0a84807">More...</a><br /></td></tr>
+<tr class="separator:afd9e666acd0bbcea10261c68a0a84807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf49f629d214eb8c97b9c3420dba354"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a0bf49f629d214eb8c97b9c3420dba354">GetOpCodeNum</a> ()</td></tr>
+<tr class="memdesc:a0bf49f629d214eb8c97b9c3420dba354"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the numerical value of op code  <a href="class_instruction.html#a0bf49f629d214eb8c97b9c3420dba354">More...</a><br /></td></tr>
+<tr class="separator:a0bf49f629d214eb8c97b9c3420dba354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af688735cb40af9f44e32317e9f611ed7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#af688735cb40af9f44e32317e9f611ed7">GetOperand1</a> ()</td></tr>
+<tr class="memdesc:af688735cb40af9f44e32317e9f611ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the content stored in of operand1  <a href="class_instruction.html#af688735cb40af9f44e32317e9f611ed7">More...</a><br /></td></tr>
+<tr class="separator:af688735cb40af9f44e32317e9f611ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1621a483cb6308d6d721de799a22120e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a1621a483cb6308d6d721de799a22120e">GetOperand2</a> ()</td></tr>
+<tr class="memdesc:a1621a483cb6308d6d721de799a22120e"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the content stored in of operand2  <a href="class_instruction.html#a1621a483cb6308d6d721de799a22120e">More...</a><br /></td></tr>
+<tr class="separator:a1621a483cb6308d6d721de799a22120e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae142535d2b46a5b269db509d4af5ccda"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ae142535d2b46a5b269db509d4af5ccda">GetNumOperand1</a> ()</td></tr>
+<tr class="memdesc:ae142535d2b46a5b269db509d4af5ccda"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the numerical value of operand 1  <a href="class_instruction.html#ae142535d2b46a5b269db509d4af5ccda">More...</a><br /></td></tr>
+<tr class="separator:ae142535d2b46a5b269db509d4af5ccda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7d98143f77467ba18f006dd3b5e555"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555">GetNumOperand2</a> ()</td></tr>
+<tr class="memdesc:a7d7d98143f77467ba18f006dd3b5e555"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the numerical value of operand 2  <a href="class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555">More...</a><br /></td></tr>
+<tr class="separator:a7d7d98143f77467ba18f006dd3b5e555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b52c8e42fd8de20ea6c7c5d99c265a"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ad8b52c8e42fd8de20ea6c7c5d99c265a">IsNumOperand1</a> ()</td></tr>
+<tr class="memdesc:ad8b52c8e42fd8de20ea6c7c5d99c265a"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsNumOperand1 check to see if operand1 is numeric.  <a href="class_instruction.html#ad8b52c8e42fd8de20ea6c7c5d99c265a">More...</a><br /></td></tr>
+<tr class="separator:ad8b52c8e42fd8de20ea6c7c5d99c265a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc9352f71c0f51640224dcdee975ef2"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aadc9352f71c0f51640224dcdee975ef2">IsNumOperand2</a> ()</td></tr>
+<tr class="memdesc:aadc9352f71c0f51640224dcdee975ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsNumOperand2 check to see if operand2 is numeric.  <a href="class_instruction.html#aadc9352f71c0f51640224dcdee975ef2">More...</a><br /></td></tr>
+<tr class="separator:aadc9352f71c0f51640224dcdee975ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796ea1d9aeebcd050024c57831c33c2f"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a796ea1d9aeebcd050024c57831c33c2f">GetOrgiInst</a> ()</td></tr>
+<tr class="memdesc:a796ea1d9aeebcd050024c57831c33c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the orginal instruction  <a href="class_instruction.html#a796ea1d9aeebcd050024c57831c33c2f">More...</a><br /></td></tr>
+<tr class="separator:a796ea1d9aeebcd050024c57831c33c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dfb0f85b9859ed092e99ced9f3e1340"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_errors.html#a2aebcb48c7d722da1b295349ebaad906">Errors::ErrorTypes</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a7dfb0f85b9859ed092e99ced9f3e1340">GetErrorMsgTypeBegin</a> ()</td></tr>
+<tr class="memdesc:a7dfb0f85b9859ed092e99ced9f3e1340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function to get start of error message type.  <a href="class_instruction.html#a7dfb0f85b9859ed092e99ced9f3e1340">More...</a><br /></td></tr>
+<tr class="separator:a7dfb0f85b9859ed092e99ced9f3e1340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f93dece43308ff797cd11521e3c565d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_errors.html#a2aebcb48c7d722da1b295349ebaad906">Errors::ErrorTypes</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a4f93dece43308ff797cd11521e3c565d">GetErrorMsgTypeEnd</a> ()</td></tr>
+<tr class="memdesc:a4f93dece43308ff797cd11521e3c565d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function to get end of error message type.  <a href="class_instruction.html#a4f93dece43308ff797cd11521e3c565d">More...</a><br /></td></tr>
+<tr class="separator:a4f93dece43308ff797cd11521e3c565d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee78542c8c38329f6949ba54fdce5eee"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aee78542c8c38329f6949ba54fdce5eee">IsErrorOpCode</a> ()</td></tr>
+<tr class="memdesc:aee78542c8c38329f6949ba54fdce5eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function  <a href="class_instruction.html#aee78542c8c38329f6949ba54fdce5eee">More...</a><br /></td></tr>
+<tr class="separator:aee78542c8c38329f6949ba54fdce5eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3837cd392375002afc4fb73cbf9fdc"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a7d3837cd392375002afc4fb73cbf9fdc">IsErrorOperand1</a> ()</td></tr>
+<tr class="memdesc:a7d3837cd392375002afc4fb73cbf9fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function  <a href="class_instruction.html#a7d3837cd392375002afc4fb73cbf9fdc">More...</a><br /></td></tr>
+<tr class="separator:a7d3837cd392375002afc4fb73cbf9fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51aa61d0e5108559b9f4980e84a6c8f"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aa51aa61d0e5108559b9f4980e84a6c8f">IsErrorOperand2</a> ()</td></tr>
+<tr class="memdesc:aa51aa61d0e5108559b9f4980e84a6c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function  <a href="class_instruction.html#aa51aa61d0e5108559b9f4980e84a6c8f">More...</a><br /></td></tr>
+<tr class="separator:aa51aa61d0e5108559b9f4980e84a6c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79bbe28e750d7621e2c8e88f0bc37ae"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ad79bbe28e750d7621e2c8e88f0bc37ae">IsErrorFundVar</a> ()</td></tr>
+<tr class="memdesc:ad79bbe28e750d7621e2c8e88f0bc37ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function  <a href="class_instruction.html#ad79bbe28e750d7621e2c8e88f0bc37ae">More...</a><br /></td></tr>
+<tr class="separator:ad79bbe28e750d7621e2c8e88f0bc37ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class to parse and provide information about instructions. </p>
-<p >This class deals entirely with the string realated things. Like scanning the given line of string <br  />
+<p >This class deals entirely with the input string realated things. Like scanning the given line of string <br  />
  and dividing it into componenets</p>
 <dl class="section note"><dt>Note</dt><dd>you will be adding more functionality. The elements of an instruction. </dd></dl>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
@@ -184,100 +206,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>LocationNextInstructio
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b" name="a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b"></a>ST_MachineLanguage&#160;</td><td class="fielddoc"><p >A machine language instruction. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed" name="a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed"></a>ST_AssemblerInstr&#160;</td><td class="fielddoc"><p ><a class="el" href="class_assembler.html" title="This is a container for all the components that make up the assembler.">Assembler</a> Language instruction. </p>
+<tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed" name="a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed"></a>ST_AssemblerInstr&#160;</td><td class="fielddoc"><p ><a class="el" href="class_assembler.html" title="This is a container for all the components that make up the assembler and runs an emulator on it.">Assembler</a> Language instruction. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18eac2d7e2de28c393adbdc6bcf52c6a5ab9" name="a191ca348a40cb711a9d41933b35ef18eac2d7e2de28c393adbdc6bcf52c6a5ab9"></a>ST_Comment&#160;</td><td class="fielddoc"><p >Comment or blank line. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18eabae7b73bb2b60fc48b08a74936ae613c" name="a191ca348a40cb711a9d41933b35ef18eabae7b73bb2b60fc48b08a74936ae613c"></a>ST_End&#160;</td><td class="fielddoc"><p >end instruction. </p>
 </td></tr>
-</table>
-
-</div>
-</div>
-<a id="a979a177c00f4eaa722d369e09613cf73" name="a979a177c00f4eaa722d369e09613cf73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a979a177c00f4eaa722d369e09613cf73">&#9670;&nbsp;</a></span>OpCode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="class_instruction.html#a979a177c00f4eaa722d369e09613cf73">Instruction::OpCode</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Op code are the intrusction that are to be performed. </p>
-<p >There are two different type of Op codes. First type of Op codes that are not supported in the machine language, but are used by the assembler. (ORG, END, DC, DS) And Second type of Op codes are supported in both machine language and assembler language. These Op codes have a corresponding number that are used by the machine language.</p>
-<p >When using Op codes, they can be all upper cased, or lowered cased, or a combination of both</p>
-<dl class="section note"><dt>Note</dt><dd>Addr is a label in assembley language and a location in machine language </dd>
-<dd>
-when used in machine languge numbers are used to represent both the op codes and label/location </dd>
-<dd>
-c(Addr) is the content that label represents in assembley language or stored in that location in memory </dd>
-<dd>
-read AddrA &lt;&ndash; c(AddrB) + c(AddrC) as storing the final result of operation in right of '&lt;&ndash;' (here, c(AddrB) + c(AddrC) ) in to the location or label in the left </dd>
-<dd>
-number of label/location right of &lt;&ndash; determines the number of label/location need for the particular Op code </dd></dl>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a9eeb52badb613229884838847294b90d" name="a979a177c00f4eaa722d369e09613cf73a9eeb52badb613229884838847294b90d"></a>ADD&#160;</td><td class="fielddoc"><p >usage: ADD Addr1 Addr2 <br  />
- Addr1 &lt;&ndash; c(Addr1) + c(Addr2) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a241dd841abade20fcb27b8a9f494e1eb" name="a979a177c00f4eaa722d369e09613cf73a241dd841abade20fcb27b8a9f494e1eb"></a>SUB&#160;</td><td class="fielddoc"><p >usage: SUB Addr1 Addr2 <br  />
- Addr1 &lt;&ndash; c(Addr1) - c(Addr2) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a36b0ca295026d76ee15df50dc4991e90" name="a979a177c00f4eaa722d369e09613cf73a36b0ca295026d76ee15df50dc4991e90"></a>MULT&#160;</td><td class="fielddoc"><p >usage: MULT Addr1 Addr2 <br  />
- Addr1 &lt;&ndash; c(Addr1)* c(Addr2) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a29bbf66f7f8529ec47e394fb5a36c646" name="a979a177c00f4eaa722d369e09613cf73a29bbf66f7f8529ec47e394fb5a36c646"></a>DIV&#160;</td><td class="fielddoc"><p >usage: DIV Addr1 Addr2 <br  />
- Addr1 &lt;&ndash; c(Addr1) / c(Addr2) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73ae8606d021da140a92c7eba8d9b8af84f" name="a979a177c00f4eaa722d369e09613cf73ae8606d021da140a92c7eba8d9b8af84f"></a>COPY&#160;</td><td class="fielddoc"><p >usage: COPY Addr1 Addr2 <br  />
- Addr1 &lt;&ndash; c(Addr2) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a3466fab4975481651940ed328aa990e4" name="a979a177c00f4eaa722d369e09613cf73a3466fab4975481651940ed328aa990e4"></a>READ&#160;</td><td class="fielddoc"><p >usage: READ Addr1 <br  />
- Read Addr 1 A line is read and record the number found there in Addr1 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73ad4b9e47f65b6e79b010582f15785867e" name="a979a177c00f4eaa722d369e09613cf73ad4b9e47f65b6e79b010582f15785867e"></a>WRITE&#160;</td><td class="fielddoc"><p >usage: WRITE Addr1 <br  />
- c(Addr1) is displayed </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a9d5ed678fe57bcca610140957afab571" name="a979a177c00f4eaa722d369e09613cf73a9d5ed678fe57bcca610140957afab571"></a>B&#160;</td><td class="fielddoc"><p >usage: B Addr1 <br  />
- Go to Addr1 for next instruction </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a5089fa881630360a9b3361469c1a0c5d" name="a979a177c00f4eaa722d369e09613cf73a5089fa881630360a9b3361469c1a0c5d"></a>BM&#160;</td><td class="fielddoc"><p >usage: BM Addr1 Addr2 <br  />
- Go to Addr1 if c(Addr2) &lt; 0 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73ae45fbcf6ca3b21f17c5f355728a2fbec" name="a979a177c00f4eaa722d369e09613cf73ae45fbcf6ca3b21f17c5f355728a2fbec"></a>BZ&#160;</td><td class="fielddoc"><p >usage: BZ Addr1 Addr2 go To Addr1 if c(Addr2) = 0 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a96d4cdff8ed57e93e3b3d843cffe3af7" name="a979a177c00f4eaa722d369e09613cf73a96d4cdff8ed57e93e3b3d843cffe3af7"></a>BP&#160;</td><td class="fielddoc"><p >usage: BP Addr1 Addr2 go To Addr1 if c(Addr2) &gt; 0 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73abf2d798abfe8267da4f101692b6cfecd" name="a979a177c00f4eaa722d369e09613cf73abf2d798abfe8267da4f101692b6cfecd"></a>HALT&#160;</td><td class="fielddoc"><p >usage: HALT <br  />
- Terminate execution. The Addr1 and Addr2 are ignored </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a06f179e75bfac08c9b75c7f847f84a6b" name="a979a177c00f4eaa722d369e09613cf73a06f179e75bfac08c9b75c7f847f84a6b"></a>ORG&#160;</td><td class="fielddoc"><p >usage: ORG 100 <br  />
- define origin. <br  />
- The operand specifies the address at which the translation of the next instruction will be generated <br  />
- Here, next intruction starts at location 100 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73acf75e54791dd1f49f918345fdfe2430b" name="a979a177c00f4eaa722d369e09613cf73acf75e54791dd1f49f918345fdfe2430b"></a>DC&#160;</td><td class="fielddoc"><p >usage: Addr1 DC 5 <br  />
- Defines constant. <br  />
- The constant is a decimal integer placed in the operand field <br  />
- Here, c(Addr1) = 5 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73a47b79bd259e22596ffc4be2ffbbe5c5a" name="a979a177c00f4eaa722d369e09613cf73a47b79bd259e22596ffc4be2ffbbe5c5a"></a>DS&#160;</td><td class="fielddoc"><p >usage: Addr1 DS 3 <br  />
- Defines storage. <br  />
- The operand specifies the number of words of storage to be set aside <br  />
- Here, Addr1 points to the start of a array of length 3 </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a979a177c00f4eaa722d369e09613cf73ab1a326c06d88bf042f73d70f50197905" name="a979a177c00f4eaa722d369e09613cf73ab1a326c06d88bf042f73d70f50197905"></a>END&#160;</td><td class="fielddoc"><p >usage: END <br  />
- Indicates that there are no additional statements to translate. </p>
+<tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18eab592df12e518a75060b2c2403f07998c" name="a191ca348a40cb711a9d41933b35ef18eab592df12e518a75060b2c2403f07998c"></a>ST_Error&#160;</td><td class="fielddoc"><p >error dectected in instruction. </p>
 </td></tr>
 </table>
 
@@ -308,14 +243,13 @@ number of label/location right of &lt;&ndash; determines the number of label/loc
 </div><div class="memdoc">
 
 <p>Constructor for the <a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> class. </p>
-<p >set int variable to 0, bool variable to false, string variable to "", and <a class="el" href="class_instruction.html#aebd15229c1651af49dcb203707e7a2d5" title="Constructor for the Instruction class.">Instruction::Instruction</a> variavle to ST_Comment. <br  />
-Uses ClearMemberVariables function </p>
+<p >It sets int variable to 0, bool variable to false, string variable to "", and <a class="el" href="class_instruction.html#aebd15229c1651af49dcb203707e7a2d5" title="Constructor for the Instruction class.">Instruction::Instruction</a> variavle to ST_Comment. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a677e78eef2b4e0e1709ccc99c8e94bc7" name="a677e78eef2b4e0e1709ccc99c8e94bc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a677e78eef2b4e0e1709ccc99c8e94bc7">&#9670;&nbsp;</a></span>GetLabel()</h2>
+<a id="a7dfb0f85b9859ed092e99ced9f3e1340" name="a7dfb0f85b9859ed092e99ced9f3e1340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfb0f85b9859ed092e99ced9f3e1340">&#9670;&nbsp;</a></span>GetErrorMsgTypeBegin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,7 +258,63 @@ Uses ClearMemberVariables function </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string &amp; Instruction::GetLabel </td>
+          <td class="memname">std::vector&lt; <a class="el" href="class_errors.html#a2aebcb48c7d722da1b295349ebaad906">Errors::ErrorTypes</a> &gt;::iterator Instruction::GetErrorMsgTypeBegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter function to get start of error message type. </p>
+<dl class="section return"><dt>Returns</dt><dd>GetErrorMsgTypeBegin returns pointer to start of ErrorMessageType </dd></dl>
+
+</div>
+</div>
+<a id="a4f93dece43308ff797cd11521e3c565d" name="a4f93dece43308ff797cd11521e3c565d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f93dece43308ff797cd11521e3c565d">&#9670;&nbsp;</a></span>GetErrorMsgTypeEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_errors.html#a2aebcb48c7d722da1b295349ebaad906">Errors::ErrorTypes</a> &gt;::iterator Instruction::GetErrorMsgTypeEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter function to get end of error message type. </p>
+<dl class="section return"><dt>Returns</dt><dd>GetErrorMsgTypeEnd returns pointer to end of ErrorMessageType </dd></dl>
+
+</div>
+</div>
+<a id="a9db27cdde18078d3a8b60e7e1a16108d" name="a9db27cdde18078d3a8b60e7e1a16108d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db27cdde18078d3a8b60e7e1a16108d">&#9670;&nbsp;</a></span>GetLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; Instruction::GetLabel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -342,8 +332,8 @@ Uses ClearMemberVariables function </p>
 
 </div>
 </div>
-<a id="aa878faa6d470bef758d307b17e56068f" name="aa878faa6d470bef758d307b17e56068f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa878faa6d470bef758d307b17e56068f">&#9670;&nbsp;</a></span>IsLabel()</h2>
+<a id="ae142535d2b46a5b269db509d4af5ccda" name="ae142535d2b46a5b269db509d4af5ccda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae142535d2b46a5b269db509d4af5ccda">&#9670;&nbsp;</a></span>GetNumOperand1()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,7 +342,7 @@ Uses ClearMemberVariables function </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Instruction::IsLabel </td>
+          <td class="memname">const int Instruction::GetNumOperand1 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -365,8 +355,373 @@ Uses ClearMemberVariables function </p>
 </table>
 </div><div class="memdoc">
 
+<p>getter function to access the numerical value of operand 1 </p>
+<dl class="section return"><dt>Returns</dt><dd>GetNumOperand1 returns numeric value of operand1 </dd></dl>
+
+</div>
+</div>
+<a id="a7d7d98143f77467ba18f006dd3b5e555" name="a7d7d98143f77467ba18f006dd3b5e555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7d98143f77467ba18f006dd3b5e555">&#9670;&nbsp;</a></span>GetNumOperand2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Instruction::GetNumOperand2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function to access the numerical value of operand 2 </p>
+<dl class="section return"><dt>Returns</dt><dd>GetNumOperand2 returns numeric value of operand2 </dd></dl>
+
+</div>
+</div>
+<a id="a0bf49f629d214eb8c97b9c3420dba354" name="a0bf49f629d214eb8c97b9c3420dba354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bf49f629d214eb8c97b9c3420dba354">&#9670;&nbsp;</a></span>GetOpCodeNum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Instruction::GetOpCodeNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function to access the numerical value of op code </p>
+<dl class="section return"><dt>Returns</dt><dd>GetOpCodeNum returns location of the Numeric OpCode </dd></dl>
+
+</div>
+</div>
+<a id="af688735cb40af9f44e32317e9f611ed7" name="af688735cb40af9f44e32317e9f611ed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af688735cb40af9f44e32317e9f611ed7">&#9670;&nbsp;</a></span>GetOperand1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Instruction::GetOperand1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function to access the content stored in of operand1 </p>
+<dl class="section return"><dt>Returns</dt><dd>GetOperand1 returns content stored in of operand1 </dd></dl>
+
+</div>
+</div>
+<a id="a1621a483cb6308d6d721de799a22120e" name="a1621a483cb6308d6d721de799a22120e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1621a483cb6308d6d721de799a22120e">&#9670;&nbsp;</a></span>GetOperand2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Instruction::GetOperand2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function to access the content stored in of operand2 </p>
+<dl class="section return"><dt>Returns</dt><dd>GetOperand2 returns content stored in of operand2 </dd></dl>
+
+</div>
+</div>
+<a id="a796ea1d9aeebcd050024c57831c33c2f" name="a796ea1d9aeebcd050024c57831c33c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a796ea1d9aeebcd050024c57831c33c2f">&#9670;&nbsp;</a></span>GetOrgiInst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Instruction::GetOrgiInst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function to access the orginal instruction </p>
+<dl class="section return"><dt>Returns</dt><dd>GetOrgiInst returns orginal instruction </dd></dl>
+
+</div>
+</div>
+<a id="ad79bbe28e750d7621e2c8e88f0bc37ae" name="ad79bbe28e750d7621e2c8e88f0bc37ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad79bbe28e750d7621e2c8e88f0bc37ae">&#9670;&nbsp;</a></span>IsErrorFundVar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Instruction::IsErrorFundVar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function </p>
+<p >If this is true, then instruction is already translated </p><dl class="section see"><dt>See also</dt><dd>SetFundamentalVar(), error case 2 and case 3</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorFundVar returns true if error was found for Fundamental variable </dd></dl>
+
+</div>
+</div>
+<a id="aee78542c8c38329f6949ba54fdce5eee" name="aee78542c8c38329f6949ba54fdce5eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee78542c8c38329f6949ba54fdce5eee">&#9670;&nbsp;</a></span>IsErrorOpCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Instruction::IsErrorOpCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function </p>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorLabelSyn returns true if error was found for op code </dd></dl>
+
+</div>
+</div>
+<a id="a7d3837cd392375002afc4fb73cbf9fdc" name="a7d3837cd392375002afc4fb73cbf9fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3837cd392375002afc4fb73cbf9fdc">&#9670;&nbsp;</a></span>IsErrorOperand1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Instruction::IsErrorOperand1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function </p>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorOperand1 returns true if error was found for operand 1 </dd></dl>
+
+</div>
+</div>
+<a id="aa51aa61d0e5108559b9f4980e84a6c8f" name="aa51aa61d0e5108559b9f4980e84a6c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa51aa61d0e5108559b9f4980e84a6c8f">&#9670;&nbsp;</a></span>IsErrorOperand2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Instruction::IsErrorOperand2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getter function </p>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorOperand2 returns true if error was found for operand 1 </dd></dl>
+
+</div>
+</div>
+<a id="afd9e666acd0bbcea10261c68a0a84807" name="afd9e666acd0bbcea10261c68a0a84807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9e666acd0bbcea10261c68a0a84807">&#9670;&nbsp;</a></span>IsLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Instruction::IsLabel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>IsLabel checks if a label is blank. </p>
 <dl class="section return"><dt>Returns</dt><dd>IsLabel returns true if label is present; false if label is absent </dd></dl>
+
+</div>
+</div>
+<a id="ad8b52c8e42fd8de20ea6c7c5d99c265a" name="ad8b52c8e42fd8de20ea6c7c5d99c265a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b52c8e42fd8de20ea6c7c5d99c265a">&#9670;&nbsp;</a></span>IsNumOperand1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Instruction::IsNumOperand1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>IsNumOperand1 check to see if operand1 is numeric. </p>
+<dl class="section return"><dt>Returns</dt><dd>IsNumOperand1 returns true if Operand 1 is numeric else returns false </dd></dl>
+
+</div>
+</div>
+<a id="aadc9352f71c0f51640224dcdee975ef2" name="aadc9352f71c0f51640224dcdee975ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc9352f71c0f51640224dcdee975ef2">&#9670;&nbsp;</a></span>IsNumOperand2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Instruction::IsNumOperand2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>IsNumOperand2 check to see if operand2 is numeric. </p>
+<dl class="section return"><dt>Returns</dt><dd>IsNumOperand2 returns true if Operand 2 is numeric else returns false </dd></dl>
+
+</div>
+</div>
+<a id="a48b085de537d251ff604df82fa20cbe9" name="a48b085de537d251ff604df82fa20cbe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b085de537d251ff604df82fa20cbe9">&#9670;&nbsp;</a></span>LocationNextInstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Instruction::LocationNextInstruction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a_loc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LocationNextInstruction Compute the location of the next instruction. </p>
+<p >If opCode is ORG, next intruction location is the value in operand 1, if opCode is DS, it increases current location by the value in operand 1; else it increases current location by 1.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_loc</td><td>Location of current instruction</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>LocationNextInstruction return a location of next intruction </dd></dl>
 
 </div>
 </div>
@@ -387,10 +742,10 @@ Uses ClearMemberVariables function </p>
 </div><div class="memdoc">
 
 <p>ParseInstruction Parses the line of string into its component. </p>
-<p >This function goes through the passed string and seperates them into their indivisual componenet which are stored and be used by parsing</p>
+<p >ParseInstruction function goes through the passed string and seperates them into their indivisual componenet which are stored and be used by parsing</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a_line</td><td>a string read from the file </td></tr>
+    <tr><td class="paramname">a_line</td><td>a string read from the file</td></tr>
   </table>
   </dd>
 </dl>

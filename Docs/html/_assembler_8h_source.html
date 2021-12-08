@@ -86,56 +86,100 @@ $(document).ready(function(){initNavTree('_assembler_8h_source.html',''); initRe
   <div class="headertitle"><div class="title">Assembler.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// </span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Assembler class. This is a container for all the components </span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// </span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once </span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;SymTab.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Instruction.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;FileAccess.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Emulator.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_assembler.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_assembler.html">Assembler</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">Assembler</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[] );</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">~Assembler</a>( );</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8">PassI</a>( );</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">PassII</a>() {};</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">DisplaySymbolTable</a>() { m_symtab.DisplaySymbolTable(); }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">   56</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">RunProgramInEmulator</a>() {};</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_class" href="class_file_access.html">FileAccess</a> m_facc;      <span class="comment">// File Access object</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_symbol_table.html">SymbolTable</a> m_symtab;   <span class="comment">// Symbol table object</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="class_instruction.html">Instruction</a> m_inst;     <span class="comment">// Instruction object</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="classemulator.html">emulator</a> m_emul;        <span class="comment">// Emulator object</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="ttc" id="aclass_assembler_html"><div class="ttname"><a href="class_assembler.html">Assembler</a></div><div class="ttdoc">This is a container for all the components that make up the assembler.</div><div class="ttdef"><b>Definition:</b> Assembler.h:16</div></div>
-<div class="ttc" id="aclass_assembler_html_a1aada326bbf84329ff60ca0533a6f9e8"><div class="ttname"><a href="class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8">Assembler::PassI</a></div><div class="ttdeci">void PassI()</div><div class="ttdoc">Pass I establishes the location of the labels.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:17</div></div>
-<div class="ttc" id="aclass_assembler_html_a46c3abf430bddcce855ccd461abe6be1"><div class="ttname"><a href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">Assembler::PassII</a></div><div class="ttdeci">void PassII()</div><div class="ttdoc">Pass II - generate a translation.</div><div class="ttdef"><b>Definition:</b> Assembler.h:46</div></div>
-<div class="ttc" id="aclass_assembler_html_a6e9d207baf8191cd6c4847f56548f73f"><div class="ttname"><a href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">Assembler::~Assembler</a></div><div class="ttdeci">~Assembler()</div><div class="ttdoc">Destructor currently does nothing. You might need to add something as you develope this project.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:13</div></div>
-<div class="ttc" id="aclass_assembler_html_a898ad743c2f623a3df00c6e7758513ae"><div class="ttname"><a href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">Assembler::Assembler</a></div><div class="ttdeci">Assembler(int argc, char *argv[])</div><div class="ttdoc">Constructor</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:7</div></div>
-<div class="ttc" id="aclass_assembler_html_ae801e9a1b01cde724e7f8ea516155041"><div class="ttname"><a href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">Assembler::DisplaySymbolTable</a></div><div class="ttdeci">void DisplaySymbolTable()</div><div class="ttdoc">Display the symbols in the symbol table.</div><div class="ttdef"><b>Definition:</b> Assembler.h:51</div></div>
-<div class="ttc" id="aclass_assembler_html_afbb8afac547b87ea5a57b8f9a9b0af80"><div class="ttname"><a href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">Assembler::RunProgramInEmulator</a></div><div class="ttdeci">void RunProgramInEmulator()</div><div class="ttdoc">Run emulator on the translation.</div><div class="ttdef"><b>Definition:</b> Assembler.h:56</div></div>
+<a href="_assembler_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*****************************************************************/</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/**********************************************************************/</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;SymTab.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;Instruction.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;FileAccess.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;MachineInstructionTable.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="_emulator_8h.html">Emulator.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_assembler.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="class_assembler.html">Assembler</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">Assembler</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">~Assembler</a>( );</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8">PassI</a>( );</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">PassII</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">   93</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">DisplaySymbolTable</a>() { m_symtab.<a class="code hl_function" href="class_symbol_table.html#a0d767f82287626f857b563da0adde783">DisplaySymbolTable</a>(); }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#a60c1f5ef54ec26a83af95214efb50cdc">DisplayDeclaredConstTab</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#aca7417d928476cf3dcfc1459ff452455">DisplayDeclaredMemVarTab</a>();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_assembler.html#accebd507f105c20f2d6991b1428e64c7">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#accebd507f105c20f2d6991b1428e64c7">DisplayMachineInstTable</a>() { m_machInstTab.<a class="code hl_function" href="class_machine_instruction_table.html#a988a1af1ea3a7c58cacf7c9317cc3e7b">DisplayMachineInstTable</a>(); }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">RunProgramInEmulator</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4">InsertInstToEmulator</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordtype">bool</span> GetNoError() { <span class="keywordflow">return</span> m_noError; }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">// ================ private member funciton ============================</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">void</span> SmartFillContent( std::string&amp; a_TranslatedContent, <span class="keywordtype">int</span> a_ToAppendNum, <span class="keywordtype">int</span> a_LengthToFill = 5 );</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">bool</span> LookupDeclaredConst( <span class="keyword">const</span> std::string&amp; a_symbol );</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">bool</span> LookupDeclaredVarMem( <span class="keyword">const</span> std::string&amp; a_symbol );</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordtype">void</span> TranslateInstruction( <span class="keywordtype">int</span> a_Loc, <span class="keywordtype">int</span> a_LineCounter );</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordtype">void</span> ComputeNextLoc( <span class="keywordtype">int</span>&amp; a_loc, <span class="keywordtype">int</span>&amp; a_LineCounter, <span class="keywordtype">bool</span>&amp; a_insufficentMemory);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">// ================ private variables ============================</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordtype">bool</span> m_noError; <span class="comment">// tracks error</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <a class="code hl_class" href="class_file_access.html">FileAccess</a> m_facc;      <span class="comment">// File Access object</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <a class="code hl_class" href="class_symbol_table.html">SymbolTable</a> m_symtab;   <span class="comment">// Symbol table object</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_class" href="class_instruction.html">Instruction</a> m_inst;     <span class="comment">// Instruction object</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <a class="code hl_class" href="class_machine_instruction_table.html">MachineInstructionTable</a> m_machInstTab; <span class="comment">// Machine Instruction Table object</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <a class="code hl_class" href="class_emulator.html">Emulator</a> m_emul;        <span class="comment">// Emulator object</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="comment">// table to store all the declared Constant number along with their lablels</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="comment">// stores all DC instruction label and Operand1 value</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    std::unordered_map&lt;std::string, int&gt; m_declaredConstTab;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="comment">// table to store all the declared variable&#39;s memory size along with their lablels</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="comment">// stores all DS instruction label and Operand1 value</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    std::unordered_map&lt;std::string, int&gt; m_declaredMemVarTab;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>};</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="ttc" id="a_emulator_8h_html"><div class="ttname"><a href="_emulator_8h.html">Emulator.h</a></div><div class="ttdoc">This file is a header file for Emulator class.</div></div>
+<div class="ttc" id="aclass_assembler_html"><div class="ttname"><a href="class_assembler.html">Assembler</a></div><div class="ttdoc">This is a container for all the components that make up the assembler and runs an emulator on it.</div><div class="ttdef"><b>Definition:</b> Assembler.h:31</div></div>
+<div class="ttc" id="aclass_assembler_html_a1aada326bbf84329ff60ca0533a6f9e8"><div class="ttname"><a href="class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8">Assembler::PassI</a></div><div class="ttdeci">void PassI()</div><div class="ttdoc">Pass I establishes the location of the labels.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:15</div></div>
+<div class="ttc" id="aclass_assembler_html_a1ed4d0badb1c882e5b923a013d23c4a4"><div class="ttname"><a href="class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4">Assembler::InsertInstToEmulator</a></div><div class="ttdeci">void InsertInstToEmulator()</div><div class="ttdoc">InsertInstToEmulator inserts all the translated machine instruction into the emulator.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:281</div></div>
+<div class="ttc" id="aclass_assembler_html_a46c3abf430bddcce855ccd461abe6be1"><div class="ttname"><a href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">Assembler::PassII</a></div><div class="ttdeci">void PassII()</div><div class="ttdoc">Pass II generates a translation for the assembey code.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:89</div></div>
+<div class="ttc" id="aclass_assembler_html_a60c1f5ef54ec26a83af95214efb50cdc"><div class="ttname"><a href="class_assembler.html#a60c1f5ef54ec26a83af95214efb50cdc">Assembler::DisplayDeclaredConstTab</a></div><div class="ttdeci">void DisplayDeclaredConstTab()</div><div class="ttdoc">DesplayDeclaredConstTab Displays all the declared Constant number along with their lablels.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:200</div></div>
+<div class="ttc" id="aclass_assembler_html_a6e9d207baf8191cd6c4847f56548f73f"><div class="ttname"><a href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">Assembler::~Assembler</a></div><div class="ttdeci">~Assembler()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:11</div></div>
+<div class="ttc" id="aclass_assembler_html_a898ad743c2f623a3df00c6e7758513ae"><div class="ttname"><a href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">Assembler::Assembler</a></div><div class="ttdeci">Assembler(int argc, char *argv[])</div><div class="ttdoc">Constructor for the Assemble object.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:5</div></div>
+<div class="ttc" id="aclass_assembler_html_aca7417d928476cf3dcfc1459ff452455"><div class="ttname"><a href="class_assembler.html#aca7417d928476cf3dcfc1459ff452455">Assembler::DisplayDeclaredMemVarTab</a></div><div class="ttdeci">void DisplayDeclaredMemVarTab()</div><div class="ttdoc">DisplayDeclaredVarMemSizeTab Displays all the declared variable memory along with their lablels.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:233</div></div>
+<div class="ttc" id="aclass_assembler_html_accebd507f105c20f2d6991b1428e64c7"><div class="ttname"><a href="class_assembler.html#accebd507f105c20f2d6991b1428e64c7">Assembler::DisplayMachineInstTable</a></div><div class="ttdeci">void DisplayMachineInstTable()</div><div class="ttdoc">Displays the translated machine instruction in the machine instruction table.</div><div class="ttdef"><b>Definition:</b> Assembler.h:120</div></div>
+<div class="ttc" id="aclass_assembler_html_ae801e9a1b01cde724e7f8ea516155041"><div class="ttname"><a href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">Assembler::DisplaySymbolTable</a></div><div class="ttdeci">void DisplaySymbolTable()</div><div class="ttdoc">DisplaySymbolTable displays the symbols in the symbol table.</div><div class="ttdef"><b>Definition:</b> Assembler.h:93</div></div>
+<div class="ttc" id="aclass_assembler_html_afbb8afac547b87ea5a57b8f9a9b0af80"><div class="ttname"><a href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">Assembler::RunProgramInEmulator</a></div><div class="ttdeci">void RunProgramInEmulator()</div><div class="ttdoc">inserts and runs the emulator on the translation.</div><div class="ttdef"><b>Definition:</b> Assembler.cpp:265</div></div>
+<div class="ttc" id="aclass_emulator_html"><div class="ttname"><a href="class_emulator.html">Emulator</a></div><div class="ttdoc">This is a class for emulator.</div><div class="ttdef"><b>Definition:</b> Emulator.h:37</div></div>
 <div class="ttc" id="aclass_file_access_html"><div class="ttname"><a href="class_file_access.html">FileAccess</a></div><div class="ttdef"><b>Definition:</b> FileAccess.h:11</div></div>
-<div class="ttc" id="aclass_instruction_html"><div class="ttname"><a href="class_instruction.html">Instruction</a></div><div class="ttdoc">Class to parse and provide information about instructions.</div><div class="ttdef"><b>Definition:</b> Instruction.h:17</div></div>
+<div class="ttc" id="aclass_instruction_html"><div class="ttname"><a href="class_instruction.html">Instruction</a></div><div class="ttdoc">Class to parse and provide information about instructions.</div><div class="ttdef"><b>Definition:</b> Instruction.h:19</div></div>
+<div class="ttc" id="aclass_machine_instruction_table_html"><div class="ttname"><a href="class_machine_instruction_table.html">MachineInstructionTable</a></div><div class="ttdef"><b>Definition:</b> MachineInstructionTable.h:6</div></div>
+<div class="ttc" id="aclass_machine_instruction_table_html_a988a1af1ea3a7c58cacf7c9317cc3e7b"><div class="ttname"><a href="class_machine_instruction_table.html#a988a1af1ea3a7c58cacf7c9317cc3e7b">MachineInstructionTable::DisplayMachineInstTable</a></div><div class="ttdeci">void DisplayMachineInstTable()</div><div class="ttdoc">DisplaySymbolTable Display the symbol table to the screen.</div><div class="ttdef"><b>Definition:</b> MachineInstructionTable.cpp:33</div></div>
 <div class="ttc" id="aclass_symbol_table_html"><div class="ttname"><a href="class_symbol_table.html">SymbolTable</a></div><div class="ttdef"><b>Definition:</b> SymTab.h:9</div></div>
-<div class="ttc" id="aclassemulator_html"><div class="ttname"><a href="classemulator.html">emulator</a></div><div class="ttdef"><b>Definition:</b> Emulator.h:7</div></div>
+<div class="ttc" id="aclass_symbol_table_html_a0d767f82287626f857b563da0adde783"><div class="ttname"><a href="class_symbol_table.html#a0d767f82287626f857b563da0adde783">SymbolTable::DisplaySymbolTable</a></div><div class="ttdeci">void DisplaySymbolTable()</div><div class="ttdoc">DisplaySymbolTable Display the symbol table to the screen.</div><div class="ttdef"><b>Definition:</b> SymTab.cpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_512de1a5226850579b6c40d7e3f0454e.html">Aayush_k_Term_Projects</a></li><li class="navelem"><b>Assembler.h</b></li>
+    <li class="navelem"><a class="el" href="dir_512de1a5226850579b6c40d7e3f0454e.html">Aayush_k_Term_Projects</a></li><li class="navelem"><a class="el" href="_assembler_8h.html">Assembler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
