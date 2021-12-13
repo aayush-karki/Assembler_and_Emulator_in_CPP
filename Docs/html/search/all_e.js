@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['write_0',['WRITE',['../class_instruction.html#a979a177c00f4eaa722d369e09613cf73ad4b9e47f65b6e79b010582f15785867e',1,'Instruction']]]
+  ['todo_20list_0',['Todo List',['../todo.html',1,'']]],
+  ['translateinstruction_1',['TranslateInstruction',['../class_assembler.html#a992aa79129109eff7c9a0888aa152f2a',1,'Assembler']]]
 ];

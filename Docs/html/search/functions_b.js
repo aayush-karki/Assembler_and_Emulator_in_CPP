@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['_7eassembler_0',['~Assembler',['../class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f',1,'Assembler']]],
-  ['_7efileaccess_1',['~FileAccess',['../class_file_access.html#a10459e5e524182ed3cd6a82dbebb5643',1,'FileAccess']]],
-  ['_7einstruction_2',['~Instruction',['../class_instruction.html#a26eb634480beff1ad7a20235c11f521d',1,'Instruction']]],
-  ['_7emachineinstructiontable_3',['~MachineInstructionTable',['../class_machine_instruction_table.html#a171c922f0ebcbf85178eaa9ccef91565',1,'MachineInstructionTable']]]
+  ['setfundamentalvar_0',['SetFundamentalVar',['../class_instruction.html#ac4d37697b21b1c9fd5102a7d262c52e7',1,'Instruction']]],
+  ['setnumopcode_1',['SetNumOpCode',['../class_instruction.html#ac68c72229314608d2967c49daff093cd',1,'Instruction']]],
+  ['setnumoperand1_2',['SetNumOperand1',['../class_instruction.html#a6f3dcb68dd382487912549de589ac5e9',1,'Instruction']]],
+  ['setnumoperand2_3',['SetNumOperand2',['../class_instruction.html#a8339bef83a19e04c189b62d51e93c8df',1,'Instruction']]],
+  ['smartfillcontent_4',['SmartFillContent',['../class_assembler.html#a55429a9991b826a628033bda4ecfe50f',1,'Assembler']]]
 ];
