@@ -133,9 +133,9 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		{
 			return std::string( "--\n   ERROR--Invalid Syntax--Operand 2 can only have a Label" );
 		}
-		case ( Errors::ErrorTypes::ERROR_InvalidOperand1Len ):
+		case ( Errors::ErrorTypes::ERROR_InvalidNumOperandLen ):
 		{
-			return std::string( "--\n   ERROR--Invalid Syntax--Operand 1 is too large for memory. Its length cannot be more than 5 digit" );
+			return std::string( "--\n   ERROR--Invalid Syntax--Operand 1 is too large for memory. Valid operand 1 range is (+/-)99,999,999,999" );
 		}
 		case ( Errors::ErrorTypes::ERROR_NotLabelConst ):
 		{
@@ -167,7 +167,7 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		}
 		case ( Errors::ErrorTypes::ERROR_InvalidInputRange ):
 		{
-			return std::string( "--\n   ERROR--Invalid input--Valid input range is (+/-)999,999,999,999" );
+			return std::string( "--\n   ERROR--Invalid input--Valid input range is (+/-)99,999,999,999" );
 		}
 	}
 }

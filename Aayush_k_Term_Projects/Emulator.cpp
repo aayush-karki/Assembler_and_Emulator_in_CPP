@@ -173,10 +173,20 @@ bool Emulator::ReadFromUser(std::string &a_userInput, int a_currAddr)
     char sign = '0';
 
     // checking if the first char is - or +
-    if( a_userInput.at( 0 ) == '-' || a_userInput.front() == '+' )
+    if( a_userInput.front() == '-' || a_userInput.front() == '+' )
     {
         sign = a_userInput.at( 0 );
         a_userInput.erase( 0, 1 ); // removing the first char
+
+		// updating first char to 1 if it is '-' else to 0 if it is '+'
+		if( sign == '-' )
+		{
+			sign = 1;
+		}
+		else
+		{
+			sign = 0;
+		}
     }
     
     // checking if all the char are num
@@ -189,8 +199,10 @@ bool Emulator::ReadFromUser(std::string &a_userInput, int a_currAddr)
     }
     
     // checking for length of the string, max is 12 cause word of VC1600 
-	// memory can only handel 12 digits; which is be (+/-)999,999,999,999
-    if( a_userInput.size() > 12 )
+	// memory can only handel 12 digits;
+	// and first digit is reserved to indicate sign 
+	// so it sould only have 11 digits which is be 99,999,999,999
+    if( a_userInput.size() > 11 )
     {
         Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputRange, "Loc", 
 							a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );

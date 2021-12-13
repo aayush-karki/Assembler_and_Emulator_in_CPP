@@ -5,8 +5,12 @@
 /// This assembler and emulator for the VC1620 computer. 
 /// This is similar to the IBM 1620 that was popular in the 1960s.
 /// 
-/// @note even though the memory is 12 digit long as each operands are 5 digit long,
+/// @note even though the word of the machine is 12 digit long as each operands are 5 digit long,
 ///			a range a constant declared by DC operantion code is 99'999
+/// 
+/// @note as word is 12 digit long the machine can only handel a constant of 11 digit long
+///		as the most significant bit is a flag for sign of the constant.
+///		if it is 0 it is positive, and if it is 1 it is negative number.
 /// 
 /// @todo make operand handel -ve value
 /// @todo check the for emulator if the value has gone over the memory, 
