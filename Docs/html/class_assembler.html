@@ -85,8 +85,6 @@ $(document).ready(function(){initNavTree('class_assembler.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_assembler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Assembler Class Reference</div></div>
 </div><!--header-->
@@ -94,8 +92,6 @@ $(document).ready(function(){initNavTree('class_assembler.html',''); initResizab
 
 <p>This is a container for all the components that make up the assembler and runs an emulator on it.  
  <a href="class_assembler.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_assembler_8h_source.html">Assembler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -129,45 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ed4d0badb1c882e5b923a013d23c4a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4">InsertInstToEmulator</a> ()</td></tr>
 <tr class="memdesc:a1ed4d0badb1c882e5b923a013d23c4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">InsertInstToEmulator inserts all the translated machine instruction into the emulator.  <a href="class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4">More...</a><br /></td></tr>
 <tr class="separator:a1ed4d0badb1c882e5b923a013d23c4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af88fabe2e3b31e5982906a99194f55d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#af88fabe2e3b31e5982906a99194f55d0">GetNoError</a> ()</td></tr>
+<tr class="memitem:af88fabe2e3b31e5982906a99194f55d0"><td class="memItemLeft" align="right" valign="top"><a id="af88fabe2e3b31e5982906a99194f55d0" name="af88fabe2e3b31e5982906a99194f55d0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetNoError</b> ()</td></tr>
 <tr class="separator:af88fabe2e3b31e5982906a99194f55d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a55429a9991b826a628033bda4ecfe50f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a55429a9991b826a628033bda4ecfe50f">SmartFillContent</a> (std::string &amp;a_TranslatedContent, int a_ToAppendNum, int a_LengthToFill=5)</td></tr>
-<tr class="memdesc:a55429a9991b826a628033bda4ecfe50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SmartFillContent fills in any need 0 before apending the num to translated content.  <a href="class_assembler.html#a55429a9991b826a628033bda4ecfe50f">More...</a><br /></td></tr>
-<tr class="separator:a55429a9991b826a628033bda4ecfe50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ca511b87643b287f6a13d9e4ccf8cf9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a4ca511b87643b287f6a13d9e4ccf8cf9">LookupDeclaredConst</a> (const std::string &amp;a_symbol)</td></tr>
-<tr class="memdesc:a4ca511b87643b287f6a13d9e4ccf8cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a symbol in the declared constant table.  <a href="class_assembler.html#a4ca511b87643b287f6a13d9e4ccf8cf9">More...</a><br /></td></tr>
-<tr class="separator:a4ca511b87643b287f6a13d9e4ccf8cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac784c6ac50a3c79d8e867e1776b6ccc7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#ac784c6ac50a3c79d8e867e1776b6ccc7">LookupDeclaredVarMem</a> (const std::string &amp;a_symbol)</td></tr>
-<tr class="memdesc:ac784c6ac50a3c79d8e867e1776b6ccc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a symbol in the declared variable memory table.  <a href="class_assembler.html#ac784c6ac50a3c79d8e867e1776b6ccc7">More...</a><br /></td></tr>
-<tr class="separator:ac784c6ac50a3c79d8e867e1776b6ccc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a992aa79129109eff7c9a0888aa152f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a992aa79129109eff7c9a0888aa152f2a">TranslateInstruction</a> (int a_Loc, int a_LineCounter)</td></tr>
-<tr class="memdesc:a992aa79129109eff7c9a0888aa152f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TranslateInstruction translates the given assembly instruction as much as possible.  <a href="class_assembler.html#a992aa79129109eff7c9a0888aa152f2a">More...</a><br /></td></tr>
-<tr class="separator:a992aa79129109eff7c9a0888aa152f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef92fa25033234a57841cfb2738612be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#aef92fa25033234a57841cfb2738612be">ComputeNextLoc</a> (int &amp;a_loc, int &amp;a_LineCounter, bool &amp;a_insufficentMemory)</td></tr>
-<tr class="memdesc:aef92fa25033234a57841cfb2738612be"><td class="mdescLeft">&#160;</td><td class="mdescRight">ComputeNextLoc computes next location.  <a href="class_assembler.html#aef92fa25033234a57841cfb2738612be">More...</a><br /></td></tr>
-<tr class="separator:aef92fa25033234a57841cfb2738612be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a10e35790dd7d6992103d023146a085e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a10e35790dd7d6992103d023146a085e2">m_noError</a></td></tr>
-<tr class="separator:a10e35790dd7d6992103d023146a085e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d5c967ce6f17647a9f2034882ec6f40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_file_access.html">FileAccess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a4d5c967ce6f17647a9f2034882ec6f40">m_facc</a></td></tr>
-<tr class="separator:a4d5c967ce6f17647a9f2034882ec6f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33fafe1d85a14971be622ede1c4398a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_symbol_table.html">SymbolTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a33fafe1d85a14971be622ede1c4398a3">m_symtab</a></td></tr>
-<tr class="separator:a33fafe1d85a14971be622ede1c4398a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6f9b5a8415ec4f3479b46605bdca0ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_instruction.html">Instruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#aa6f9b5a8415ec4f3479b46605bdca0ce">m_inst</a></td></tr>
-<tr class="separator:aa6f9b5a8415ec4f3479b46605bdca0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dbaf545acae2122587de162b2147df7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_machine_instruction_table.html">MachineInstructionTable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a7dbaf545acae2122587de162b2147df7">m_machInstTab</a></td></tr>
-<tr class="separator:a7dbaf545acae2122587de162b2147df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4199a756bada832cda3bfc9038c7da0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_emulator.html">Emulator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#ae4199a756bada832cda3bfc9038c7da0">m_emul</a></td></tr>
-<tr class="separator:ae4199a756bada832cda3bfc9038c7da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01cec940e246a4b4d20a2ccc01133759"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a01cec940e246a4b4d20a2ccc01133759">m_declaredConstTab</a></td></tr>
-<tr class="separator:a01cec940e246a4b4d20a2ccc01133759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9ad17474772c4964084214167d2b53"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a3c9ad17474772c4964084214167d2b53">m_declaredMemVarTab</a></td></tr>
-<tr class="separator:a3c9ad17474772c4964084214167d2b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is a container for all the components that make up the assembler and runs an emulator on it. </p>
@@ -211,9 +171,7 @@ argc should be 2 else it will be raised by the file access class raise an error<
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki </dd>
-<dd>
-Victor Miller</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
 
 </div>
@@ -234,68 +192,12 @@ Victor Miller</dd></dl>
 </div><div class="memdoc">
 
 <p>Destructor. </p>
-<dl class="section author"><dt>Author</dt><dd>Victor Miller</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aef92fa25033234a57841cfb2738612be" name="aef92fa25033234a57841cfb2738612be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef92fa25033234a57841cfb2738612be">&#9670;&nbsp;</a></span>ComputeNextLoc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Assembler::ComputeNextLoc </td>
-          <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>a_loc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>a_LineCounter</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>a_insufficentMemory</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ComputeNextLoc computes next location. </p>
-<p >ComputeNextLoc sets the a_loc value to operand1 if opCode is ORG, adds the value in operand1 to a_loc if opCode is DS, else it increments a_loc by 1</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_loc</td><td>address of loction variable </td></tr>
-    <tr><td class="paramname">a_LineCounter</td><td>address of lineCounter variable </td></tr>
-    <tr><td class="paramname">a_insufficentMemory</td><td>address of variable that signifiy if there insufficent memory error was flaged or not</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 25, 2021 <br  />
- </dd></dl>
-
-</div>
-</div>
 <a id="a60c1f5ef54ec26a83af95214efb50cdc" name="a60c1f5ef54ec26a83af95214efb50cdc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60c1f5ef54ec26a83af95214efb50cdc">&#9670;&nbsp;</a></span>DisplayDeclaredConstTab()</h2>
 
@@ -391,33 +293,8 @@ Victor Miller</dd></dl>
 </div><div class="memdoc">
 
 <p>DisplaySymbolTable displays the symbols in the symbol table. </p>
-<dl class="section author"><dt>Author</dt><dd>Victor Miller</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
-
-</div>
-</div>
-<a id="af88fabe2e3b31e5982906a99194f55d0" name="af88fabe2e3b31e5982906a99194f55d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af88fabe2e3b31e5982906a99194f55d0">&#9670;&nbsp;</a></span>GetNoError()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Assembler::GetNoError </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -442,86 +319,6 @@ Victor Miller</dd></dl>
 
 </div>
 </div>
-<a id="a4ca511b87643b287f6a13d9e4ccf8cf9" name="a4ca511b87643b287f6a13d9e4ccf8cf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ca511b87643b287f6a13d9e4ccf8cf9">&#9670;&nbsp;</a></span>LookupDeclaredConst()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Assembler::LookupDeclaredConst </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>a_symbol</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Lookup a symbol in the declared constant table. </p>
-<p >This is used to validate if the lable used as operand1 for ADD, SUB, MULT, DIV, COPY, READ, and WRITE should point to memory variable</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_assembler.html#ac784c6ac50a3c79d8e867e1776b6ccc7" title="Lookup a symbol in the declared variable memory table.">LookupDeclaredVarMem()</a></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>memory varialble are declared using opcode DC or DS</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_symbol</td><td>address of symbol to lookup</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>LookupSymbol returns true is symbol is found in table else returns false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
-
-</div>
-</div>
-<a id="ac784c6ac50a3c79d8e867e1776b6ccc7" name="ac784c6ac50a3c79d8e867e1776b6ccc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac784c6ac50a3c79d8e867e1776b6ccc7">&#9670;&nbsp;</a></span>LookupDeclaredVarMem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Assembler::LookupDeclaredVarMem </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>a_symbol</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Lookup a symbol in the declared variable memory table. </p>
-<p >This is used to validate if the lable used as operand1 for ADD, SUB, MULT, DIV, COPY, READ, and WRITE should point to memory variable</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_assembler.html#a4ca511b87643b287f6a13d9e4ccf8cf9" title="Lookup a symbol in the declared constant table.">LookupDeclaredConst()</a></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>memory varialble are declared using opcode DC or DS</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_symbol</td><td>address of symbol to lookup</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>LookupSymbol returns true is symbol is found in table else returns false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
-
-</div>
-</div>
 <a id="a1aada326bbf84329ff60ca0533a6f9e8" name="a1aada326bbf84329ff60ca0533a6f9e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aada326bbf84329ff60ca0533a6f9e8">&#9670;&nbsp;</a></span>PassI()</h2>
 
@@ -540,9 +337,7 @@ Victor Miller</dd></dl>
 <p>Pass I establishes the location of the labels. </p>
 <p >Pass I will go through the file from top to bottom on line by line basis and finds any label and their corresponding memory location adding them to symbol table</p>
 <dl class="section note"><dt>Note</dt><dd>responsible for reporting multi defined label error but is displayed after PassII</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki </dd>
-<dd>
-Victor Miller</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
 
 </div>
@@ -590,294 +385,9 @@ Victor Miller</dd></dl>
 
 </div>
 </div>
-<a id="a55429a9991b826a628033bda4ecfe50f" name="a55429a9991b826a628033bda4ecfe50f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55429a9991b826a628033bda4ecfe50f">&#9670;&nbsp;</a></span>SmartFillContent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Assembler::SmartFillContent </td>
-          <td>(</td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>a_TranslatedContent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a_ToAppendNum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a_LengthToFill</em> = <code>5</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>SmartFillContent fills in any need 0 before apending the num to translated content. </p>
-<dl class="section note"><dt>Note</dt><dd>for DC the value of operand1 is stored in operand 2, so the a_lengthToFill is 10 </dd>
-<dd>
-for every thing the value of operand1 and operand1 is 5 long. So, the a_lengthToFill is 5 </dd>
-<dd>
-Opcodes if 2 long. So, a_lengthToFill is 2</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_TranslatedContent</td><td>address of the string to append to </td></tr>
-    <tr><td class="paramname">a_ToAppendNum</td><td>interger value to append to the string </td></tr>
-    <tr><td class="paramname">a_LengthToFill</td><td>final length of the a_toAppendNum</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ValidateOperand2Lab returns true if it does else false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
-
-</div>
-</div>
-<a id="a992aa79129109eff7c9a0888aa152f2a" name="a992aa79129109eff7c9a0888aa152f2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a992aa79129109eff7c9a0888aa152f2a">&#9670;&nbsp;</a></span>TranslateInstruction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Assembler::TranslateInstruction </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a_Loc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a_LineCounter</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>TranslateInstruction translates the given assembly instruction as much as possible. </p>
-<p >All of errors are reported</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_loc</td><td>current location </td></tr>
-    <tr><td class="paramname">a_LineCounter</td><td>current line</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a01cec940e246a4b4d20a2ccc01133759" name="a01cec940e246a4b4d20a2ccc01133759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01cec940e246a4b4d20a2ccc01133759">&#9670;&nbsp;</a></span>m_declaredConstTab</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt;std::string, int&gt; Assembler::m_declaredConstTab</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3c9ad17474772c4964084214167d2b53" name="a3c9ad17474772c4964084214167d2b53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c9ad17474772c4964084214167d2b53">&#9670;&nbsp;</a></span>m_declaredMemVarTab</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt;std::string, int&gt; Assembler::m_declaredMemVarTab</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae4199a756bada832cda3bfc9038c7da0" name="ae4199a756bada832cda3bfc9038c7da0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4199a756bada832cda3bfc9038c7da0">&#9670;&nbsp;</a></span>m_emul</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_emulator.html">Emulator</a> Assembler::m_emul</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4d5c967ce6f17647a9f2034882ec6f40" name="a4d5c967ce6f17647a9f2034882ec6f40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d5c967ce6f17647a9f2034882ec6f40">&#9670;&nbsp;</a></span>m_facc</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_file_access.html">FileAccess</a> Assembler::m_facc</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa6f9b5a8415ec4f3479b46605bdca0ce" name="aa6f9b5a8415ec4f3479b46605bdca0ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6f9b5a8415ec4f3479b46605bdca0ce">&#9670;&nbsp;</a></span>m_inst</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_instruction.html">Instruction</a> Assembler::m_inst</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7dbaf545acae2122587de162b2147df7" name="a7dbaf545acae2122587de162b2147df7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dbaf545acae2122587de162b2147df7">&#9670;&nbsp;</a></span>m_machInstTab</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_machine_instruction_table.html">MachineInstructionTable</a> Assembler::m_machInstTab</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a10e35790dd7d6992103d023146a085e2" name="a10e35790dd7d6992103d023146a085e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e35790dd7d6992103d023146a085e2">&#9670;&nbsp;</a></span>m_noError</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Assembler::m_noError</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a33fafe1d85a14971be622ede1c4398a3" name="a33fafe1d85a14971be622ede1c4398a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33fafe1d85a14971be622ede1c4398a3">&#9670;&nbsp;</a></span>m_symtab</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_symbol_table.html">SymbolTable</a> Assembler::m_symtab</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Aayush_k_Term_Projects/<a class="el" href="_assembler_8h_source.html">Assembler.h</a></li>
-<li>Aayush_k_Term_Projects/<a class="el" href="_assembler_8cpp.html">Assembler.cpp</a></li>
+<li>Aayush_k_Term_Projects/Assembler.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

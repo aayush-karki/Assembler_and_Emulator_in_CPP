@@ -1,20 +1,15 @@
 var searchData=
 [
-  ['getdefaultcontent_0',['GetDefaultContent',['../class_machine_instruction_table.html#a5369c331a7e18d98fd8c276762df1c46',1,'MachineInstructionTable']]],
-  ['getdefaultlocation_1',['GetDefaultLocation',['../class_machine_instruction_table.html#a29d50c5c509f3a8dde89c630e9a2f5cf',1,'MachineInstructionTable']]],
-  ['geterrormessagebegin_2',['GetErrorMessageBegin',['../class_errors.html#a44b8b910fcb266484e59d164d84ed1c8',1,'Errors']]],
-  ['geterrormessageend_3',['GetErrorMessageEnd',['../class_errors.html#ad1d1cdb4231b922dce9474bcca04aa67',1,'Errors']]],
-  ['geterrormsgtypebegin_4',['GetErrorMsgTypeBegin',['../class_instruction.html#a7dfb0f85b9859ed092e99ced9f3e1340',1,'Instruction']]],
-  ['geterrormsgtypeend_5',['GetErrorMsgTypeEnd',['../class_instruction.html#a4f93dece43308ff797cd11521e3c565d',1,'Instruction']]],
-  ['getlabel_6',['GetLabel',['../class_instruction.html#a9db27cdde18078d3a8b60e7e1a16108d',1,'Instruction']]],
-  ['getmachineinsttabbegin_7',['GetMachineInstTabBegin',['../class_machine_instruction_table.html#a17ce09717f062fb2644d4429f3581b10',1,'MachineInstructionTable']]],
-  ['getmachineinsttabend_8',['GetMachineInstTabEnd',['../class_machine_instruction_table.html#a72899f7659ef1de788e14f061b8e7fa8',1,'MachineInstructionTable']]],
-  ['getnextline_9',['GetNextLine',['../class_file_access.html#ae873ad4b8fb51ae0f7ca05d4320633a7',1,'FileAccess']]],
-  ['getnoerror_10',['GetNoError',['../class_assembler.html#af88fabe2e3b31e5982906a99194f55d0',1,'Assembler']]],
-  ['getnumoperand1_11',['GetNumOperand1',['../class_instruction.html#af3811474a5c1ad514dd2b8875a94083f',1,'Instruction']]],
-  ['getnumoperand2_12',['GetNumOperand2',['../class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555',1,'Instruction']]],
-  ['getopcodenum_13',['GetOpCodeNum',['../class_instruction.html#a0bf49f629d214eb8c97b9c3420dba354',1,'Instruction']]],
-  ['getoperand1_14',['GetOperand1',['../class_instruction.html#af688735cb40af9f44e32317e9f611ed7',1,'Instruction']]],
-  ['getoperand2_15',['GetOperand2',['../class_instruction.html#a1621a483cb6308d6d721de799a22120e',1,'Instruction']]],
-  ['getorgiinst_16',['GetOrgiInst',['../class_instruction.html#a796ea1d9aeebcd050024c57831c33c2f',1,'Instruction']]]
+  ['initerrorreporting_0',['InitErrorReporting',['../class_errors.html#aab977ccc6c560f0e0b287cf46cf18ade',1,'Errors']]],
+  ['insertinsttoemulator_1',['InsertInstToEmulator',['../class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4',1,'Assembler']]],
+  ['insertmemory_2',['InsertMemory',['../class_emulator.html#ad773f411c92b4b501b036db00c825167',1,'Emulator']]],
+  ['instruction_3',['Instruction',['../class_instruction.html',1,'Instruction'],['../class_instruction.html#aebd15229c1651af49dcb203707e7a2d5',1,'Instruction::Instruction()']]],
+  ['instructiontype_4',['InstructionType',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18e',1,'Instruction']]],
+  ['iserrorfundvar_5',['IsErrorFundVar',['../class_instruction.html#ad79bbe28e750d7621e2c8e88f0bc37ae',1,'Instruction']]],
+  ['iserroropcode_6',['IsErrorOpCode',['../class_instruction.html#aee78542c8c38329f6949ba54fdce5eee',1,'Instruction']]],
+  ['iserroroperand1_7',['IsErrorOperand1',['../class_instruction.html#a7d3837cd392375002afc4fb73cbf9fdc',1,'Instruction']]],
+  ['iserroroperand2_8',['IsErrorOperand2',['../class_instruction.html#aa51aa61d0e5108559b9f4980e84a6c8f',1,'Instruction']]],
+  ['islabel_9',['IsLabel',['../class_instruction.html#afd9e666acd0bbcea10261c68a0a84807',1,'Instruction']]],
+  ['isnumoperand1_10',['IsNumOperand1',['../class_instruction.html#ad8b52c8e42fd8de20ea6c7c5d99c265a',1,'Instruction']]],
+  ['isnumoperand2_11',['IsNumOperand2',['../class_instruction.html#aadc9352f71c0f51640224dcdee975ef2',1,'Instruction']]]
 ];

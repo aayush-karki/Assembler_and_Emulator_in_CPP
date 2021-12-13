@@ -86,8 +86,6 @@ $(document).ready(function(){initNavTree('class_emulator.html',''); initResizabl
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_emulator-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Emulator Class Reference</div></div>
 </div><!--header-->
@@ -96,7 +94,7 @@ $(document).ready(function(){initNavTree('class_emulator.html',''); initResizabl
 <p>This is a class for emulator.  
  <a href="class_emulator.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_emulator_8h_source.html">Emulator.h</a>&gt;</code></p>
+<p><code>#include &quot;<a class="el" href="_emulator_8h_source.html">Emulator.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -115,21 +113,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:aa790b65ebd90f0a2764dc7e2954955be"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_emulator.html#aa790b65ebd90f0a2764dc7e2954955be">MEMSZ</a> = 100000</td></tr>
+<tr class="memitem:aa790b65ebd90f0a2764dc7e2954955be"><td class="memItemLeft" align="right" valign="top"><a id="aa790b65ebd90f0a2764dc7e2954955be" name="aa790b65ebd90f0a2764dc7e2954955be"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MEMSZ</b> = 100000</td></tr>
 <tr class="separator:aa790b65ebd90f0a2764dc7e2954955be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a330d5b7823b57ad1191722a3c5e25980"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_emulator.html#a330d5b7823b57ad1191722a3c5e25980">ReadFromUser</a> (std::string &amp;a_userInput, int a_currAddr)</td></tr>
-<tr class="memdesc:a330d5b7823b57ad1191722a3c5e25980"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReadFromUser get a interger from user.  <a href="class_emulator.html#a330d5b7823b57ad1191722a3c5e25980">More...</a><br /></td></tr>
-<tr class="separator:a330d5b7823b57ad1191722a3c5e25980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:afb210e5749fce7b0cb5c203d38106155"><td class="memItemLeft" align="right" valign="top">std::vector&lt; long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_emulator.html#afb210e5749fce7b0cb5c203d38106155">m_memory</a></td></tr>
-<tr class="separator:afb210e5749fce7b0cb5c203d38106155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacfc76fa3eebf6693733fb399ae9102e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_emulator.html#aacfc76fa3eebf6693733fb399ae9102e">m_START_ADDRESS</a> = 100</td></tr>
-<tr class="separator:aacfc76fa3eebf6693733fb399ae9102e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is a class for emulator. </p>
@@ -167,7 +153,7 @@ If only emulator is used, there are lot of errors which it does not accounts for
 <p >The size of the memory of the VC1620. </p>
 </blockquote>
 </p>
-<p >constructor, inializes the memory.</p>
+<p >Constructor inializes the memory.</p>
 <p >It resizes the memory to the size defined by MEMSZ and sets each to have the value of 0.</p>
 <dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>December 03, 2021 </dd></dl>
@@ -205,55 +191,12 @@ If only emulator is used, there are lot of errors which it does not accounts for
 <p >InsertMemory checks for valid location</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a_location</td><td>index of VC1620 memory where the intruction or data should be stored </td></tr>
+    <tr><td class="paramname">a_location</td><td>index of VC1620 memory, where the intruction or data should be stored </td></tr>
     <tr><td class="paramname">a_contents</td><td>intruction and data that needs to be stored in the memory</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if successfull</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>December 03, 2021 </dd></dl>
-
-</div>
-</div>
-<a id="a330d5b7823b57ad1191722a3c5e25980" name="a330d5b7823b57ad1191722a3c5e25980"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a330d5b7823b57ad1191722a3c5e25980">&#9670;&nbsp;</a></span>ReadFromUser()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Emulator::ReadFromUser </td>
-          <td>(</td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>a_userInput</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a_currAddr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ReadFromUser get a interger from user. </p>
-<p >ReadFromUser is called for opCode 07 "READ." It also validates the user input.</p>
-<dl class="section note"><dt>Note</dt><dd>As each word is 12 digit long, a valid userInput is +/- 999,999,999,999.</dd></dl>
-<p>returns true if recorded program run successfully; else returns false.</p>
 <dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>December 03, 2021 </dd></dl>
 
@@ -282,76 +225,9 @@ If only emulator is used, there are lot of errors which it does not accounts for
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="afb210e5749fce7b0cb5c203d38106155" name="afb210e5749fce7b0cb5c203d38106155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb210e5749fce7b0cb5c203d38106155">&#9670;&nbsp;</a></span>m_memory</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;long long&gt; Emulator::m_memory</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aacfc76fa3eebf6693733fb399ae9102e" name="aacfc76fa3eebf6693733fb399ae9102e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacfc76fa3eebf6693733fb399ae9102e">&#9670;&nbsp;</a></span>m_START_ADDRESS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Emulator::m_START_ADDRESS = 100</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa790b65ebd90f0a2764dc7e2954955be" name="aa790b65ebd90f0a2764dc7e2954955be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa790b65ebd90f0a2764dc7e2954955be">&#9670;&nbsp;</a></span>MEMSZ</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Emulator::MEMSZ = 100000</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Aayush_k_Term_Projects/<a class="el" href="_emulator_8h_source.html">Emulator.h</a></li>
-<li>Aayush_k_Term_Projects/<a class="el" href="_emulator_8cpp.html">Emulator.cpp</a></li>
+<li>Aayush_k_Term_Projects/Emulator.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

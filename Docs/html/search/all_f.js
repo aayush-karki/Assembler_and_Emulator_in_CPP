@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['validateopcodesyntax_0',['ValidateOpCodeSyntax',['../class_instruction.html#a3bea8a867d955b8072174e5dd9aac087',1,'Instruction']]],
-  ['validatesymsyntax_1',['ValidateSymSyntax',['../class_instruction.html#aee25f5062cfff75ada60bbfe4273eb18',1,'Instruction']]]
+  ['_7eassembler_0',['~Assembler',['../class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f',1,'Assembler']]],
+  ['_7einstruction_1',['~Instruction',['../class_instruction.html#a26eb634480beff1ad7a20235c11f521d',1,'Instruction']]]
 ];

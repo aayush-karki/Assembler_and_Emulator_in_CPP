@@ -9,8 +9,6 @@ var searchData=
   ['iserroroperand1_6',['IsErrorOperand1',['../class_instruction.html#a7d3837cd392375002afc4fb73cbf9fdc',1,'Instruction']]],
   ['iserroroperand2_7',['IsErrorOperand2',['../class_instruction.html#aa51aa61d0e5108559b9f4980e84a6c8f',1,'Instruction']]],
   ['islabel_8',['IsLabel',['../class_instruction.html#afd9e666acd0bbcea10261c68a0a84807',1,'Instruction']]],
-  ['isnum_9',['IsNum',['../class_instruction.html#a3a1b4f4e5d3e3460796a75a5a4623903',1,'Instruction']]],
-  ['isnumoperand1_10',['IsNumOperand1',['../class_instruction.html#ad8b52c8e42fd8de20ea6c7c5d99c265a',1,'Instruction']]],
-  ['isnumoperand2_11',['IsNumOperand2',['../class_instruction.html#aadc9352f71c0f51640224dcdee975ef2',1,'Instruction']]],
-  ['isopcode_12',['IsOpCode',['../class_instruction.html#aed100c71e2951d65f632f5e844a44961',1,'Instruction']]]
+  ['isnumoperand1_9',['IsNumOperand1',['../class_instruction.html#ad8b52c8e42fd8de20ea6c7c5d99c265a',1,'Instruction']]],
+  ['isnumoperand2_10',['IsNumOperand2',['../class_instruction.html#aadc9352f71c0f51640224dcdee975ef2',1,'Instruction']]]
 ];

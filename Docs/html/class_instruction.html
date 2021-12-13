@@ -86,8 +86,6 @@ $(document).ready(function(){initNavTree('class_instruction.html',''); initResiz
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_instruction-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Instruction Class Reference</div></div>
 </div><!--header-->
@@ -96,7 +94,7 @@ $(document).ready(function(){initNavTree('class_instruction.html',''); initResiz
 <p>Class to parse and provide information about instructions.  
  <a href="class_instruction.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_instruction_8h_source.html">Instruction.h</a>&gt;</code></p>
+<p><code>#include &quot;<a class="el" href="_instruction_8h_source.html">Instruction.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -109,7 +107,8 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18eab592df12e518a75060b2c2403f07998c">ST_Error</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a191ca348a40cb711a9d41933b35ef18e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> type indicates the type of instruction we are processing.  <a href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">More...</a><br /></td></tr>
+<tr class="memdesc:a191ca348a40cb711a9d41933b35ef18e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> type indicates the type of instruction we are processing. <br  />
+  <a href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">More...</a><br /></td></tr>
 <tr class="separator:a191ca348a40cb711a9d41933b35ef18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -117,8 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aebd15229c1651af49dcb203707e7a2d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aebd15229c1651af49dcb203707e7a2d5">Instruction</a> ()</td></tr>
 <tr class="memdesc:aebd15229c1651af49dcb203707e7a2d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> class.  <a href="class_instruction.html#aebd15229c1651af49dcb203707e7a2d5">More...</a><br /></td></tr>
 <tr class="separator:aebd15229c1651af49dcb203707e7a2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26eb634480beff1ad7a20235c11f521d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a26eb634480beff1ad7a20235c11f521d">~Instruction</a> ()</td></tr>
-<tr class="memdesc:a26eb634480beff1ad7a20235c11f521d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor for the <a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> class.  <a href="class_instruction.html#a26eb634480beff1ad7a20235c11f521d">More...</a><br /></td></tr>
+<tr class="memitem:a26eb634480beff1ad7a20235c11f521d"><td class="memItemLeft" align="right" valign="top"><a id="a26eb634480beff1ad7a20235c11f521d" name="a26eb634480beff1ad7a20235c11f521d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Instruction</b> ()</td></tr>
+<tr class="memdesc:a26eb634480beff1ad7a20235c11f521d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor for the <a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> class. <br /></td></tr>
 <tr class="separator:a26eb634480beff1ad7a20235c11f521d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91e07a77007bc08898b78d02892bc187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">Instruction::InstructionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a91e07a77007bc08898b78d02892bc187">ParseInstruction</a> (std::string a_line)</td></tr>
 <tr class="memdesc:a91e07a77007bc08898b78d02892bc187"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParseInstruction Parses the line of string into its component.  <a href="class_instruction.html#a91e07a77007bc08898b78d02892bc187">More...</a><br /></td></tr>
@@ -141,9 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1621a483cb6308d6d721de799a22120e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a1621a483cb6308d6d721de799a22120e">GetOperand2</a> ()</td></tr>
 <tr class="memdesc:a1621a483cb6308d6d721de799a22120e"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the content stored in of operand2  <a href="class_instruction.html#a1621a483cb6308d6d721de799a22120e">More...</a><br /></td></tr>
 <tr class="separator:a1621a483cb6308d6d721de799a22120e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3811474a5c1ad514dd2b8875a94083f"><td class="memItemLeft" align="right" valign="top">const long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#af3811474a5c1ad514dd2b8875a94083f">GetNumOperand1</a> ()</td></tr>
-<tr class="memdesc:af3811474a5c1ad514dd2b8875a94083f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the numerical value of operand 1  <a href="class_instruction.html#af3811474a5c1ad514dd2b8875a94083f">More...</a><br /></td></tr>
-<tr class="separator:af3811474a5c1ad514dd2b8875a94083f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae142535d2b46a5b269db509d4af5ccda"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ae142535d2b46a5b269db509d4af5ccda">GetNumOperand1</a> ()</td></tr>
+<tr class="memdesc:ae142535d2b46a5b269db509d4af5ccda"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the numerical value of operand 1  <a href="class_instruction.html#ae142535d2b46a5b269db509d4af5ccda">More...</a><br /></td></tr>
+<tr class="separator:ae142535d2b46a5b269db509d4af5ccda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d7d98143f77467ba18f006dd3b5e555"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555">GetNumOperand2</a> ()</td></tr>
 <tr class="memdesc:a7d7d98143f77467ba18f006dd3b5e555"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function to access the numerical value of operand 2  <a href="class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555">More...</a><br /></td></tr>
 <tr class="separator:a7d7d98143f77467ba18f006dd3b5e555"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,87 +174,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad79bbe28e750d7621e2c8e88f0bc37ae"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ad79bbe28e750d7621e2c8e88f0bc37ae">IsErrorFundVar</a> ()</td></tr>
 <tr class="memdesc:ad79bbe28e750d7621e2c8e88f0bc37ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function  <a href="class_instruction.html#ad79bbe28e750d7621e2c8e88f0bc37ae">More...</a><br /></td></tr>
 <tr class="separator:ad79bbe28e750d7621e2c8e88f0bc37ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a0963106b13056679f9565a74a2a8e6de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a0963106b13056679f9565a74a2a8e6de">ClearMemberVariables</a> ()</td></tr>
-<tr class="memdesc:a0963106b13056679f9565a74a2a8e6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">ClearMemberVariables cleans all non-constant member variable.  <a href="class_instruction.html#a0963106b13056679f9565a74a2a8e6de">More...</a><br /></td></tr>
-<tr class="separator:a0963106b13056679f9565a74a2a8e6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab305f10c5a680f83d7c02acec31a7716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ab305f10c5a680f83d7c02acec31a7716">RemoveComment</a> (std::string &amp;a_line)</td></tr>
-<tr class="memdesc:ab305f10c5a680f83d7c02acec31a7716"><td class="mdescLeft">&#160;</td><td class="mdescRight">RemoveComment removes everything after first instances of a ';' from the parameter a_line.  <a href="class_instruction.html#ab305f10c5a680f83d7c02acec31a7716">More...</a><br /></td></tr>
-<tr class="separator:ab305f10c5a680f83d7c02acec31a7716"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a1b4f4e5d3e3460796a75a5a4623903"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a3a1b4f4e5d3e3460796a75a5a4623903">IsNum</a> (std::string a_string)</td></tr>
-<tr class="memdesc:a3a1b4f4e5d3e3460796a75a5a4623903"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsNum returns true if the parameter string is a digit.  <a href="class_instruction.html#a3a1b4f4e5d3e3460796a75a5a4623903">More...</a><br /></td></tr>
-<tr class="separator:a3a1b4f4e5d3e3460796a75a5a4623903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed100c71e2951d65f632f5e844a44961"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aed100c71e2951d65f632f5e844a44961">IsOpCode</a> (std::string a_string)</td></tr>
-<tr class="memdesc:aed100c71e2951d65f632f5e844a44961"><td class="mdescLeft">&#160;</td><td class="mdescRight">IsOpCode returns true if the parameter a_string is in enum Instruction::OpCode.  <a href="class_instruction.html#aed100c71e2951d65f632f5e844a44961">More...</a><br /></td></tr>
-<tr class="separator:aed100c71e2951d65f632f5e844a44961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11e47538768ca8a996d3d98e2ad18cfe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a11e47538768ca8a996d3d98e2ad18cfe">AllUpperCase</a> (std::string a_string)</td></tr>
-<tr class="memdesc:a11e47538768ca8a996d3d98e2ad18cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">AllUpperCase capitalises teh content of parameter a_string.  <a href="class_instruction.html#a11e47538768ca8a996d3d98e2ad18cfe">More...</a><br /></td></tr>
-<tr class="separator:a11e47538768ca8a996d3d98e2ad18cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4d37697b21b1c9fd5102a7d262c52e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ac4d37697b21b1c9fd5102a7d262c52e7">SetFundamentalVar</a> (std::vector&lt; std::string &gt; &amp;a_indivisualInstruction)</td></tr>
-<tr class="memdesc:ac4d37697b21b1c9fd5102a7d262c52e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">SetFundamentalVar sets the member varible unless there is a Invalid syntax.  <a href="class_instruction.html#ac4d37697b21b1c9fd5102a7d262c52e7">More...</a><br /></td></tr>
-<tr class="separator:ac4d37697b21b1c9fd5102a7d262c52e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac68c72229314608d2967c49daff093cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ac68c72229314608d2967c49daff093cd">SetNumOpCode</a> ()</td></tr>
-<tr class="memdesc:ac68c72229314608d2967c49daff093cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter function to set the Numeric equivalent of Operation code  <a href="class_instruction.html#ac68c72229314608d2967c49daff093cd">More...</a><br /></td></tr>
-<tr class="separator:ac68c72229314608d2967c49daff093cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f3dcb68dd382487912549de589ac5e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a6f3dcb68dd382487912549de589ac5e9">SetNumOperand1</a> ()</td></tr>
-<tr class="memdesc:a6f3dcb68dd382487912549de589ac5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter function to set numiric first operand  <a href="class_instruction.html#a6f3dcb68dd382487912549de589ac5e9">More...</a><br /></td></tr>
-<tr class="separator:a6f3dcb68dd382487912549de589ac5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8339bef83a19e04c189b62d51e93c8df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a8339bef83a19e04c189b62d51e93c8df">SetNumOperand2</a> ()</td></tr>
-<tr class="memdesc:a8339bef83a19e04c189b62d51e93c8df"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter function to set numiric second operand  <a href="class_instruction.html#a8339bef83a19e04c189b62d51e93c8df">More...</a><br /></td></tr>
-<tr class="separator:a8339bef83a19e04c189b62d51e93c8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee25f5062cfff75ada60bbfe4273eb18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aee25f5062cfff75ada60bbfe4273eb18">ValidateSymSyntax</a> (std::string a_Symbol)</td></tr>
-<tr class="memdesc:aee25f5062cfff75ada60bbfe4273eb18"><td class="mdescLeft">&#160;</td><td class="mdescRight">ValidateSymSyntax checks if a symbol meets the requirement.  <a href="class_instruction.html#aee25f5062cfff75ada60bbfe4273eb18">More...</a><br /></td></tr>
-<tr class="separator:aee25f5062cfff75ada60bbfe4273eb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bea8a867d955b8072174e5dd9aac087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a3bea8a867d955b8072174e5dd9aac087">ValidateOpCodeSyntax</a> ()</td></tr>
-<tr class="memdesc:a3bea8a867d955b8072174e5dd9aac087"><td class="mdescLeft">&#160;</td><td class="mdescRight">ValidateOpCodeSyntax checks if the instruction syntax was vaild or not.  <a href="class_instruction.html#a3bea8a867d955b8072174e5dd9aac087">More...</a><br /></td></tr>
-<tr class="separator:a3bea8a867d955b8072174e5dd9aac087"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:af90f268fce276cad5c40959d66938681"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#af90f268fce276cad5c40959d66938681">m_Instruction</a></td></tr>
-<tr class="separator:af90f268fce276cad5c40959d66938681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18014b06b66b73dcee17d7656ce91e46"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a18014b06b66b73dcee17d7656ce91e46">m_Label</a></td></tr>
-<tr class="separator:a18014b06b66b73dcee17d7656ce91e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2d32cb255e564f8abe43bdda477cc6d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aa2d32cb255e564f8abe43bdda477cc6d">m_OpCode</a></td></tr>
-<tr class="separator:aa2d32cb255e564f8abe43bdda477cc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a7c2c747e095ccda616fb0807c4e9da"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a3a7c2c747e095ccda616fb0807c4e9da">m_Operand1</a></td></tr>
-<tr class="separator:a3a7c2c747e095ccda616fb0807c4e9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5316e622baf0e6ccadd0fa3f54dd88bf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a5316e622baf0e6ccadd0fa3f54dd88bf">m_Operand2</a></td></tr>
-<tr class="separator:a5316e622baf0e6ccadd0fa3f54dd88bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe59b06903bc0046ac5b6e55f9d5a0d5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_errors.html#a2aebcb48c7d722da1b295349ebaad906">Errors::ErrorTypes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#afe59b06903bc0046ac5b6e55f9d5a0d5">m_ErrorMsgType</a></td></tr>
-<tr class="separator:afe59b06903bc0046ac5b6e55f9d5a0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39d704034cf725bfbfc6d943dc1bec7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a39d704034cf725bfbfc6d943dc1bec7a">m_ErrorOpCode</a></td></tr>
-<tr class="separator:a39d704034cf725bfbfc6d943dc1bec7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe1508cbe0f0f00b690fb21ee394c362"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#afe1508cbe0f0f00b690fb21ee394c362">m_ErrorOperand1</a></td></tr>
-<tr class="separator:afe1508cbe0f0f00b690fb21ee394c362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ec003f0e6379d7a7d276da4ec9d0acb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a5ec003f0e6379d7a7d276da4ec9d0acb">m_ErrorOperand2</a></td></tr>
-<tr class="separator:a5ec003f0e6379d7a7d276da4ec9d0acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec599be76d1eede38322694027a94f54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#aec599be76d1eede38322694027a94f54">m_ErrorFundVar</a></td></tr>
-<tr class="separator:aec599be76d1eede38322694027a94f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46cd0be9c2c688559b7d41a1ae51236"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">Instruction::InstructionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#ad46cd0be9c2c688559b7d41a1ae51236">m_Type</a></td></tr>
-<tr class="separator:ad46cd0be9c2c688559b7d41a1ae51236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244f6ebb6aacb89bcfc9405747efe438"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a244f6ebb6aacb89bcfc9405747efe438">m_NumOpCode</a></td></tr>
-<tr class="separator:a244f6ebb6aacb89bcfc9405747efe438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c5251c3367f60fbfb5850bb9adec4dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a4c5251c3367f60fbfb5850bb9adec4dc">m_IsNumericOperand1</a></td></tr>
-<tr class="separator:a4c5251c3367f60fbfb5850bb9adec4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d6e213b06d555a1abc93d3d78004696"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a3d6e213b06d555a1abc93d3d78004696">m_Operand1Value</a></td></tr>
-<tr class="separator:a3d6e213b06d555a1abc93d3d78004696"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f377f7b3d95dd7bab2e167e1ea5abb0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a7f377f7b3d95dd7bab2e167e1ea5abb0">m_IsNumericOperand2</a></td></tr>
-<tr class="separator:a7f377f7b3d95dd7bab2e167e1ea5abb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8879f2241c274a2c2f170e1286b3e263"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a8879f2241c274a2c2f170e1286b3e263">m_Operand2Value</a></td></tr>
-<tr class="separator:a8879f2241c274a2c2f170e1286b3e263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96ed8b4088052a12acd9fdf41ed3cc44"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instruction.html#a96ed8b4088052a12acd9fdf41ed3cc44">opCodeTable</a></td></tr>
-<tr class="memdesc:a96ed8b4088052a12acd9fdf41ed3cc44"><td class="mdescLeft">&#160;</td><td class="mdescRight">operation code lookup table  <a href="class_instruction.html#a96ed8b4088052a12acd9fdf41ed3cc44">More...</a><br /></td></tr>
-<tr class="separator:a96ed8b4088052a12acd9fdf41ed3cc44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class to parse and provide information about instructions. </p>
-<p >This class deals entirely with the input string realated things. Like scanning the given line of string and dividing it into componenets, validating the instructions.</p>
-<dl class="section note"><dt>Note</dt><dd>this class is not used by <a class="el" href="class_emulator.html" title="This is a class for emulator.">Emulator</a> class</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 12, 2021 </dd></dl>
+<p >This class deals entirely with the input string realated things. Like scanning the given line of string <br  />
+ and dividing it into componenets</p>
+<dl class="section note"><dt>Note</dt><dd>you will be adding more functionality. The elements of an instruction. </dd></dl>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a191ca348a40cb711a9d41933b35ef18e" name="a191ca348a40cb711a9d41933b35ef18e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a191ca348a40cb711a9d41933b35ef18e">&#9670;&nbsp;</a></span>InstructionType</h2>
@@ -276,11 +201,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> type indicates the type of instruction we are processing. </p>
-<dl class="section author"><dt>Author</dt><dd>Victor Miller </dd>
-<dd>
-Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 12, 202 </dd></dl>
+<p><a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> type indicates the type of instruction we are processing. <br  />
+ </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b" name="a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b"></a>ST_MachineLanguage&#160;</td><td class="fielddoc"><p >A machine language instruction. </p>
 </td></tr>
@@ -321,111 +243,11 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>Constructor for the <a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> class. </p>
-<p >It sets int variable to 0, bool variable to false, string variable to "", and <a class="el" href="class_instruction.html#aebd15229c1651af49dcb203707e7a2d5" title="Constructor for the Instruction class.">Instruction::Instruction</a> variavle to ST_Comment.</p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 12, 2021 </dd></dl>
-
-</div>
-</div>
-<a id="a26eb634480beff1ad7a20235c11f521d" name="a26eb634480beff1ad7a20235c11f521d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26eb634480beff1ad7a20235c11f521d">&#9670;&nbsp;</a></span>~Instruction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Instruction::~Instruction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deconstructor for the <a class="el" href="class_instruction.html" title="Class to parse and provide information about instructions.">Instruction</a> class. </p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 12, 202 </dd></dl>
+<p >It sets int variable to 0, bool variable to false, string variable to "", and <a class="el" href="class_instruction.html#aebd15229c1651af49dcb203707e7a2d5" title="Constructor for the Instruction class.">Instruction::Instruction</a> variavle to ST_Comment. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a11e47538768ca8a996d3d98e2ad18cfe" name="a11e47538768ca8a996d3d98e2ad18cfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11e47538768ca8a996d3d98e2ad18cfe">&#9670;&nbsp;</a></span>AllUpperCase()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Instruction::AllUpperCase </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>a_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>AllUpperCase capitalises teh content of parameter a_string. </p>
-<dl class="section note"><dt>Note</dt><dd>This funciton is called tor converting operation code to upper case</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_string</td><td>string to which the test is done on</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>AllUpperCase returns a uppercased string</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<a id="a0963106b13056679f9565a74a2a8e6de" name="a0963106b13056679f9565a74a2a8e6de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0963106b13056679f9565a74a2a8e6de">&#9670;&nbsp;</a></span>ClearMemberVariables()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Instruction::ClearMemberVariables </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ClearMemberVariables cleans all non-constant member variable. </p>
-<p >ClearMemberVariable sets the member varialbe to 0 for int type, false for bool type, "" for string type, and ST_Comment for <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e" title="Instruction type indicates the type of instruction we are processing.">Instruction::InstructionType</a> type</p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e" title="Instruction type indicates the type of instruction we are processing.">Instruction::InstructionType</a> is a enum</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
-
-</div>
-</div>
 <a id="a7dfb0f85b9859ed092e99ced9f3e1340" name="a7dfb0f85b9859ed092e99ced9f3e1340"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7dfb0f85b9859ed092e99ced9f3e1340">&#9670;&nbsp;</a></span>GetErrorMsgTypeBegin()</h2>
 
@@ -450,9 +272,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>Getter function to get start of error message type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GetErrorMsgTypeBegin returns pointer to start of ErrorMessageType</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetErrorMsgTypeBegin returns pointer to start of ErrorMessageType </dd></dl>
 
 </div>
 </div>
@@ -480,9 +300,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>Getter function to get end of error message type. </p>
-<dl class="section return"><dt>Returns</dt><dd>GetErrorMsgTypeEnd returns pointer to end of ErrorMessageType</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetErrorMsgTypeEnd returns pointer to end of ErrorMessageType </dd></dl>
 
 </div>
 </div>
@@ -510,14 +328,12 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the label </p>
-<dl class="section return"><dt>Returns</dt><dd>location of the label if present; if label is not present return NULL</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>location of the label if present; if label is not present return NULL </dd></dl>
 
 </div>
 </div>
-<a id="af3811474a5c1ad514dd2b8875a94083f" name="af3811474a5c1ad514dd2b8875a94083f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3811474a5c1ad514dd2b8875a94083f">&#9670;&nbsp;</a></span>GetNumOperand1()</h2>
+<a id="ae142535d2b46a5b269db509d4af5ccda" name="ae142535d2b46a5b269db509d4af5ccda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae142535d2b46a5b269db509d4af5ccda">&#9670;&nbsp;</a></span>GetNumOperand1()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,7 +342,7 @@ Aayush Karki</dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const long long Instruction::GetNumOperand1 </td>
+          <td class="memname">const int Instruction::GetNumOperand1 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -540,9 +356,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the numerical value of operand 1 </p>
-<dl class="section return"><dt>Returns</dt><dd>GetNumOperand1 returns numeric value of operand1</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetNumOperand1 returns numeric value of operand1 </dd></dl>
 
 </div>
 </div>
@@ -570,9 +384,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the numerical value of operand 2 </p>
-<dl class="section return"><dt>Returns</dt><dd>GetNumOperand2 returns numeric value of operand2</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetNumOperand2 returns numeric value of operand2 </dd></dl>
 
 </div>
 </div>
@@ -600,9 +412,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the numerical value of op code </p>
-<dl class="section return"><dt>Returns</dt><dd>GetOpCodeNum returns of the Numeric OpCode</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetOpCodeNum returns location of the Numeric OpCode </dd></dl>
 
 </div>
 </div>
@@ -630,9 +440,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the content stored in of operand1 </p>
-<dl class="section return"><dt>Returns</dt><dd>GetOperand1 returns content stored in of operand1</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetOperand1 returns content stored in of operand1 </dd></dl>
 
 </div>
 </div>
@@ -660,9 +468,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the content stored in of operand2 </p>
-<dl class="section return"><dt>Returns</dt><dd>GetOperand2 returns content stored in of operand2</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetOperand2 returns content stored in of operand2 </dd></dl>
 
 </div>
 </div>
@@ -690,9 +496,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function to access the orginal instruction </p>
-<dl class="section return"><dt>Returns</dt><dd>GetOrgiInst returns orginal instruction</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>GetOrgiInst returns orginal instruction </dd></dl>
 
 </div>
 </div>
@@ -720,11 +524,8 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function </p>
-<p >If this is true, then instruction is already translated</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_instruction.html#ac4d37697b21b1c9fd5102a7d262c52e7" title="SetFundamentalVar sets the member varible unless there is a Invalid syntax.">SetFundamentalVar()</a>, error case 2 and case 3</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>IsErrorFundVar returns true if error was found for Fundamental variable</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<p >If this is true, then instruction is already translated </p><dl class="section see"><dt>See also</dt><dd>SetFundamentalVar(), error case 2 and case 3</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorFundVar returns true if error was found for Fundamental variable </dd></dl>
 
 </div>
 </div>
@@ -752,9 +553,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function </p>
-<dl class="section return"><dt>Returns</dt><dd>IsErrorLabelSyn returns true if error was found for op code</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorLabelSyn returns true if error was found for op code </dd></dl>
 
 </div>
 </div>
@@ -782,9 +581,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function </p>
-<dl class="section return"><dt>Returns</dt><dd>IsErrorOperand1 returns true if error was found for operand 1</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorOperand1 returns true if error was found for operand 1 </dd></dl>
 
 </div>
 </div>
@@ -812,9 +609,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>getter function </p>
-<dl class="section return"><dt>Returns</dt><dd>IsErrorOperand2 returns true if error was found for operand 1</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsErrorOperand2 returns true if error was found for operand 1 </dd></dl>
 
 </div>
 </div>
@@ -842,47 +637,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>IsLabel checks if a label is blank. </p>
-<dl class="section return"><dt>Returns</dt><dd>IsLabel returns true if label variable is not empty; false if label is absent</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
-
-</div>
-</div>
-<a id="a3a1b4f4e5d3e3460796a75a5a4623903" name="a3a1b4f4e5d3e3460796a75a5a4623903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a1b4f4e5d3e3460796a75a5a4623903">&#9670;&nbsp;</a></span>IsNum()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool Instruction::IsNum </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>a_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>IsNum returns true if the parameter string is a digit. </p>
-<p >IsNum check if all the character in the string is a digit.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_string</td><td>string to which the test is done on</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>IsNum returns true if the argument string is a digit, else false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsLabel returns true if label is present; false if label is absent </dd></dl>
 
 </div>
 </div>
@@ -910,9 +665,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>IsNumOperand1 check to see if operand1 is numeric. </p>
-<dl class="section return"><dt>Returns</dt><dd>IsNumOperand1 returns true if Operand 1 is numeric else returns false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsNumOperand1 returns true if Operand 1 is numeric else returns false </dd></dl>
 
 </div>
 </div>
@@ -940,46 +693,7 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>IsNumOperand2 check to see if operand2 is numeric. </p>
-<dl class="section return"><dt>Returns</dt><dd>IsNumOperand2 returns true if Operand 2 is numeric else returns false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
-
-</div>
-</div>
-<a id="aed100c71e2951d65f632f5e844a44961" name="aed100c71e2951d65f632f5e844a44961"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed100c71e2951d65f632f5e844a44961">&#9670;&nbsp;</a></span>IsOpCode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool Instruction::IsOpCode </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>a_string</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>IsOpCode returns true if the parameter a_string is in enum Instruction::OpCode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_string</td><td>string to which the test is done on</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>IsOpCode returns true if the argument string is found in the opCodeTable, else false</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>IsNumOperand2 returns true if Operand 2 is numeric else returns false </dd></dl>
 
 </div>
 </div>
@@ -1007,9 +721,7 @@ Aayush Karki</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>LocationNextInstruction return a location of next intruction</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LocationNextInstruction return a location of next intruction </dd></dl>
 
 </div>
 </div>
@@ -1030,665 +742,20 @@ Aayush Karki</dd></dl>
 </div><div class="memdoc">
 
 <p>ParseInstruction Parses the line of string into its component. </p>
-<p >ParseInstruction function goes through the passed instruction and seperates them into their indivisual componenet which are stored and be used by parsing</p>
-<dl class="section note"><dt>Note</dt><dd>It calls on private memmber funcitons to validate the input and break it apart</dd></dl>
+<p >ParseInstruction function goes through the passed string and seperates them into their indivisual componenet which are stored and be used by parsing</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_line</td><td>a string read from the file</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ParseInstruction return a corresponding <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e" title="Instruction type indicates the type of instruction we are processing.">Instruction::InstructionType</a>.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
-
-</div>
-</div>
-<a id="ab305f10c5a680f83d7c02acec31a7716" name="ab305f10c5a680f83d7c02acec31a7716"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab305f10c5a680f83d7c02acec31a7716">&#9670;&nbsp;</a></span>RemoveComment()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Instruction::RemoveComment </td>
-          <td>(</td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>a_line</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>RemoveComment removes everything after first instances of a ';' from the parameter a_line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_line</td><td>address of the instuction</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 202 </dd></dl>
-
-</div>
-</div>
-<a id="ac4d37697b21b1c9fd5102a7d262c52e7" name="ac4d37697b21b1c9fd5102a7d262c52e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4d37697b21b1c9fd5102a7d262c52e7">&#9670;&nbsp;</a></span>SetFundamentalVar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::SetFundamentalVar </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a_indivisualInstruction</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>SetFundamentalVar sets the member varible unless there is a Invalid syntax. </p>
-<p >This funciton detects error in input and deals them according to the error cases.</p>
-<p >Error Cases: </p><pre class="fragment">-# case 1: if extra statement element error was detected it deletes the extra statement element
-    while flaging the error
-
--# case 2: if only opcode was suppled, with the exception of END and HALT it set the corresponding
-    numerical equivalent of the opcode and  error signifier of set operand1 and operand2 to true
-    while flaging the error and set the numerical equivalent of the opCode
-
--# case3: if any other error was found it sets error signifier of label, opCode, operand1 and
-    operand2 to true depending to what caused the error while flaging the error 
-    and tries to continue translation
-</pre> <dl class="section note"><dt>Note</dt><dd>SetFundamentalVar only sets he fundamental variable, it does not validate the input validation is done by <a class="el" href="class_instruction.html#a3bea8a867d955b8072174e5dd9aac087" title="ValidateOpCodeSyntax checks if the instruction syntax was vaild or not.">ValidateOpCodeSyntax()</a></dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_indivisualInstruction</td><td>is the extraxted words form the line</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ValidateSymSyntax returns false in error case 2 and 3; else true</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<a id="ac68c72229314608d2967c49daff093cd" name="ac68c72229314608d2967c49daff093cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac68c72229314608d2967c49daff093cd">&#9670;&nbsp;</a></span>SetNumOpCode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Instruction::SetNumOpCode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>setter function to set the Numeric equivalent of Operation code </p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<a id="a6f3dcb68dd382487912549de589ac5e9" name="a6f3dcb68dd382487912549de589ac5e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f3dcb68dd382487912549de589ac5e9">&#9670;&nbsp;</a></span>SetNumOperand1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Instruction::SetNumOperand1 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>setter function to set numiric first operand </p>
-<p >checks if the operand1 is a number if it is converst it into long long and stores it into m_Operand1Value member variable</p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<a id="a8339bef83a19e04c189b62d51e93c8df" name="a8339bef83a19e04c189b62d51e93c8df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8339bef83a19e04c189b62d51e93c8df">&#9670;&nbsp;</a></span>SetNumOperand2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Instruction::SetNumOperand2 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>setter function to set numiric second operand </p>
-<p >checks if the operand2 is a number if it is converst it into integer and stores it into m_Operand2Value member variable</p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<a id="a3bea8a867d955b8072174e5dd9aac087" name="a3bea8a867d955b8072174e5dd9aac087"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bea8a867d955b8072174e5dd9aac087">&#9670;&nbsp;</a></span>ValidateOpCodeSyntax()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Instruction::ValidateOpCodeSyntax </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ValidateOpCodeSyntax checks if the instruction syntax was vaild or not. </p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<a id="aee25f5062cfff75ada60bbfe4273eb18" name="aee25f5062cfff75ada60bbfe4273eb18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee25f5062cfff75ada60bbfe4273eb18">&#9670;&nbsp;</a></span>ValidateSymSyntax()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::ValidateSymSyntax </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>a_Symbol</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ValidateSymSyntax checks if a symbol meets the requirement. </p>
-<p >If the symbol does not meet the requirement it set the error</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a_Symbol</td><td>symbol to check the requirements on</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ValidateSymSyntax returns false if error was found</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aec599be76d1eede38322694027a94f54" name="aec599be76d1eede38322694027a94f54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec599be76d1eede38322694027a94f54">&#9670;&nbsp;</a></span>m_ErrorFundVar</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::m_ErrorFundVar</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afe59b06903bc0046ac5b6e55f9d5a0d5" name="afe59b06903bc0046ac5b6e55f9d5a0d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe59b06903bc0046ac5b6e55f9d5a0d5">&#9670;&nbsp;</a></span>m_ErrorMsgType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_errors.html#a2aebcb48c7d722da1b295349ebaad906">Errors::ErrorTypes</a>&gt; Instruction::m_ErrorMsgType</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a39d704034cf725bfbfc6d943dc1bec7a" name="a39d704034cf725bfbfc6d943dc1bec7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39d704034cf725bfbfc6d943dc1bec7a">&#9670;&nbsp;</a></span>m_ErrorOpCode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::m_ErrorOpCode</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afe1508cbe0f0f00b690fb21ee394c362" name="afe1508cbe0f0f00b690fb21ee394c362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe1508cbe0f0f00b690fb21ee394c362">&#9670;&nbsp;</a></span>m_ErrorOperand1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::m_ErrorOperand1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ec003f0e6379d7a7d276da4ec9d0acb" name="a5ec003f0e6379d7a7d276da4ec9d0acb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ec003f0e6379d7a7d276da4ec9d0acb">&#9670;&nbsp;</a></span>m_ErrorOperand2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::m_ErrorOperand2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af90f268fce276cad5c40959d66938681" name="af90f268fce276cad5c40959d66938681"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af90f268fce276cad5c40959d66938681">&#9670;&nbsp;</a></span>m_Instruction</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Instruction::m_Instruction</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4c5251c3367f60fbfb5850bb9adec4dc" name="a4c5251c3367f60fbfb5850bb9adec4dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c5251c3367f60fbfb5850bb9adec4dc">&#9670;&nbsp;</a></span>m_IsNumericOperand1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::m_IsNumericOperand1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7f377f7b3d95dd7bab2e167e1ea5abb0" name="a7f377f7b3d95dd7bab2e167e1ea5abb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f377f7b3d95dd7bab2e167e1ea5abb0">&#9670;&nbsp;</a></span>m_IsNumericOperand2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Instruction::m_IsNumericOperand2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a18014b06b66b73dcee17d7656ce91e46" name="a18014b06b66b73dcee17d7656ce91e46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18014b06b66b73dcee17d7656ce91e46">&#9670;&nbsp;</a></span>m_Label</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Instruction::m_Label</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a244f6ebb6aacb89bcfc9405747efe438" name="a244f6ebb6aacb89bcfc9405747efe438"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a244f6ebb6aacb89bcfc9405747efe438">&#9670;&nbsp;</a></span>m_NumOpCode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Instruction::m_NumOpCode</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa2d32cb255e564f8abe43bdda477cc6d" name="aa2d32cb255e564f8abe43bdda477cc6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2d32cb255e564f8abe43bdda477cc6d">&#9670;&nbsp;</a></span>m_OpCode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Instruction::m_OpCode</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3a7c2c747e095ccda616fb0807c4e9da" name="a3a7c2c747e095ccda616fb0807c4e9da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a7c2c747e095ccda616fb0807c4e9da">&#9670;&nbsp;</a></span>m_Operand1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Instruction::m_Operand1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3d6e213b06d555a1abc93d3d78004696" name="a3d6e213b06d555a1abc93d3d78004696"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d6e213b06d555a1abc93d3d78004696">&#9670;&nbsp;</a></span>m_Operand1Value</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">long long Instruction::m_Operand1Value</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5316e622baf0e6ccadd0fa3f54dd88bf" name="a5316e622baf0e6ccadd0fa3f54dd88bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5316e622baf0e6ccadd0fa3f54dd88bf">&#9670;&nbsp;</a></span>m_Operand2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Instruction::m_Operand2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8879f2241c274a2c2f170e1286b3e263" name="a8879f2241c274a2c2f170e1286b3e263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8879f2241c274a2c2f170e1286b3e263">&#9670;&nbsp;</a></span>m_Operand2Value</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Instruction::m_Operand2Value</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad46cd0be9c2c688559b7d41a1ae51236" name="ad46cd0be9c2c688559b7d41a1ae51236"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad46cd0be9c2c688559b7d41a1ae51236">&#9670;&nbsp;</a></span>m_Type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e">Instruction::InstructionType</a> Instruction::m_Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a96ed8b4088052a12acd9fdf41ed3cc44" name="a96ed8b4088052a12acd9fdf41ed3cc44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96ed8b4088052a12acd9fdf41ed3cc44">&#9670;&nbsp;</a></span>opCodeTable</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::unordered_map&lt;std::string, int&gt; Instruction::opCodeTable</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">        {<span class="stringliteral">&quot;ADD&quot;</span>, 1},</div>
-<div class="line">        {<span class="stringliteral">&quot;SUB&quot;</span>, 2},</div>
-<div class="line">        {<span class="stringliteral">&quot;MULT&quot;</span>, 3},</div>
-<div class="line">        {<span class="stringliteral">&quot;DIV&quot;</span>, 4},</div>
-<div class="line">        {<span class="stringliteral">&quot;COPY&quot;</span>, 5},</div>
-<div class="line">        {<span class="stringliteral">&quot;READ&quot;</span>, 7},</div>
-<div class="line">        {<span class="stringliteral">&quot;WRITE&quot;</span>, 8},</div>
-<div class="line">        {<span class="stringliteral">&quot;B&quot;</span>, 9},</div>
-<div class="line">        {<span class="stringliteral">&quot;BM&quot;</span>, 10},</div>
-<div class="line">        {<span class="stringliteral">&quot;BZ&quot;</span>, 11},</div>
-<div class="line">        {<span class="stringliteral">&quot;BP&quot;</span>, 12},</div>
-<div class="line">        {<span class="stringliteral">&quot;HALT&quot;</span>, 13},</div>
-<div class="line">        {<span class="stringliteral">&quot;ORG&quot;</span>, 100},</div>
-<div class="line">        {<span class="stringliteral">&quot;DC&quot;</span>, 200},</div>
-<div class="line">        {<span class="stringliteral">&quot;DS&quot;</span>, 300},</div>
-<div class="line">        {<span class="stringliteral">&quot;END&quot;</span>, 400},</div>
-<div class="line">    }</div>
-</div><!-- fragment -->
-<p>operation code lookup table </p>
-<p >This is a list of all the operation code recognized by the assembler. This list maps the Operation code to their numerical value recognized by the emulator</p>
-<dl class="section note"><dt>Note</dt><dd>the lookup table contains operation code used by both the emulator and assembler </dd>
-<dd>
-assemble only intruction are multiple of 100 so that when dividing the code number by 100 the remender will be the actual code number</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 20, 20 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ParseInstruction return a corresponding <a class="el" href="class_instruction.html#a191ca348a40cb711a9d41933b35ef18e" title="Instruction type indicates the type of instruction we are processing.">Instruction::InstructionType</a>. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Aayush_k_Term_Projects/<a class="el" href="_instruction_8h_source.html">Instruction.h</a></li>
-<li>Aayush_k_Term_Projects/<a class="el" href="_instruction_8cpp.html">Instruction.cpp</a></li>
+<li>Aayush_k_Term_Projects/Instruction.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

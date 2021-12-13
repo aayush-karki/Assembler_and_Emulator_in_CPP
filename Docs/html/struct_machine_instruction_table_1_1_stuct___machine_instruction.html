@@ -90,8 +90,6 @@ $(document).ready(function(){initNavTree('struct_machine_instruction_table_1_1_s
   <div class="headertitle"><div class="title">MachineInstructionTable::Stuct_MachineInstruction Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_machine_instruction_table_8h_source.html">MachineInstructionTable.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -104,23 +102,26 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7e50552fa1d0c2ad6da8c6443700b024"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#a7e50552fa1d0c2ad6da8c6443700b024">m_Location</a></td></tr>
+<tr class="memitem:a7e50552fa1d0c2ad6da8c6443700b024"><td class="memItemLeft" align="right" valign="top"><a id="a7e50552fa1d0c2ad6da8c6443700b024" name="a7e50552fa1d0c2ad6da8c6443700b024"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_Location</b></td></tr>
 <tr class="separator:a7e50552fa1d0c2ad6da8c6443700b024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5557621888c773dedae0d6b77af77c7f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#a5557621888c773dedae0d6b77af77c7f">m_Content</a></td></tr>
 <tr class="separator:a5557621888c773dedae0d6b77af77c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6801e4b08c5bb01279089f5a1a787ed5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#a6801e4b08c5bb01279089f5a1a787ed5">m_AssembInst</a></td></tr>
 <tr class="separator:a6801e4b08c5bb01279089f5a1a787ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2be048689c70b9e58620da5ddd02ad0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#ae2be048689c70b9e58620da5ddd02ad0">m_isOrg</a></td></tr>
+<tr class="memitem:ae2be048689c70b9e58620da5ddd02ad0"><td class="memItemLeft" align="right" valign="top"><a id="ae2be048689c70b9e58620da5ddd02ad0" name="ae2be048689c70b9e58620da5ddd02ad0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_isOrg</b></td></tr>
 <tr class="memdesc:ae2be048689c70b9e58620da5ddd02ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><blockquote class="doxtable">
 <p >copy of orginal Assembly instrction that was used to translate the </p>
 </blockquote>
- <a href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#ae2be048689c70b9e58620da5ddd02ad0">More...</a><br /></td></tr>
+<br /></td></tr>
 <tr class="separator:ae2be048689c70b9e58620da5ddd02ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfd20431169cde27ad3287a705fa93db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#adfd20431169cde27ad3287a705fa93db">m_nextLoc</a></td></tr>
+<tr class="memitem:adfd20431169cde27ad3287a705fa93db"><td class="memItemLeft" align="right" valign="top"><a id="adfd20431169cde27ad3287a705fa93db" name="adfd20431169cde27ad3287a705fa93db"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>m_nextLoc</b></td></tr>
 <tr class="memdesc:adfd20431169cde27ad3287a705fa93db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><blockquote class="doxtable">
 <p >==true if current opcode is ORG </p>
 </blockquote>
- <a href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#adfd20431169cde27ad3287a705fa93db">More...</a><br /></td></tr>
+<br /></td></tr>
 <tr class="separator:adfd20431169cde27ad3287a705fa93db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -152,9 +153,16 @@ Public Attributes</h2></td></tr>
 </blockquote>
 </p>
 <p >constructor</p>
-<p >Initializes the member variable of the structure to 0 if int or "" if string</p>
-<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>November 28, 2021 </dd></dl>
+<p >Initializes the member variable of the structure</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_AssembInst</td><td>orginal assembly intruction used to translate into machine instruction </td></tr>
+    <tr><td class="paramname">a_Location</td><td>location in memory of VC1620 to stored the machine instruction </td></tr>
+    <tr><td class="paramname">a_Content</td><td>machine instruction for VC1620 </td></tr>
+    <tr><td class="paramname">a_IsError</td><td>signifies if error is present in this line or not </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -190,58 +198,6 @@ Public Attributes</h2></td></tr>
 <blockquote class="doxtable">
 <p >stroes the location of where the instruciton is in VC1620's memory is the index for m_memory </p>
 </blockquote>
-
-</div>
-</div>
-<a id="ae2be048689c70b9e58620da5ddd02ad0" name="ae2be048689c70b9e58620da5ddd02ad0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2be048689c70b9e58620da5ddd02ad0">&#9670;&nbsp;</a></span>m_isOrg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MachineInstructionTable::Stuct_MachineInstruction::m_isOrg</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><blockquote class="doxtable">
-<p >copy of orginal Assembly instrction that was used to translate the </p>
-</blockquote>
-</p>
-
-</div>
-</div>
-<a id="a7e50552fa1d0c2ad6da8c6443700b024" name="a7e50552fa1d0c2ad6da8c6443700b024"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e50552fa1d0c2ad6da8c6443700b024">&#9670;&nbsp;</a></span>m_Location</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MachineInstructionTable::Stuct_MachineInstruction::m_Location</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adfd20431169cde27ad3287a705fa93db" name="adfd20431169cde27ad3287a705fa93db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfd20431169cde27ad3287a705fa93db">&#9670;&nbsp;</a></span>m_nextLoc</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MachineInstructionTable::Stuct_MachineInstruction::m_nextLoc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><blockquote class="doxtable">
-<p >==true if current opcode is ORG </p>
-</blockquote>
-</p>
 
 </div>
 </div>
