@@ -326,7 +326,6 @@ void Assembler::SmartFillContent( std::string &a_TranslatedContent,int a_ToAppen
     }
     else
     {
-
         // apending filler '0' to the translatedContent according to length of toAppend 
         // before appending toAppend to the translatedContent
         for( int i = 0; i < ( a_LengthToFill - toAppend.size() ); ++i )
