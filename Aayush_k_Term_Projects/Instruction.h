@@ -451,8 +451,6 @@ private:
     /// checks if the operand1 is a number if it is converst it into 
     ///     long long and stores it into m_Operand1Value member variable
 	/// 
-	/// @see SetNumOperand2
-	/// 
 	/// @author Aayush Karki
 	/// 
 	/// @date  November 20, 20
@@ -465,8 +463,6 @@ private:
     /// 
     /// checks if the operand2 is a number if it is converst it into 
     ///     integer and stores it into m_Operand2Value member variable
-	/// 
-	/// @see SetNumOperand1
 	/// 
 	/// @author Aayush Karki
 	/// 
@@ -514,13 +510,7 @@ private:
     std::string m_Operand1;     // The first operand. 
     std::string m_Operand2;     // The second operand.
 
-	// =================== flags ======================
-	
-	// constant flag
-	bool m_Operand1Const; // == true if operand1 is a numerical constant
-	bool m_Operand2Const; // == true if operand2 is a numerical constant
-
-    // error flags
+    // error indicators
     std::vector<Errors::ErrorTypes> m_ErrorMsgType;    // Contains the error message
 
     bool m_ErrorOpCode;     // == true if error in opCode

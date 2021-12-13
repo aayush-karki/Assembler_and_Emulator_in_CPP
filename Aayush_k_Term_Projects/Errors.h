@@ -73,7 +73,7 @@ public:
         ERROR_NotNumOperand1,				///> when operation code only accepts number as operand1
         ERROR_NotLabelOperand1,				///> when operation code only accepts label as operand1
         ERROR_NotLabelOperand2,				///> when operation code only accepts label as operand2 
-        ERROR_InvalidNumOperandLen,			///> when length of number user as operand is out of the range (+/-)99,999,999,999
+        ERROR_InvalidOperand1Len,			///> when length of number user as operand1 is more than 5
         ERROR_NotLabelConst,				///> when label used for operand does points to memory variable
         ERROR_InvalidSymSyntaxLen,			///> when label length is more than 10 characters
         ERROR_InvalidSymSyntaxfirstChar,	///> when first character of a label is not a alphabet

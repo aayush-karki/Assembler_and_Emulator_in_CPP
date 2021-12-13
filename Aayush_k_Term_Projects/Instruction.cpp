@@ -142,8 +142,6 @@ void Instruction::ClearMemberVariables()
     m_Operand1Value = 0;  
 
     // setting all bool variable to false 
-	m_Operand1Const = false;
-	m_Operand2Const = false;
     m_IsNumericOperand1 = false; 
     m_ErrorOpCode = false;
     m_ErrorOperand1 = false;
@@ -286,101 +284,26 @@ void Instruction::SetNumOpCode()
 
 void Instruction::SetNumOperand1()
 {
-	// makign a copy of operand 2 so that we do not mess up the orignal content of operand2
-	std::string orgiOperand1Cpy = m_Operand1;
-
-	// checking for negative input 
-	char sign = '0';
-
-	// checking if the first char is - or +
-	if( orgiOperand1Cpy.front() == '-' || orgiOperand1Cpy.front() == '+' )
-	{
-		sign = orgiOperand1Cpy.front();
-		orgiOperand1Cpy.erase( 0, 1 ); // removing the first char
-
-		// updating first char to 1 if it is '-' else to 0 if it is '+'
-		if( sign == '-' )
-		{
-			sign = 1;
-		}
-		else
-		{
-			sign = 0;
-		}
-	}
-	
     // checking if first operand is a number or not
-    m_IsNumericOperand1 = IsNum( orgiOperand1Cpy );
+    m_IsNumericOperand1 = IsNum( m_Operand1 );
 
     // getting m_Operand1Value if operand1 is a number
     if( m_IsNumericOperand1 )
     {
-		// checking for length of the string, max is 12 cause word of VC1600 
-		// memory can only handel 12 digits;
-		// and first digit is reserved to indicate sign 
-		// so it sould only have 11 digits which is be 99,999,999,999
-		if( orgiOperand1Cpy.size() > 11 )
-		{
-			m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidNumOperandLen );
-			m_ErrorOperand1 = true;
-			return;
-		}
-
-		// every thing is digit, so, adding the first char back
-		orgiOperand1Cpy = sign + orgiOperand1Cpy;
-
-        m_Operand1Value = std::stoll( orgiOperand1Cpy );
-		m_Operand1Const = true;
+        m_Operand1Value = std::stoll( m_Operand1 );
     }
 }
 
 void Instruction::SetNumOperand2()
 {
-	// makign a copy of operand 2 so that we do not mess up the orignal content of operand2
-	std::string orgiOperand2Cpy = m_Operand2;
+    // checking if second operand is a number or not
+    m_IsNumericOperand2 = IsNum( m_Operand2 );
 
-	// checking for negative input 
-	char sign = '0';
-
-	// checking if the first char is - or +
-	if( orgiOperand2Cpy.front() == '-' || orgiOperand2Cpy.front() == '+' )
-	{
-		sign = orgiOperand2Cpy.front();
-		orgiOperand2Cpy.erase( 0, 1 ); // removing the first char
-
-		// updating first char to 1 if it is '-' else to 0 if it is '+'
-		if( sign == '-' )
-		{
-			sign = 1;
-		}
-		else
-		{
-			sign = 0;
-		}
-	}
-
-	// checking if first operand is a number or not
-	m_IsNumericOperand2 = IsNum( orgiOperand2Cpy );
-
-	// getting m_Operand1Value if operand1 is a number
-	if( m_IsNumericOperand2 )
-	{
-		// checking for length of the string, max is 12 cause word of VC1600 
-		// memory can only handel 12 digits;
-		// and first digit is reserved to indicate sign 
-		// so it sould only have 11 digits which is be 99,999,999,999
-		if( orgiOperand2Cpy.size() > 11 )
-		{
-			m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidNumOperandLen );
-			m_ErrorOperand2 = true;
-			return;
-		}
-		// every thing is digit, so, adding the first char back
-		orgiOperand2Cpy = sign + orgiOperand2Cpy;
-
-		m_Operand2Value = std::stoll( orgiOperand2Cpy );
-		m_Operand1Const = true;
-	}
+    // getting m_Operand2Value if operand2 is a number
+    if( m_IsNumericOperand2 )
+    {
+        m_Operand2Value = std::stoi( m_Operand2 );
+    }
 }
 
 bool Instruction::ValidateSymSyntax( std::string a_Symbol )
@@ -466,6 +389,13 @@ void Instruction::ValidateOpCodeSyntax()
         if( !m_IsNumericOperand1 )
         {
             m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_NotNumOperand1 );
+            m_ErrorOperand1 = true;
+        }
+
+        // its length should not be > 5
+        if( m_Operand1.size() > 5 )
+        {
+            m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidOperand1Len );
             m_ErrorOperand1 = true;
         }
     }
