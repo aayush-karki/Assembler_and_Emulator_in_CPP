@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['b_0',['B',['../class_instruction.html#a979a177c00f4eaa722d369e09613cf73a9d5ed678fe57bcca610140957afab571',1,'Instruction']]],
-  ['bm_1',['BM',['../class_instruction.html#a979a177c00f4eaa722d369e09613cf73a5089fa881630360a9b3361469c1a0c5d',1,'Instruction']]],
-  ['bp_2',['BP',['../class_instruction.html#a979a177c00f4eaa722d369e09613cf73a96d4cdff8ed57e93e3b3d843cffe3af7',1,'Instruction']]],
-  ['bz_3',['BZ',['../class_instruction.html#a979a177c00f4eaa722d369e09613cf73ae45fbcf6ca3b21f17c5f355728a2fbec',1,'Instruction']]]
+  ['st_5fassemblerinstr_0',['ST_AssemblerInstr',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed',1,'Instruction']]],
+  ['st_5fcomment_1',['ST_Comment',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eac2d7e2de28c393adbdc6bcf52c6a5ab9',1,'Instruction']]],
+  ['st_5fend_2',['ST_End',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eabae7b73bb2b60fc48b08a74936ae613c',1,'Instruction']]],
+  ['st_5ferror_3',['ST_Error',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eab592df12e518a75060b2c2403f07998c',1,'Instruction']]],
+  ['st_5fmachinelanguage_4',['ST_MachineLanguage',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b',1,'Instruction']]]
 ];

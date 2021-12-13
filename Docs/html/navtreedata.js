@@ -25,12 +25,14 @@
 var NAVTREE =
 [
   [ "VC1620 Assembler and Emulator", "index.html", [
+    [ "Todo List", "todo.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ]
       ] ]
     ] ],
@@ -42,7 +44,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_assembler_8h_source.html"
+"_assembler_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

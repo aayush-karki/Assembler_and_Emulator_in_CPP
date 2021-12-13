@@ -93,13 +93,21 @@ $(document).ready(function(){initNavTree('class_file_access.html',''); initResiz
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a306267fe5b66f8d3b7c09156b74f1526"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_access.html#a306267fe5b66f8d3b7c09156b74f1526">FileAccess</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a306267fe5b66f8d3b7c09156b74f1526"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor, Opens the file.  <a href="class_file_access.html#a306267fe5b66f8d3b7c09156b74f1526">More...</a><br /></td></tr>
 <tr class="separator:a306267fe5b66f8d3b7c09156b74f1526"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae873ad4b8fb51ae0f7ca05d4320633a7"><td class="memItemLeft" align="right" valign="top"><a id="ae873ad4b8fb51ae0f7ca05d4320633a7" name="ae873ad4b8fb51ae0f7ca05d4320633a7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetNextLine</b> (std::string &amp;a_line)</td></tr>
+<tr class="memitem:a10459e5e524182ed3cd6a82dbebb5643"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_access.html#a10459e5e524182ed3cd6a82dbebb5643">~FileAccess</a> ()</td></tr>
+<tr class="separator:a10459e5e524182ed3cd6a82dbebb5643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae873ad4b8fb51ae0f7ca05d4320633a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_access.html#ae873ad4b8fb51ae0f7ca05d4320633a7">GetNextLine</a> (std::string &amp;a_line)</td></tr>
+<tr class="memdesc:ae873ad4b8fb51ae0f7ca05d4320633a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetNextLine gets the next line from the source file. <br  />
+  <a href="class_file_access.html#ae873ad4b8fb51ae0f7ca05d4320633a7">More...</a><br /></td></tr>
 <tr class="separator:ae873ad4b8fb51ae0f7ca05d4320633a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a021ccd177bbbf8d32fa8bf2cbdb9e9"><td class="memItemLeft" align="right" valign="top"><a id="a7a021ccd177bbbf8d32fa8bf2cbdb9e9" name="a7a021ccd177bbbf8d32fa8bf2cbdb9e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rewind</b> ()</td></tr>
-<tr class="separator:a7a021ccd177bbbf8d32fa8bf2cbdb9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc8def5adc4f6d949168c67cfca7da0"><td class="memItemLeft" align="right" valign="top"><a id="abbc8def5adc4f6d949168c67cfca7da0" name="abbc8def5adc4f6d949168c67cfca7da0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Rewind</b> ()</td></tr>
+<tr class="memdesc:abbc8def5adc4f6d949168c67cfca7da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewind Put the file pointer back to the beginning of the file. <br /></td></tr>
+<tr class="separator:abbc8def5adc4f6d949168c67cfca7da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373d1730bcf10e5c5b2a4ac445c01fe0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_access.html#a373d1730bcf10e5c5b2a4ac445c01fe0">CheckEOF</a> ()</td></tr>
+<tr class="memdesc:a373d1730bcf10e5c5b2a4ac445c01fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">CheckEOF checks if the file pointer is currently at end of file.  <a href="class_file_access.html#a373d1730bcf10e5c5b2a4ac445c01fe0">More...</a><br /></td></tr>
+<tr class="separator:a373d1730bcf10e5c5b2a4ac445c01fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a306267fe5b66f8d3b7c09156b74f1526" name="a306267fe5b66f8d3b7c09156b74f1526"></a>
@@ -127,7 +135,91 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>rewind</b> ()</td></t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Implementation of file access class. </p>
+
+<p>constructor, Opens the file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>number of arguments passed. should always be 2 if not error </td></tr>
+    <tr><td class="paramname">argv</td><td>character array with argument passed to the program. first element is the binary of the program second is the file to be compiled</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Implementation of file access class. </p>
+
+</div>
+</div>
+<a id="a10459e5e524182ed3cd6a82dbebb5643" name="a10459e5e524182ed3cd6a82dbebb5643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10459e5e524182ed3cd6a82dbebb5643">&#9670;&nbsp;</a></span>~FileAccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FileAccess::~FileAccess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >@bried deconstructor, Closes the file. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a373d1730bcf10e5c5b2a4ac445c01fe0" name="a373d1730bcf10e5c5b2a4ac445c01fe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373d1730bcf10e5c5b2a4ac445c01fe0">&#9670;&nbsp;</a></span>CheckEOF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FileAccess::CheckEOF </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CheckEOF checks if the file pointer is currently at end of file. </p>
+<p >returns true if file pointer is pointed at end of file </p>
+
+</div>
+</div>
+<a id="ae873ad4b8fb51ae0f7ca05d4320633a7" name="ae873ad4b8fb51ae0f7ca05d4320633a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae873ad4b8fb51ae0f7ca05d4320633a7">&#9670;&nbsp;</a></span>GetNextLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FileAccess::GetNextLine </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>a_line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GetNextLine gets the next line from the source file. <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_line</td><td>is the string where the extracted line is stored</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if there was one. </dd></dl>
 
 </div>
 </div>

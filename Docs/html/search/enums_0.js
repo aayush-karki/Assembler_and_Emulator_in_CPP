@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instructiontype_0',['InstructionType',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18e',1,'Instruction']]]
+  ['errortypes_0',['ErrorTypes',['../class_errors.html#a2aebcb48c7d722da1b295349ebaad906',1,'Errors']]]
 ];

@@ -90,39 +90,49 @@ $(document).ready(function(){initNavTree('class_assembler.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p>This is a container for all the components that make up the assembler.  
+<p>This is a container for all the components that make up the assembler and runs an emulator on it.  
  <a href="class_assembler.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_assembler_8h_source.html">Assembler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a898ad743c2f623a3df00c6e7758513ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">Assembler</a> (int argc, char *argv[])</td></tr>
-<tr class="memdesc:a898ad743c2f623a3df00c6e7758513ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor <br  />
-  <a href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">More...</a><br /></td></tr>
+<tr class="memdesc:a898ad743c2f623a3df00c6e7758513ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Assemble object.  <a href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">More...</a><br /></td></tr>
 <tr class="separator:a898ad743c2f623a3df00c6e7758513ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9d207baf8191cd6c4847f56548f73f"><td class="memItemLeft" align="right" valign="top"><a id="a6e9d207baf8191cd6c4847f56548f73f" name="a6e9d207baf8191cd6c4847f56548f73f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~Assembler</b> ()</td></tr>
-<tr class="memdesc:a6e9d207baf8191cd6c4847f56548f73f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor currently does nothing. You might need to add something as you develope this project. <br /></td></tr>
+<tr class="memitem:a6e9d207baf8191cd6c4847f56548f73f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">~Assembler</a> ()</td></tr>
+<tr class="memdesc:a6e9d207baf8191cd6c4847f56548f73f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">More...</a><br /></td></tr>
 <tr class="separator:a6e9d207baf8191cd6c4847f56548f73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aada326bbf84329ff60ca0533a6f9e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8">PassI</a> ()</td></tr>
 <tr class="memdesc:a1aada326bbf84329ff60ca0533a6f9e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass I establishes the location of the labels.  <a href="class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8">More...</a><br /></td></tr>
 <tr class="separator:a1aada326bbf84329ff60ca0533a6f9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46c3abf430bddcce855ccd461abe6be1"><td class="memItemLeft" align="right" valign="top"><a id="a46c3abf430bddcce855ccd461abe6be1" name="a46c3abf430bddcce855ccd461abe6be1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PassII</b> ()</td></tr>
-<tr class="memdesc:a46c3abf430bddcce855ccd461abe6be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass II - generate a translation. <br /></td></tr>
+<tr class="memitem:a46c3abf430bddcce855ccd461abe6be1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">PassII</a> ()</td></tr>
+<tr class="memdesc:a46c3abf430bddcce855ccd461abe6be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass II generates a translation for the assembey code.  <a href="class_assembler.html#a46c3abf430bddcce855ccd461abe6be1">More...</a><br /></td></tr>
 <tr class="separator:a46c3abf430bddcce855ccd461abe6be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae801e9a1b01cde724e7f8ea516155041"><td class="memItemLeft" align="right" valign="top"><a id="ae801e9a1b01cde724e7f8ea516155041" name="ae801e9a1b01cde724e7f8ea516155041"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DisplaySymbolTable</b> ()</td></tr>
-<tr class="memdesc:ae801e9a1b01cde724e7f8ea516155041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the symbols in the symbol table. <br /></td></tr>
+<tr class="memitem:ae801e9a1b01cde724e7f8ea516155041"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">DisplaySymbolTable</a> ()</td></tr>
+<tr class="memdesc:ae801e9a1b01cde724e7f8ea516155041"><td class="mdescLeft">&#160;</td><td class="mdescRight">DisplaySymbolTable displays the symbols in the symbol table.  <a href="class_assembler.html#ae801e9a1b01cde724e7f8ea516155041">More...</a><br /></td></tr>
 <tr class="separator:ae801e9a1b01cde724e7f8ea516155041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbb8afac547b87ea5a57b8f9a9b0af80"><td class="memItemLeft" align="right" valign="top"><a id="afbb8afac547b87ea5a57b8f9a9b0af80" name="afbb8afac547b87ea5a57b8f9a9b0af80"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RunProgramInEmulator</b> ()</td></tr>
-<tr class="memdesc:afbb8afac547b87ea5a57b8f9a9b0af80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run emulator on the translation. <br /></td></tr>
+<tr class="memitem:a60c1f5ef54ec26a83af95214efb50cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a60c1f5ef54ec26a83af95214efb50cdc">DisplayDeclaredConstTab</a> ()</td></tr>
+<tr class="memdesc:a60c1f5ef54ec26a83af95214efb50cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">DesplayDeclaredConstTab Displays all the declared Constant number along with their lablels.  <a href="class_assembler.html#a60c1f5ef54ec26a83af95214efb50cdc">More...</a><br /></td></tr>
+<tr class="separator:a60c1f5ef54ec26a83af95214efb50cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca7417d928476cf3dcfc1459ff452455"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#aca7417d928476cf3dcfc1459ff452455">DisplayDeclaredMemVarTab</a> ()</td></tr>
+<tr class="memdesc:aca7417d928476cf3dcfc1459ff452455"><td class="mdescLeft">&#160;</td><td class="mdescRight">DisplayDeclaredVarMemSizeTab Displays all the declared variable memory along with their lablels.  <a href="class_assembler.html#aca7417d928476cf3dcfc1459ff452455">More...</a><br /></td></tr>
+<tr class="separator:aca7417d928476cf3dcfc1459ff452455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accebd507f105c20f2d6991b1428e64c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#accebd507f105c20f2d6991b1428e64c7">DisplayMachineInstTable</a> ()</td></tr>
+<tr class="memdesc:accebd507f105c20f2d6991b1428e64c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the translated machine instruction in the machine instruction table.  <a href="class_assembler.html#accebd507f105c20f2d6991b1428e64c7">More...</a><br /></td></tr>
+<tr class="separator:accebd507f105c20f2d6991b1428e64c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbb8afac547b87ea5a57b8f9a9b0af80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">RunProgramInEmulator</a> ()</td></tr>
+<tr class="memdesc:afbb8afac547b87ea5a57b8f9a9b0af80"><td class="mdescLeft">&#160;</td><td class="mdescRight">inserts and runs the emulator on the translation.  <a href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">More...</a><br /></td></tr>
 <tr class="separator:afbb8afac547b87ea5a57b8f9a9b0af80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed4d0badb1c882e5b923a013d23c4a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4">InsertInstToEmulator</a> ()</td></tr>
+<tr class="memdesc:a1ed4d0badb1c882e5b923a013d23c4a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">InsertInstToEmulator inserts all the translated machine instruction into the emulator.  <a href="class_assembler.html#a1ed4d0badb1c882e5b923a013d23c4a4">More...</a><br /></td></tr>
+<tr class="separator:a1ed4d0badb1c882e5b923a013d23c4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88fabe2e3b31e5982906a99194f55d0"><td class="memItemLeft" align="right" valign="top"><a id="af88fabe2e3b31e5982906a99194f55d0" name="af88fabe2e3b31e5982906a99194f55d0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetNoError</b> ()</td></tr>
+<tr class="separator:af88fabe2e3b31e5982906a99194f55d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This is a container for all the components that make up the assembler. </p>
+<div class="textblock"><p >This is a container for all the components that make up the assembler and runs an emulator on it. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 06, 2021 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a898ad743c2f623a3df00c6e7758513ae" name="a898ad743c2f623a3df00c6e7758513ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a898ad743c2f623a3df00c6e7758513ae">&#9670;&nbsp;</a></span>Assembler()</h2>
@@ -150,14 +160,165 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>RunProgramInEmulator<
       </table>
 </div><div class="memdoc">
 
-<p>Constructor <br  />
- </p>
-<dl class="section note"><dt>Note</dt><dd>we are passing argc and argv to the file access constructor. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>main program. </dd></dl>
+<p>Constructor for the Assemble object. </p>
+<dl class="section note"><dt>Note</dt><dd>we are passing command line argument from the user in to the constructor </dd>
+<dd>
+argc should be 2 else it will be raised by the file access class raise an error</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>number of elemets passed to the program + 1 </td></tr>
+    <tr><td class="paramname">argv</td><td>pointer to the binary of the program and file containting the assembly code</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="a6e9d207baf8191cd6c4847f56548f73f" name="a6e9d207baf8191cd6c4847f56548f73f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e9d207baf8191cd6c4847f56548f73f">&#9670;&nbsp;</a></span>~Assembler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assembler::~Assembler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a60c1f5ef54ec26a83af95214efb50cdc" name="a60c1f5ef54ec26a83af95214efb50cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60c1f5ef54ec26a83af95214efb50cdc">&#9670;&nbsp;</a></span>DisplayDeclaredConstTab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::DisplayDeclaredConstTab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DesplayDeclaredConstTab Displays all the declared Constant number along with their lablels. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="aca7417d928476cf3dcfc1459ff452455" name="aca7417d928476cf3dcfc1459ff452455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca7417d928476cf3dcfc1459ff452455">&#9670;&nbsp;</a></span>DisplayDeclaredMemVarTab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::DisplayDeclaredMemVarTab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DisplayDeclaredVarMemSizeTab Displays all the declared variable memory along with their lablels. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="accebd507f105c20f2d6991b1428e64c7" name="accebd507f105c20f2d6991b1428e64c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accebd507f105c20f2d6991b1428e64c7">&#9670;&nbsp;</a></span>DisplayMachineInstTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::DisplayMachineInstTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays the translated machine instruction in the machine instruction table. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 28, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="ae801e9a1b01cde724e7f8ea516155041" name="ae801e9a1b01cde724e7f8ea516155041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae801e9a1b01cde724e7f8ea516155041">&#9670;&nbsp;</a></span>DisplaySymbolTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::DisplaySymbolTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DisplaySymbolTable displays the symbols in the symbol table. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="a1ed4d0badb1c882e5b923a013d23c4a4" name="a1ed4d0badb1c882e5b923a013d23c4a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed4d0badb1c882e5b923a013d23c4a4">&#9670;&nbsp;</a></span>InsertInstToEmulator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::InsertInstToEmulator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>InsertInstToEmulator inserts all the translated machine instruction into the emulator. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>December 03, 2021 </dd></dl>
+
+</div>
+</div>
 <a id="a1aada326bbf84329ff60ca0533a6f9e8" name="a1aada326bbf84329ff60ca0533a6f9e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aada326bbf84329ff60ca0533a6f9e8">&#9670;&nbsp;</a></span>PassI()</h2>
 
@@ -174,8 +335,53 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>RunProgramInEmulator<
 </div><div class="memdoc">
 
 <p>Pass I establishes the location of the labels. </p>
-<p >This function with go through the file from top to bottom on line by line basis and finds any label and their corresponding memory location adding them to symbol table</p>
-<p >You will write better function comments according to the coding standards. </p>
+<p >Pass I will go through the file from top to bottom on line by line basis and finds any label and their corresponding memory location adding them to symbol table</p>
+<dl class="section note"><dt>Note</dt><dd>responsible for reporting multi defined label error but is displayed after PassII</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 10, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="a46c3abf430bddcce855ccd461abe6be1" name="a46c3abf430bddcce855ccd461abe6be1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c3abf430bddcce855ccd461abe6be1">&#9670;&nbsp;</a></span>PassII()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::PassII </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pass II generates a translation for the assembey code. </p>
+<p >Pass II is responsible for translating as much of the assemble code to machine code as possible. It also report error if any.</p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>November 25, 2021 </dd></dl>
+
+</div>
+</div>
+<a id="afbb8afac547b87ea5a57b8f9a9b0af80" name="afbb8afac547b87ea5a57b8f9a9b0af80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbb8afac547b87ea5a57b8f9a9b0af80">&#9670;&nbsp;</a></span>RunProgramInEmulator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assembler::RunProgramInEmulator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>inserts and runs the emulator on the translation. </p>
+<dl class="section author"><dt>Author</dt><dd>Aayush Karki</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>December 03, 2021 </dd></dl>
 
 </div>
 </div>

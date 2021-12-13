@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7eassembler_0',['~Assembler',['../class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f',1,'Assembler']]],
-  ['_7einstruction_1',['~Instruction',['../class_instruction.html#a26eb634480beff1ad7a20235c11f521d',1,'Instruction']]]
+  ['machineinstructiontable_0',['MachineInstructionTable',['../class_machine_instruction_table.html#a01cab83b513af02ea19d83c51895dfa7',1,'MachineInstructionTable']]],
+  ['stuct_5fmachineinstruction_1',['Stuct_MachineInstruction',['../struct_machine_instruction_table_1_1_stuct___machine_instruction.html#ab33b33fec9779672a1735d939b7a48b6',1,'MachineInstructionTable::Stuct_MachineInstruction']]]
 ];
