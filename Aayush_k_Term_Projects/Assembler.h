@@ -88,7 +88,7 @@ public:
     /// 
     /// @brief DisplaySymbolTable displays the symbols in the symbol table.
 	/// 
-	/// @author Aayush Karki
+	/// @author Victor Miller
     /// 
 	/// @date  November 10, 2021 
     /// 
@@ -160,7 +160,7 @@ private:
    /// 
    /// @author Aayush Karki
    /// 
-   /// @date  December 03, 2021
+   /// @date  November 25, 2021 
    /// 
     void SmartFillContent( std::string& a_TranslatedContent, int a_ToAppendNum, int a_LengthToFill = 5 );
     
@@ -181,7 +181,7 @@ private:
 	/// 
 	/// @author Aayush Karki
 	/// 
-	/// @date  December 03, 2021
+	/// @date  November 25, 2021 
     /// 
     bool LookupDeclaredConst( const std::string& a_symbol );
     
@@ -202,7 +202,7 @@ private:
 	/// 
 	/// @author Aayush Karki
 	/// 
-	/// @date  December 03, 2021
+	/// @date  November 25, 2021 
     /// 
     bool LookupDeclaredVarMem( const std::string& a_symbol );
     
@@ -217,8 +217,8 @@ private:
 	/// 
 	/// @author Aayush Karki
 	/// 
-	/// @date  December 03, 2021
-    /// 
+	/// @date  November 25, 2021 
+	/// 
     void TranslateInstruction( int a_Loc, int a_LineCounter );
 
     ///

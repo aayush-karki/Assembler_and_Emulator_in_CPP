@@ -101,12 +101,12 @@ int Instruction::LocationNextInstruction( int a_loc )
     // if opCode is ORG then next location is the Operand1Value
     if ( m_NumOpCode == 100 )
     {
-        return m_Operand1Value;
+		return (int)m_Operand1Value;
     }
     // if opCode is DS then calculating the next loc
     else if ( m_NumOpCode == 300 )
     {
-        return a_loc + m_Operand1Value;
+        return a_loc + (int)m_Operand1Value;
     }
     // else increment by 1
     return ++a_loc;
@@ -124,7 +124,7 @@ void Instruction::ClearMemberVariables()
     // resizing the vector to 0
     m_ErrorMsgType.resize(0);
 
-    // setting all int variable to 0 
+    // setting all int / long long variable to 0 
     m_NumOpCode = 0;
     m_Operand1Value = 0;  
 
@@ -277,7 +277,7 @@ void Instruction::SetNumOperand1()
     // getting m_Operand1Value if operand1 is a number
     if( m_IsNumericOperand1 )
     {
-        m_Operand1Value = std::stoi( m_Operand1 );
+        m_Operand1Value = std::stoll( m_Operand1 );
     }
 }
 
@@ -286,7 +286,7 @@ void Instruction::SetNumOperand2()
     // checking if second operand is a number or not
     m_IsNumericOperand2 = IsNum( m_Operand2 );
 
-    // getting m_Operand1Value if operand1 is a number
+    // getting m_Operand2Value if operand2 is a number
     if( m_IsNumericOperand2 )
     {
         m_Operand2Value = std::stoi( m_Operand2 );

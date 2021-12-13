@@ -80,8 +80,8 @@ public:
         ERROR_InvalidSymSyntaxComposition,  ///> when even one of hte character used for label name is not alphabet or number
         ERROR_InsufficentMemory,			///> when there is insufficent memory for instruction translation
         ERROR_InvalidLoc,					///>  when memory address is less than 0 or more than MEMSZ, used by emulator
-        ERROR_InvalidInputSyn,				///> when a non-number input is entered by the user
-        ERROR_InvalidInputRange				///> when number input entered by user is out of  (+/-)999,999,999,999 range
+		ERROR_InvalidInputSyn,				///> when a non-number input is entered by the user
+		ERROR_InvalidInputRange				///> when number input entered by user is out of  (+/-)999,999,999,999 range
     };
 
     /// 

@@ -1,6 +1,17 @@
-//
-// Instruction Class
-// 
+/*************************************************************************************/
+/// 
+/// @file Instruction.h 
+/// 
+/// @brief  This file is a header file for Instruction class.
+/// 
+/// It contains all of the declaration of the member funciton of Instruction class.
+/// It contains all of the inline funcitons defination of  the member funciton of Instruction class 
+///
+/// @author Aayush Karki
+/// 
+/// @date  November 12, 2021 
+///  
+/*************************************************************************************/
 
 #pragma once
 
@@ -11,11 +22,15 @@
 /// @brief Class to parse and provide information about instructions. 
 /// 
 /// This class deals entirely with the input string realated things.
-/// Like scanning the given line of string  
-/// and dividing it into componenets 
+///		Like scanning the given line of string and dividing it into componenets,
+///		validating the instructions.
 /// 
-/// @note you will be adding more functionality.
-/// The elements of an instruction.
+/// @note this class is not used by Emulator class
+/// 
+/// @author Aayush Karki
+/// 
+/// @date  November 12, 2021 
+/// 
 class Instruction {
 
 
@@ -28,17 +43,30 @@ public:
     /// It sets int variable to 0, bool variable to  false, string variable to "", 
     ///     and Instruction::Instruction variavle to ST_Comment.
     /// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 12, 2021
+	/// 
     Instruction() { ClearMemberVariables(); }
     
     /// 
     /// @brief Deconstructor for the Instruction class. 
     /// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 12, 202
+	/// 
     ~Instruction( ) { };
 
     ///
     /// @enum InstructionType
     /// 
-    /// @brief Instruction type indicates the type of instruction we are processing.  
+    /// @brief Instruction type indicates the type of instruction we are processing.
+	/// 
+	/// @author Victor Miller
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 12, 202
     /// 
     enum class InstructionType 
     {
@@ -52,13 +80,20 @@ public:
     ///
     /// @brief ParseInstruction Parses the line of string into its component.
     /// 
-    /// ParseInstruction function goes through the passed string and 
+    /// ParseInstruction function goes through the passed instruction and 
     ///     seperates them into their indivisual componenet which are stored and 
     ///     be used by parsing
+	/// 
+	/// @note It calls on private memmber funcitons to validate the input 
+	///		and break it apart
     /// 
     /// @param a_line: a string read from the file
     /// 
     /// @return ParseInstruction return a corresponding Instruction::InstructionType.
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///          
     Instruction::InstructionType ParseInstruction( std::string a_line);
 
@@ -73,6 +108,10 @@ public:
     /// 
     /// @return LocationNextInstruction return a location of 
     ///     next intruction
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     /// 
     int LocationNextInstruction( int a_loc );
 
@@ -81,14 +120,22 @@ public:
     /// 
     /// @return location of the label if present; 
     ///         if label is not present return NULL
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     /// 
     inline const std::string& GetLabel(){ return m_Label; }
 
     ///
     /// @brief IsLabel checks if a label is blank.
     /// 
-    /// @return IsLabel returns true if label is present; 
+    /// @return IsLabel returns true if label variable is not empty; 
     ///     false if label is absent
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     /// 
     inline bool IsLabel() const{ return !m_Label.empty(); }
     
@@ -96,8 +143,11 @@ public:
     /// @brief getter function to access the numerical 
     ///         value of op code
     /// 
-    /// @return GetOpCodeNum returns location of the 
-    ///         Numeric OpCode 
+    /// @return GetOpCodeNum returns of the Numeric OpCode 
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const int GetOpCodeNum(){ return m_NumOpCode; }
 
@@ -106,6 +156,10 @@ public:
     ///         stored in of operand1
     /// 
     /// @return GetOperand1 returns content stored in of operand1
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const std::string GetOperand1(){ return m_Operand1; }
 
@@ -114,6 +168,10 @@ public:
     ///         stored in of operand2
     /// 
     /// @return GetOperand2 returns content stored in of operand2
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const std::string GetOperand2(){ return m_Operand2; }
 
@@ -121,15 +179,23 @@ public:
     /// @brief getter function to access the numerical 
     ///         value of operand 1
     /// 
-    /// @return GetNumOperand1 returns numeric value of operand1 
+    /// @return GetNumOperand1 returns numeric value of operand1
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202 
     ///
-    inline const int GetNumOperand1(){ return m_Operand1Value; }
+    inline const long long GetNumOperand1(){ return m_Operand1Value; }
 
     ///
     /// @brief getter function to access the numerical 
     ///         value of operand 2
     /// 
     /// @return GetNumOperand2 returns numeric value of operand2 
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const int GetNumOperand2(){ return m_Operand2Value; }
 
@@ -138,6 +204,10 @@ public:
     /// 
     /// @return IsNumOperand1 returns true if Operand 1 is numeric
     ///         else returns false
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const bool IsNumOperand1(){ return m_IsNumericOperand1; }
 
@@ -146,6 +216,10 @@ public:
     /// 
     /// @return IsNumOperand2 returns true if Operand 2 is numeric
     ///         else returns false
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const bool IsNumOperand2(){ return m_IsNumericOperand2; }
 
@@ -153,14 +227,21 @@ public:
     /// @brief getter function to access the orginal instruction
     /// 
     /// @return GetOrgiInst returns orginal instruction
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const std::string GetOrgiInst() { return m_Instruction; }
 
     /// 
     /// @brief Getter function to get start of error message type.
     /// 
-    /// 
     /// @return GetErrorMsgTypeBegin returns pointer to start of ErrorMessageType
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     /// 
     std::vector<Errors::ErrorTypes>::iterator GetErrorMsgTypeBegin() { return m_ErrorMsgType.begin(); }
 
@@ -169,6 +250,10 @@ public:
     /// 
     /// 
     /// @return GetErrorMsgTypeEnd returns pointer to end of ErrorMessageType
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     /// 
     std::vector<Errors::ErrorTypes>::iterator GetErrorMsgTypeEnd() { return m_ErrorMsgType.end(); }
 
@@ -176,6 +261,10 @@ public:
     /// @brief getter function
     /// 
     /// @return IsErrorLabelSyn returns true if error was found for op code
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const bool IsErrorOpCode(){ return m_ErrorOpCode; }
 
@@ -183,6 +272,10 @@ public:
     /// @brief getter function
     /// 
     /// @return IsErrorOperand1 returns true if error was found for operand 1
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const bool IsErrorOperand1(){ return m_ErrorOperand1; }
 
@@ -190,6 +283,10 @@ public:
     /// @brief getter function
     /// 
     /// @return IsErrorOperand2 returns true if error was found for operand 1
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const bool IsErrorOperand2(){ return m_ErrorOperand2; }
 
@@ -197,9 +294,14 @@ public:
     /// @brief getter function
     /// 
     /// If this is true, then instruction is already translated
+	/// 
     /// @see  SetFundamentalVar(), error case 2 and case 3 
     /// 
     /// @return IsErrorFundVar returns true if error was found for Fundamental variable
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///
     inline const bool IsErrorFundVar(){ return m_ErrorFundVar; }
 
@@ -207,17 +309,32 @@ private:
     // ===================== private functions ===================
 
     /// 
+	/// @private
     /// @brief ClearMemberVariables cleans all non-constant member variable.
     /// 
-    /// ClearMemberVariable sets them to 0 if int, false if bool,
-    ///  "" if string, and ST_Comment if Instruction::InstructionType
+    /// ClearMemberVariable sets the member varialbe to 0 for int type, 
+	///		false for bool type,
+    ///		"" for string type, and
+	///		 ST_Comment for Instruction::InstructionType type 
+	/// 
+	/// @note Instruction::InstructionType is a enum
     /// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
+	/// 
     void ClearMemberVariables();
 
     /// 
+	/// @private
     /// @brief RemoveComment removes everything after first instances of a ';'
+	///		from the parameter a_line
     /// 
-    /// @param a_line: address of the instuction  
+    /// @param a_line: address of the instuction 
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202 
     /// 
     inline void RemoveComment( std::string& a_line )
     { 
@@ -225,7 +342,8 @@ private:
     }
 
     /// 
-    /// @brief IsNum returns true if the argument string is a digit
+	/// @private
+    /// @brief IsNum returns true if the parameter string is a digit
     /// 
     /// IsNum check if all the character in the string
     ///     is a digit.
@@ -234,6 +352,10 @@ private:
     /// 
     /// @returns IsNum returns true if the argument 
     ///         string is a digit, else false 
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 202
     ///    
     inline const bool IsNum(std::string a_string)
     {
@@ -242,13 +364,18 @@ private:
     }
 
     /// 
-    /// @brief IsOpCode returns true if the argument string is in 
+	/// @private
+    /// @brief IsOpCode returns true if the parameter a_string is in 
     ///     enum Instruction::OpCode
     /// 
     /// @param a_string: string to which the test is done on
     /// 
     /// @returns IsOpCode returns true if the argument 
-    ///         string is found in the opCodeTable, else false 
+    ///         string is found in the opCodeTable, else false
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20 
     /// 
     const bool IsOpCode(std::string a_string) 
     {
@@ -256,11 +383,18 @@ private:
     }
     
     ///
-    /// @brief  AllUpperCase capitalises the passes string argument
+	/// @private
+    /// @brief  AllUpperCase capitalises teh content of parameter a_string
     ///
+	/// @note This funciton is called tor converting operation code to upper case
+	/// 
     /// @param a_string: string to which the test is done on
     /// 
     /// @returns AllUpperCase returns a uppercased string
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     ///     
     std::string AllUpperCase(std::string a_string)
     {
@@ -269,20 +403,21 @@ private:
     }
 
     ///
+	/// @private
     /// @brief  SetFundamentalVar sets the member varible unless there is a Invalid syntax
     ///
     /// This funciton detects error in input and deals them according to the error cases.
     /// 
     /// Error Cases:
     /// 
-    ///     case 1: if extra statement element error was detected it deletes the extra statement element
+    ///     -# case 1: if extra statement element error was detected it deletes the extra statement element
     ///         while flaging the error
     /// 
-    ///     case 2: if only opcode was suppled, with the exception of END and HALT it set the corresponding
+    ///     -# case 2: if only opcode was suppled, with the exception of END and HALT it set the corresponding
     ///         numerical equivalent of the opcode and  error signifier of set operand1 and operand2 to true
     ///         while flaging the error and set the numerical equivalent of the opCode
     /// 
-    ///     case3: if any other error was found it sets error signifier of label, opCode, operand1 and
+    ///     -# case3: if any other error was found it sets error signifier of label, opCode, operand1 and
     ///         operand2 to true depending to what caused the error while flaging the error 
     ///         and tries to continue translation
     /// 
@@ -292,31 +427,51 @@ private:
     /// @param a_indivisualInstruction: is the extraxted words form the line
     ///
     /// @return ValidateSymSyntax returns false in error case 2 and 3; else true
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     /// 
     bool SetFundamentalVar( std::vector<std::string>& a_indivisualInstruction );
 
     ///
+	/// @private
     /// @brief setter function to set the Numeric equivalent of Operation code
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     /// 
     void SetNumOpCode();
 
     ///
+	/// @private
     /// @brief setter function to set numiric first operand
     /// 
     /// checks if the operand1 is a number if it is converst it into 
-    ///     integer and stores it into m_Operand1Value member variable
+    ///     long long and stores it into m_Operand1Value member variable
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     /// 
     void SetNumOperand1();
 
     ///
+	/// @private
     /// @brief setter function to set numiric second operand
     /// 
     /// checks if the operand2 is a number if it is converst it into 
     ///     integer and stores it into m_Operand2Value member variable
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     /// 
     void SetNumOperand2();
 
     /// 
+	/// @private
     /// @brief ValidateSymSyntax checks if a symbol meets the requirement
     /// 
     /// If the symbol does not meet the requirement it set the error
@@ -324,11 +479,20 @@ private:
     /// @param a_Symbol symbol to check the requirements on
     /// 
     /// @return ValidateSymSyntax returns false if error was found
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     ///
     bool ValidateSymSyntax(std::string a_Symbol);
 
     /// 
+	/// @private
     /// @brief ValidateOpCodeSyntax checks if the instruction syntax was vaild or not
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
     /// 
     void ValidateOpCodeSyntax();
 
@@ -362,16 +526,29 @@ private:
     int m_NumOpCode;     
 
     bool m_IsNumericOperand1;   // == true if the operand1 is numeric.
-    int m_Operand1Value;   // The value of the operand1 if it is numeric.
+    long long m_Operand1Value;   // The value of the operand1 if it is numeric.
 
     bool m_IsNumericOperand2;   // == true if the operand2 is numeric.
     int m_Operand2Value;   // The value of the operand2 if it is numeric.
 
-    /// @note assemble only intruction are multiple of 100
+    /// 
+	/// @private
+	/// @brief operation code lookup table 
+	/// 
+	/// This is a list of all the operation code recognized by the assembler.
+	///		This list maps the Operation code to their numerical value 
+	///		recognized by the emulator 
+	/// 
+	/// @note the lookup table contains operation code used by both the 
+	///		emulator and assembler 
+	/// @note assemble only intruction are multiple of 100
     ///     so that when dividing the code number by 100 the remender
     ///     will be the actual code number
-    
-    // opCode lookup table 
+	/// 
+	/// @author Aayush Karki
+	/// 
+	/// @date  November 20, 20
+	/// 
     const std::unordered_map<std::string, int> opCodeTable
     {
         {"ADD", 1},

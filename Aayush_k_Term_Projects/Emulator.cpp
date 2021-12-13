@@ -187,9 +187,6 @@ bool Emulator::ReadFromUser(std::string &a_userInput, int a_currAddr)
 
         return false;
     }
-
-    // chekcing if the string can successfully convert in to an int
-    // valid input is (+/-)2147483647
     
     // checking for length of the string, max is 12 cause word of VC1600 
 	// memory can only handel 12 digits; which is be (+/-)999,999,999,999

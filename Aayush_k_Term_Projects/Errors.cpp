@@ -163,13 +163,12 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		}
 		case ( Errors::ErrorTypes::ERROR_InvalidInputSyn ):
 		{
-			return std::string( "--\n   ERROR--Invalid input--Input can only have digits" );
+			return std::string( "--\n   ERROR--Invalid input--Valid input can only have digits" );
 		}
 		case ( Errors::ErrorTypes::ERROR_InvalidInputRange ):
 		{
-			return std::string( "--\n   ERROR--Invalid input--Input range is (+/-)999,999,999,999" );
+			return std::string( "--\n   ERROR--Invalid input--Valid input range is (+/-)999,999,999,999" );
 		}
-
 	}
 }
 
