@@ -80,7 +80,7 @@ public:
 	/// 
 	/// @date  December 03, 2021
     /// 
-    bool RunProgram( );
+    bool RunProgram();
 
 private:
 	// ==================================== private function =====================================
