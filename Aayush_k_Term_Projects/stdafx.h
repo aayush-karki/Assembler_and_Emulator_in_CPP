@@ -6,9 +6,10 @@
 ///		or project specific include files that are used frequently, but
 ///		are changed infrequently
 /// 
-/// visusal studio uses this as precompile header 
+/// @note visusal studio uses this as precompile header 
 /// 
 /// @author Victor Miller
+/// @author Aayush Karki
 ///
 /// @date  November 10, 2021 
 ///  

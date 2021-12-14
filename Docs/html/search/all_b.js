@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['st_5fassemblerinstr_0',['ST_AssemblerInstr',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18ea6314cd86b9659d6a0d3b705aca6f44ed',1,'Instruction']]],
-  ['st_5fcomment_1',['ST_Comment',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eac2d7e2de28c393adbdc6bcf52c6a5ab9',1,'Instruction']]],
-  ['st_5fend_2',['ST_End',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eabae7b73bb2b60fc48b08a74936ae613c',1,'Instruction']]],
-  ['st_5ferror_3',['ST_Error',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eab592df12e518a75060b2c2403f07998c',1,'Instruction']]],
-  ['st_5fmachinelanguage_4',['ST_MachineLanguage',['../class_instruction.html#a191ca348a40cb711a9d41933b35ef18eae61139b7690299c7a3d0cd151da0a91b',1,'Instruction']]],
-  ['stuct_5fmachineinstruction_5',['Stuct_MachineInstruction',['../struct_machine_instruction_table_1_1_stuct___machine_instruction.html',1,'MachineInstructionTable']]],
-  ['symboltable_6',['SymbolTable',['../class_symbol_table.html',1,'']]]
+  ['parseinstruction_0',['ParseInstruction',['../class_instruction.html#a91e07a77007bc08898b78d02892bc187',1,'Instruction']]],
+  ['passi_1',['PassI',['../class_assembler.html#a1aada326bbf84329ff60ca0533a6f9e8',1,'Assembler']]],
+  ['passii_2',['PassII',['../class_assembler.html#a46c3abf430bddcce855ccd461abe6be1',1,'Assembler']]]
 ];

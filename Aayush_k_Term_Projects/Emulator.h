@@ -33,16 +33,16 @@
 /// 
 /// @date  December 03, 2021
 /// 
-class Emulator {
+class Emulator
+{
 
 public:
 
-	
-    const static int MEMSZ = 100000; ///> The size of the memory of the VC1620.
-    
-    /// 
-    /// @brief constructor, inializes the memory.
-    /// 
+	const static int MEMSZ = 100000; // The size of the memory of the VC1620.
+
+	/// 
+	/// @brief constructor, inializes the memory.
+	/// 
 	/// It resizes the memory to the size defined by MEMSZ 
 	///		and sets each to have the value of 0.
 	/// 
@@ -50,64 +50,64 @@ public:
 	/// 
 	/// @date  December 03, 2021
 	/// 
-    Emulator() {
+	Emulator() { m_memory.resize( MEMSZ, 0 ); }
 
-         m_memory.resize(MEMSZ, 0);
-    }
-
-    /// 
-    /// @brief InsertMemory Records instructions and data into VC1620.
-    /// 
+	/// 
+	/// @brief InsertMemory Records instructions and data into VC1620.
+	/// 
 	/// InsertMemory checks for valid location
 	/// 
-    /// @param a_location index of VC1620 memory where the intruction or data should be stored
-    /// @param a_contents intruction and data that needs to be stored in the memory 
-    /// 
-    /// @returns true if successfull
+	/// @param a_location index of VC1620 memory where the intruction or data should be stored
+	/// @param a_contents intruction and data that needs to be stored in the memory 
+	/// 
+	/// @returns true if instruciton instertion in a memory is successfull;
+	///			else false.
 	/// 
 	/// @author Aayush Karki
 	/// 
 	/// @date  December 03, 2021
-    /// 
-    bool InsertMemory( int a_location, long long a_contents );
-    
-    /// 
-    /// @brief RunProgram Runs the VC1600 program recorded in memory.
-    /// 
+	/// 
+	bool InsertMemory( int a_location, long long a_contents );
+
+	/// 
+	/// @brief RunProgram Runs the VC1600 program recorded in memory.
+	/// 
 	/// It there is an error, the execution of the program is stoped.
 	/// 
-    /// returns true if recorded program run successfully; else returns false.
+	/// @returns true if recorded program run successfully; else returns false.
 	/// 
 	/// @author Aayush Karki
 	/// 
 	/// @date  December 03, 2021
-    /// 
-    bool RunProgram( );
+	/// 
+	bool RunProgram();
 
 private:
-    // ==================================== private function =====================================
+	// ==================================== private function =====================================
 
 	/// 
+	/// @private
 	/// @brief ReadFromUser get a interger from user
 	/// 
 	/// ReadFromUser is called for opCode 07 "READ."
 	/// It also validates the user input.
 	/// 
-	/// @note As each word is 12 digit long, a valid userInput is +/- 999,999,999,999.
+	/// @note As each word is 12 digit long, a valid userInput is +/- 99,999,999,999 
+	///			as one digit is used to store the sign.
 	/// 
-	/// returns true if recorded program run successfully; else returns false.
+	/// @returns true if recorded program run successfully; else returns false.
 	/// 
 	/// @author Aayush Karki
 	/// 
 	/// @date  December 03, 2021
 	///
-    bool ReadFromUser( std::string& a_userInput, int a_currAddr );
+	bool ReadFromUser( std::string& a_userInput, int a_currAddr );
 
 private:
-    // ==================================== private variables =====================================
+	// ==================================== private variables =====================================
 
-    std::vector<long long> m_memory;  	// Memory for the VC1620
-    const int m_START_ADDRESS = 100;	// location of where the first instruction is 
+	std::vector<long long> m_memory;  	// Memory for the VC1620
+	const int m_START_ADDRESS = 100;	// location of where the first instruction is 
 };
 
 #endif
