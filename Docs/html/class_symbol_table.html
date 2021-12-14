@@ -109,7 +109,10 @@ $(document).ready(function(){initNavTree('class_symbol_table.html',''); initResi
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a85b1952180dcf0db9a715aef4db0ce4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">AddSymbol</a> (const std::string &amp;a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst)</td></tr>
-<tr class="memdesc:a85b1952180dcf0db9a715aef4db0ce4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">AddSymbol adds a new symbol to the symbol table.  <a href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">More...</a><br /></td></tr>
+<tr class="memdesc:a85b1952180dcf0db9a715aef4db0ce4d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><blockquote class="doxtable">
+<p >indicator of multiply defined symbol </p>
+</blockquote>
+ <a href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">More...</a><br /></td></tr>
 <tr class="separator:a85b1952180dcf0db9a715aef4db0ce4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d767f82287626f857b563da0adde783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#a0d767f82287626f857b563da0adde783">DisplaySymbolTable</a> ()</td></tr>
 <tr class="memdesc:a0d767f82287626f857b563da0adde783"><td class="mdescLeft">&#160;</td><td class="mdescRight">DisplaySymbolTable Display the symbol table to the screen.  <a href="class_symbol_table.html#a0d767f82287626f857b563da0adde783">More...</a><br /></td></tr>
@@ -126,6 +129,13 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a49ffa03849389f3f81352349ff7bc7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19f8c3da0230a0e41d55740c8068d5c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#ab19f8c3da0230a0e41d55740c8068d5c">multiplyDefinedSymbol</a> = -999</td></tr>
 <tr class="separator:ab19f8c3da0230a0e41d55740c8068d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1d820bab717109ce54c3086e1bbcb7ff"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#a1d820bab717109ce54c3086e1bbcb7ff">m_symbolTable</a></td></tr>
+<tr class="separator:a1d820bab717109ce54c3086e1bbcb7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ffa03849389f3f81352349ff7bc7b6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_symbol_table.html#a49ffa03849389f3f81352349ff7bc7b6">m_MAX_SYMBOL_LENGTH</a> = 10</td></tr>
+<tr class="separator:a49ffa03849389f3f81352349ff7bc7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is a class for <a class="el" href="class_symbol_table.html" title="This is a class for SymbolTable.">SymbolTable</a>. </p>
@@ -171,7 +181,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>AddSymbol adds a new symbol to the symbol table. </p>
+<p><blockquote class="doxtable">
+<p >indicator of multiply defined symbol </p>
+</blockquote>
+</p>
+<p >AddSymbol adds a new symbol to the symbol table.</p>
 <p >AddSymbol function will place the symbol "a_symbol" and its location "a_loc" in the symbol table.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
