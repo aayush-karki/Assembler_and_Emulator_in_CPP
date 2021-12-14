@@ -1,4 +1,4 @@
-/// /*************************************************************************************/
+/*************************************************************************************/
 /// 
 /// @file MachineInstructionTable.cpp 
 /// 
@@ -22,7 +22,7 @@ void MachineInstructionTable::AddMachineIntr( std::string a_AssembInst, int a_Lo
 
 	// adding information to the struct
 	m_machineInstTab.back().m_AssembInst = a_AssembInst;
-	
+
 	// checking if a_content was suplied or not
 	if( a_Content == "-5" )
 	{
@@ -51,7 +51,7 @@ void MachineInstructionTable::DisplayMachineInstTable()
 	std::cout << "Translation of Program:" << std::endl << std::endl;
 
 	// formating the table and printing the table headign
-	std::cout << std::left; 
+	std::cout << std::left;
 	std::cout << std::setw( 7 ) << "Line "
 		<< std::setw( 9 ) << "Location "
 		<< std::setw( 14 ) << "  Content"
@@ -61,18 +61,18 @@ void MachineInstructionTable::DisplayMachineInstTable()
 	while( currInstIte != m_machineInstTab.end() )
 	{
 		++currLineNum;
-		std::cout <<" " << std::setw(6) << currLineNum << "   ";
+		std::cout << " " << std::setw( 6 ) << currLineNum << "   ";
 		std::cout << std::setw( 6 );
 		if( currInstIte->m_Location != GetDefaultLocation() )
 		{
 			std::cout << currInstIte->m_Location;
-		} 
+		}
 		else
 		{
 			std::cout << " ";
-		} 
+		}
 		std::cout << std::setw( 15 );
-		
+
 		if( currInstIte->m_Content != GetDefaultContent() )
 		{
 			std::cout << currInstIte->m_Content;

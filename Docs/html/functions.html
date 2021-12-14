@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>VC1620 Assembler and Emulator: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -16,9 +17,15 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -30,6 +37,21 @@
    <div id="projectbrief">Emulates VC1620 which is based on IBM1620</div>
   </td>
  </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td></tr>
  </tbody>
 </table>
 </div>
@@ -40,19 +62,7 @@
 var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -83,21 +93,26 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
+<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>AddMachineIntr()&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#aa7302500a187dc0355fefbf7d1fb8b1b">MachineInstructionTable</a></li>
 <li>AddSymbol()&#160;:&#160;<a class="el" href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">SymbolTable</a></li>
+<li>AllUpperCase()&#160;:&#160;<a class="el" href="class_instruction.html#a11e47538768ca8a996d3d98e2ad18cfe">Instruction</a></li>
 <li>Assembler()&#160;:&#160;<a class="el" href="class_assembler.html#a898ad743c2f623a3df00c6e7758513ae">Assembler</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>CheckEOF()&#160;:&#160;<a class="el" href="class_file_access.html#a373d1730bcf10e5c5b2a4ac445c01fe0">FileAccess</a></li>
+<li>ClearMemberVariables()&#160;:&#160;<a class="el" href="class_instruction.html#a0963106b13056679f9565a74a2a8e6de">Instruction</a></li>
+<li>ComputeNextLoc()&#160;:&#160;<a class="el" href="class_assembler.html#aef92fa25033234a57841cfb2738612be">Assembler</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>DEFAULT_CONTENT&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#af883c1c376366d040edd250b9bc5a89a">MachineInstructionTable</a></li>
+<li>DEFAULT_LOCATION&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#a0a7389ee3494b3aea2e9f7d22de051bd">MachineInstructionTable</a></li>
 <li>DisplayAllErrors()&#160;:&#160;<a class="el" href="class_errors.html#a08f159f033f7ee172ba0d888075f1696">Errors</a></li>
 <li>DisplayDeclaredConstTab()&#160;:&#160;<a class="el" href="class_assembler.html#a60c1f5ef54ec26a83af95214efb50cdc">Assembler</a></li>
 <li>DisplayDeclaredMemVarTab()&#160;:&#160;<a class="el" href="class_assembler.html#aca7417d928476cf3dcfc1459ff452455">Assembler</a></li>
@@ -128,7 +143,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>GetMachineInstTabBegin()&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#a17ce09717f062fb2644d4429f3581b10">MachineInstructionTable</a></li>
 <li>GetMachineInstTabEnd()&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#a72899f7659ef1de788e14f061b8e7fa8">MachineInstructionTable</a></li>
 <li>GetNextLine()&#160;:&#160;<a class="el" href="class_file_access.html#ae873ad4b8fb51ae0f7ca05d4320633a7">FileAccess</a></li>
-<li>GetNumOperand1()&#160;:&#160;<a class="el" href="class_instruction.html#ae142535d2b46a5b269db509d4af5ccda">Instruction</a></li>
+<li>GetNoError()&#160;:&#160;<a class="el" href="class_assembler.html#af88fabe2e3b31e5982906a99194f55d0">Assembler</a></li>
+<li>GetNumOperand1()&#160;:&#160;<a class="el" href="class_instruction.html#af3811474a5c1ad514dd2b8875a94083f">Instruction</a></li>
 <li>GetNumOperand2()&#160;:&#160;<a class="el" href="class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555">Instruction</a></li>
 <li>GetOpCodeNum()&#160;:&#160;<a class="el" href="class_instruction.html#a0bf49f629d214eb8c97b9c3420dba354">Instruction</a></li>
 <li>GetOperand1()&#160;:&#160;<a class="el" href="class_instruction.html#af688735cb40af9f44e32317e9f611ed7">Instruction</a></li>
@@ -148,13 +164,18 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>IsErrorOperand1()&#160;:&#160;<a class="el" href="class_instruction.html#a7d3837cd392375002afc4fb73cbf9fdc">Instruction</a></li>
 <li>IsErrorOperand2()&#160;:&#160;<a class="el" href="class_instruction.html#aa51aa61d0e5108559b9f4980e84a6c8f">Instruction</a></li>
 <li>IsLabel()&#160;:&#160;<a class="el" href="class_instruction.html#afd9e666acd0bbcea10261c68a0a84807">Instruction</a></li>
+<li>IsNum()&#160;:&#160;<a class="el" href="class_instruction.html#a3a1b4f4e5d3e3460796a75a5a4623903">Instruction</a></li>
 <li>IsNumOperand1()&#160;:&#160;<a class="el" href="class_instruction.html#ad8b52c8e42fd8de20ea6c7c5d99c265a">Instruction</a></li>
 <li>IsNumOperand2()&#160;:&#160;<a class="el" href="class_instruction.html#aadc9352f71c0f51640224dcdee975ef2">Instruction</a></li>
+<li>IsOpCode()&#160;:&#160;<a class="el" href="class_instruction.html#aed100c71e2951d65f632f5e844a44961">Instruction</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>LocationNextInstruction()&#160;:&#160;<a class="el" href="class_instruction.html#a48b085de537d251ff604df82fa20cbe9">Instruction</a></li>
+<li>LookupDeclaredConst()&#160;:&#160;<a class="el" href="class_assembler.html#a4ca511b87643b287f6a13d9e4ccf8cf9">Assembler</a></li>
+<li>LookupDeclaredVarMem()&#160;:&#160;<a class="el" href="class_assembler.html#ac784c6ac50a3c79d8e867e1776b6ccc7">Assembler</a></li>
+<li>LookUpErrorMsgs()&#160;:&#160;<a class="el" href="class_errors.html#a13952116585acea090fb4bc0a50f5740">Errors</a></li>
 <li>LookupSymbol()&#160;:&#160;<a class="el" href="class_symbol_table.html#abca195d5f0ae45089761f09d014e5c06">SymbolTable</a></li>
 </ul>
 
@@ -162,10 +183,48 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>m_AssembInst&#160;:&#160;<a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#a6801e4b08c5bb01279089f5a1a787ed5">MachineInstructionTable::Stuct_MachineInstruction</a></li>
 <li>m_Content&#160;:&#160;<a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#a5557621888c773dedae0d6b77af77c7f">MachineInstructionTable::Stuct_MachineInstruction</a></li>
+<li>m_declaredConstTab&#160;:&#160;<a class="el" href="class_assembler.html#a01cec940e246a4b4d20a2ccc01133759">Assembler</a></li>
+<li>m_declaredMemVarTab&#160;:&#160;<a class="el" href="class_assembler.html#a3c9ad17474772c4964084214167d2b53">Assembler</a></li>
+<li>m_emul&#160;:&#160;<a class="el" href="class_assembler.html#ae4199a756bada832cda3bfc9038c7da0">Assembler</a></li>
+<li>m_ErrorFundVar&#160;:&#160;<a class="el" href="class_instruction.html#aec599be76d1eede38322694027a94f54">Instruction</a></li>
+<li>m_ErrorMsgs&#160;:&#160;<a class="el" href="class_errors.html#ace6ce60a43e6699aea631235c32cbeae">Errors</a></li>
+<li>m_ErrorMsgType&#160;:&#160;<a class="el" href="class_instruction.html#afe59b06903bc0046ac5b6e55f9d5a0d5">Instruction</a></li>
+<li>m_ErrorOpCode&#160;:&#160;<a class="el" href="class_instruction.html#a39d704034cf725bfbfc6d943dc1bec7a">Instruction</a></li>
+<li>m_ErrorOperand1&#160;:&#160;<a class="el" href="class_instruction.html#afe1508cbe0f0f00b690fb21ee394c362">Instruction</a></li>
+<li>m_ErrorOperand2&#160;:&#160;<a class="el" href="class_instruction.html#a5ec003f0e6379d7a7d276da4ec9d0acb">Instruction</a></li>
+<li>m_facc&#160;:&#160;<a class="el" href="class_assembler.html#a4d5c967ce6f17647a9f2034882ec6f40">Assembler</a></li>
+<li>m_inst&#160;:&#160;<a class="el" href="class_assembler.html#aa6f9b5a8415ec4f3479b46605bdca0ce">Assembler</a></li>
+<li>m_Instruction&#160;:&#160;<a class="el" href="class_instruction.html#af90f268fce276cad5c40959d66938681">Instruction</a></li>
+<li>m_IsNumericOperand1&#160;:&#160;<a class="el" href="class_instruction.html#a4c5251c3367f60fbfb5850bb9adec4dc">Instruction</a></li>
+<li>m_IsNumericOperand2&#160;:&#160;<a class="el" href="class_instruction.html#a7f377f7b3d95dd7bab2e167e1ea5abb0">Instruction</a></li>
 <li>m_isOrg&#160;:&#160;<a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#ae2be048689c70b9e58620da5ddd02ad0">MachineInstructionTable::Stuct_MachineInstruction</a></li>
+<li>m_Label&#160;:&#160;<a class="el" href="class_instruction.html#a18014b06b66b73dcee17d7656ce91e46">Instruction</a></li>
+<li>m_Location&#160;:&#160;<a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#a7e50552fa1d0c2ad6da8c6443700b024">MachineInstructionTable::Stuct_MachineInstruction</a></li>
+<li>m_machineInstTab&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#a091799e2bd2cdea9c467f81b620e1ff9">MachineInstructionTable</a></li>
+<li>m_machInstTab&#160;:&#160;<a class="el" href="class_assembler.html#a7dbaf545acae2122587de162b2147df7">Assembler</a></li>
+<li>m_MAX_SYMBOL_LENGTH&#160;:&#160;<a class="el" href="class_symbol_table.html#a49ffa03849389f3f81352349ff7bc7b6">SymbolTable</a></li>
+<li>m_memory&#160;:&#160;<a class="el" href="class_emulator.html#afb210e5749fce7b0cb5c203d38106155">Emulator</a></li>
 <li>m_nextLoc&#160;:&#160;<a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#adfd20431169cde27ad3287a705fa93db">MachineInstructionTable::Stuct_MachineInstruction</a></li>
-<li>MachineInstructionTable()&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#a01cab83b513af02ea19d83c51895dfa7">MachineInstructionTable</a></li>
+<li>m_noError&#160;:&#160;<a class="el" href="class_assembler.html#a10e35790dd7d6992103d023146a085e2">Assembler</a></li>
+<li>m_NumOpCode&#160;:&#160;<a class="el" href="class_instruction.html#a244f6ebb6aacb89bcfc9405747efe438">Instruction</a></li>
+<li>m_OpCode&#160;:&#160;<a class="el" href="class_instruction.html#aa2d32cb255e564f8abe43bdda477cc6d">Instruction</a></li>
+<li>m_Operand1&#160;:&#160;<a class="el" href="class_instruction.html#a3a7c2c747e095ccda616fb0807c4e9da">Instruction</a></li>
+<li>m_Operand1Value&#160;:&#160;<a class="el" href="class_instruction.html#a3d6e213b06d555a1abc93d3d78004696">Instruction</a></li>
+<li>m_Operand2&#160;:&#160;<a class="el" href="class_instruction.html#a5316e622baf0e6ccadd0fa3f54dd88bf">Instruction</a></li>
+<li>m_Operand2Value&#160;:&#160;<a class="el" href="class_instruction.html#a8879f2241c274a2c2f170e1286b3e263">Instruction</a></li>
+<li>m_sfile&#160;:&#160;<a class="el" href="class_file_access.html#ad3b4ac4e686627bd373aa0b695caec3b">FileAccess</a></li>
+<li>m_START_ADDRESS&#160;:&#160;<a class="el" href="class_emulator.html#aacfc76fa3eebf6693733fb399ae9102e">Emulator</a></li>
+<li>m_symbolTable&#160;:&#160;<a class="el" href="class_symbol_table.html#a1d820bab717109ce54c3086e1bbcb7ff">SymbolTable</a></li>
+<li>m_symtab&#160;:&#160;<a class="el" href="class_assembler.html#a33fafe1d85a14971be622ede1c4398a3">Assembler</a></li>
+<li>m_Type&#160;:&#160;<a class="el" href="class_instruction.html#ad46cd0be9c2c688559b7d41a1ae51236">Instruction</a></li>
 <li>MachineInstructionTable::Stuct_MachineInstruction()&#160;:&#160;<a class="el" href="struct_machine_instruction_table_1_1_stuct___machine_instruction.html#ab33b33fec9779672a1735d939b7a48b6">MachineInstructionTable::Stuct_MachineInstruction</a></li>
+<li>MEMSZ&#160;:&#160;<a class="el" href="class_emulator.html#aa790b65ebd90f0a2764dc7e2954955be">Emulator</a></li>
+<li>multiplyDefinedSymbol&#160;:&#160;<a class="el" href="class_symbol_table.html#ab19f8c3da0230a0e41d55740c8068d5c">SymbolTable</a></li>
+</ul>
+
+
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>opCodeTable&#160;:&#160;<a class="el" href="class_instruction.html#a96ed8b4088052a12acd9fdf41ed3cc44">Instruction</a></li>
 </ul>
 
 
@@ -177,10 +236,32 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>ReadFromUser()&#160;:&#160;<a class="el" href="class_emulator.html#a330d5b7823b57ad1191722a3c5e25980">Emulator</a></li>
 <li>RecordError()&#160;:&#160;<a class="el" href="class_errors.html#ab366436c05401b93787c567910c6755e">Errors</a></li>
+<li>RemoveComment()&#160;:&#160;<a class="el" href="class_instruction.html#ab305f10c5a680f83d7c02acec31a7716">Instruction</a></li>
 <li>Rewind()&#160;:&#160;<a class="el" href="class_file_access.html#abbc8def5adc4f6d949168c67cfca7da0">FileAccess</a></li>
 <li>RunProgram()&#160;:&#160;<a class="el" href="class_emulator.html#aaf0246b3e6b73b52712a9cf2a5528191">Emulator</a></li>
 <li>RunProgramInEmulator()&#160;:&#160;<a class="el" href="class_assembler.html#afbb8afac547b87ea5a57b8f9a9b0af80">Assembler</a></li>
+</ul>
+
+
+<h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>SetFundamentalVar()&#160;:&#160;<a class="el" href="class_instruction.html#ac4d37697b21b1c9fd5102a7d262c52e7">Instruction</a></li>
+<li>SetNumOpCode()&#160;:&#160;<a class="el" href="class_instruction.html#ac68c72229314608d2967c49daff093cd">Instruction</a></li>
+<li>SetNumOperand1()&#160;:&#160;<a class="el" href="class_instruction.html#a6f3dcb68dd382487912549de589ac5e9">Instruction</a></li>
+<li>SetNumOperand2()&#160;:&#160;<a class="el" href="class_instruction.html#a8339bef83a19e04c189b62d51e93c8df">Instruction</a></li>
+<li>SmartFillContent()&#160;:&#160;<a class="el" href="class_assembler.html#a76a1dc74bc63d09ec2f6942b4f28d3c8">Assembler</a></li>
+</ul>
+
+
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>TranslateInstruction()&#160;:&#160;<a class="el" href="class_assembler.html#a992aa79129109eff7c9a0888aa152f2a">Assembler</a></li>
+</ul>
+
+
+<h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>ValidateOpCodeSyntax()&#160;:&#160;<a class="el" href="class_instruction.html#a3bea8a867d955b8072174e5dd9aac087">Instruction</a></li>
+<li>ValidateSymSyntax()&#160;:&#160;<a class="el" href="class_instruction.html#aee25f5062cfff75ada60bbfe4273eb18">Instruction</a></li>
 </ul>
 
 
@@ -188,7 +269,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>~Assembler()&#160;:&#160;<a class="el" href="class_assembler.html#a6e9d207baf8191cd6c4847f56548f73f">Assembler</a></li>
 <li>~FileAccess()&#160;:&#160;<a class="el" href="class_file_access.html#a10459e5e524182ed3cd6a82dbebb5643">FileAccess</a></li>
 <li>~Instruction()&#160;:&#160;<a class="el" href="class_instruction.html#a26eb634480beff1ad7a20235c11f521d">Instruction</a></li>
-<li>~MachineInstructionTable()&#160;:&#160;<a class="el" href="class_machine_instruction_table.html#a171c922f0ebcbf85178eaa9ccef91565">MachineInstructionTable</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

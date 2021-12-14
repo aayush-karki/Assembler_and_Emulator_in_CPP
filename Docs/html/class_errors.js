@@ -26,6 +26,7 @@ var class_errors =
       [ "ERROR_InsufficentMemory", "class_errors.html#a2aebcb48c7d722da1b295349ebaad906ae12fac83d73aae01827e2604f4bb685a", null ],
       [ "ERROR_InvalidLoc", "class_errors.html#a2aebcb48c7d722da1b295349ebaad906abe008e297a7dd8ab3b81a1437e6dc351", null ],
       [ "ERROR_InvalidInputSyn", "class_errors.html#a2aebcb48c7d722da1b295349ebaad906a4255dfc739bf862859fe48bdc2685b94", null ],
-      [ "ERROR_InvalidInputRange", "class_errors.html#a2aebcb48c7d722da1b295349ebaad906a1a3c086bfab2c6c2fb73b83c8b1e6185", null ]
+      [ "ERROR_InvalidInputRange", "class_errors.html#a2aebcb48c7d722da1b295349ebaad906a1a3c086bfab2c6c2fb73b83c8b1e6185", null ],
+      [ "ERROR_InvalidConstantRange", "class_errors.html#a2aebcb48c7d722da1b295349ebaad906ab457f0b527877fc1ecde0964312a5d18", null ]
     ] ]
 ];

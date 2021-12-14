@@ -10,10 +10,11 @@ var searchData=
   ['getmachineinsttabbegin_7',['GetMachineInstTabBegin',['../class_machine_instruction_table.html#a17ce09717f062fb2644d4429f3581b10',1,'MachineInstructionTable']]],
   ['getmachineinsttabend_8',['GetMachineInstTabEnd',['../class_machine_instruction_table.html#a72899f7659ef1de788e14f061b8e7fa8',1,'MachineInstructionTable']]],
   ['getnextline_9',['GetNextLine',['../class_file_access.html#ae873ad4b8fb51ae0f7ca05d4320633a7',1,'FileAccess']]],
-  ['getnumoperand1_10',['GetNumOperand1',['../class_instruction.html#ae142535d2b46a5b269db509d4af5ccda',1,'Instruction']]],
-  ['getnumoperand2_11',['GetNumOperand2',['../class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555',1,'Instruction']]],
-  ['getopcodenum_12',['GetOpCodeNum',['../class_instruction.html#a0bf49f629d214eb8c97b9c3420dba354',1,'Instruction']]],
-  ['getoperand1_13',['GetOperand1',['../class_instruction.html#af688735cb40af9f44e32317e9f611ed7',1,'Instruction']]],
-  ['getoperand2_14',['GetOperand2',['../class_instruction.html#a1621a483cb6308d6d721de799a22120e',1,'Instruction']]],
-  ['getorgiinst_15',['GetOrgiInst',['../class_instruction.html#a796ea1d9aeebcd050024c57831c33c2f',1,'Instruction']]]
+  ['getnoerror_10',['GetNoError',['../class_assembler.html#af88fabe2e3b31e5982906a99194f55d0',1,'Assembler']]],
+  ['getnumoperand1_11',['GetNumOperand1',['../class_instruction.html#af3811474a5c1ad514dd2b8875a94083f',1,'Instruction']]],
+  ['getnumoperand2_12',['GetNumOperand2',['../class_instruction.html#a7d7d98143f77467ba18f006dd3b5e555',1,'Instruction']]],
+  ['getopcodenum_13',['GetOpCodeNum',['../class_instruction.html#a0bf49f629d214eb8c97b9c3420dba354',1,'Instruction']]],
+  ['getoperand1_14',['GetOperand1',['../class_instruction.html#af688735cb40af9f44e32317e9f611ed7',1,'Instruction']]],
+  ['getoperand2_15',['GetOperand2',['../class_instruction.html#a1621a483cb6308d6d721de799a22120e',1,'Instruction']]],
+  ['getorgiinst_16',['GetOrgiInst',['../class_instruction.html#a796ea1d9aeebcd050024c57831c33c2f',1,'Instruction']]]
 ];
