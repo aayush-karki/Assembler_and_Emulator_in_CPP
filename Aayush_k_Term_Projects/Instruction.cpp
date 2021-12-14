@@ -382,8 +382,46 @@ void Instruction::ValidateOpCodeSyntax()
             m_Type = Instruction::InstructionType::ST_End;
         }
     }
-    //  for ORG, DC, and DS, operand1 should have a numeric value
-    else if( m_NumOpCode >= 100 && m_NumOpCode <= 300 )
+	//for DC operand1 should be numeric value whoose range is +/- 99'999'999'999
+	else if( m_NumOpCode == 200 )
+	{
+		char sign = '0';
+
+		// checking if the first char is - or +
+		if( m_Operand1.at( 0 ) == '-' || m_Operand1.front() == '+' )
+		{
+			sign = m_Operand1.at( 0 );
+			m_Operand1.erase( 0, 1 ); // removing the first char
+
+			SetNumOperand1(); // setting the numoperand again
+		}
+
+		// if it is not a numberic value
+		if( !m_IsNumericOperand1 )
+		{
+			m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_NotNumOperand1 );
+			m_ErrorOperand1 = true;
+		}
+
+		else
+		{
+			// checking number in operand 1 is out of rand
+			if( m_Operand1Value > 99'999'999'999 )
+			{
+				m_ErrorMsgType.push_back( Errors::ErrorTypes::ERROR_InvalidConstantRange );
+				m_ErrorOperand1 = true;
+			}
+			else
+			{
+				if( sign == '-' )
+				{
+					m_Operand1Value *= -1;
+				}
+			}
+		}
+	}
+    //  for ORG and DS, operand1 should have a numeric value between 0 to 99'999
+    else if( m_NumOpCode == 100 || m_NumOpCode == 300 )
     {
         // if it is not a numberic value
         if( !m_IsNumericOperand1 )

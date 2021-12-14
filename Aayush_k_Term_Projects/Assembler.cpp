@@ -315,7 +315,7 @@ void Assembler::InsertInstToEmulator()
     return;
 }
 
-void Assembler::SmartFillContent( std::string &a_TranslatedContent,int a_ToAppendNum, int a_LengthToFill)
+void Assembler::SmartFillContent( std::string &a_TranslatedContent,long long a_ToAppendNum, int a_LengthToFill)
 {
     std::string toAppend = std::to_string( a_ToAppendNum );
     
@@ -407,7 +407,10 @@ void Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         {
             //no error
             // for DC the value of operand1 is stored in operand 2
-            SmartFillContent( translatedContent, m_inst.GetNumOperand1(), 10 );
+			// translated Content currently contain "00" in it
+			translatedContent = "";
+
+            SmartFillContent( translatedContent, m_inst.GetNumOperand1(), 12 );
         }
 
         // adding it to the  machine inst table

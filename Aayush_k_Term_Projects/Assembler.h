@@ -162,7 +162,7 @@ private:
    /// 
    /// @date  November 25, 2021 
    /// 
-    void SmartFillContent( std::string& a_TranslatedContent, int a_ToAppendNum, int a_LengthToFill = 5 );
+    void SmartFillContent( std::string& a_TranslatedContent, long long a_ToAppendNum, int a_LengthToFill = 5 );
     
     /// 
     /// @brief Lookup a symbol in the declared constant table.

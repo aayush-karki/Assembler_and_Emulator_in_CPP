@@ -1,7 +1,7 @@
 ;this is a test
         org  100  
 hi     read    x;comment immediately after statement       
-hay  copy   y, x ; This is the another comment.
+hay  copY   y, x ; This is the another comment.
         WRITE    x; to show that operation codes are case insensitive
           bp      hi y; shows we don't have to have everything line up.
         halt

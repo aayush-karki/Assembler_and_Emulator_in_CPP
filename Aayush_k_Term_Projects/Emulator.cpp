@@ -189,8 +189,8 @@ bool Emulator::ReadFromUser(std::string &a_userInput, int a_currAddr)
     }
     
     // checking for length of the string, max is 12 cause word of VC1600 
-	// memory can only handel 12 digits; which is be (+/-)999,999,999,999
-    if( a_userInput.size() > 12 )
+	// memory can only handel 12 digits; which is be (+/-)99,999,999,999
+    if( a_userInput.size() > 11 )
     {
         Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputRange, "Loc", 
 							a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );

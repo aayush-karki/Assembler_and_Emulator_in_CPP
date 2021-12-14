@@ -81,8 +81,9 @@ public:
         ERROR_InsufficentMemory,			///> when there is insufficent memory for instruction translation
         ERROR_InvalidLoc,					///>  when memory address is less than 0 or more than MEMSZ, used by emulator
 		ERROR_InvalidInputSyn,				///> when a non-number input is entered by the user
-		ERROR_InvalidInputRange				///> when number input entered by user is out of  (+/-)999,999,999,999 range
-    };
+		ERROR_InvalidInputRange,			///> when number input entered by user is out of  (+/-)99,999,999,999 range
+		ERROR_InvalidConstantRange			///> when number constant is out of  (+/-)99,999,999,999 range
+	};
 
     /// 
 	/// @brief RecordError constructs an error message accoring to the error type

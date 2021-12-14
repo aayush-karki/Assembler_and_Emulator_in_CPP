@@ -167,7 +167,11 @@ std::string Errors::LookUpErrorMsgs( Errors::ErrorTypes a_errorType )
 		}
 		case ( Errors::ErrorTypes::ERROR_InvalidInputRange ):
 		{
-			return std::string( "--\n   ERROR--Invalid input--Valid input range is (+/-)999,999,999,999" );
+			return std::string( "--\n   ERROR--Invalid input--Valid input range is (+/-)99,999,999,999" );
+		}
+		case ( Errors::ErrorTypes::ERROR_InvalidConstantRange ):
+		{
+			return std::string( "--\n   ERROR--Invalid Constant--Valid constant range is (+/-)99,999,999,999" );
 		}
 	}
 }
