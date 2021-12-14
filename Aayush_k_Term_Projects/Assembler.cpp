@@ -2,10 +2,10 @@
 #include "Assembler.h"
 #include "Errors.h"
 
-Assembler::Assembler( int argc, char *argv[] )
-: m_facc( argc, argv )
+Assembler::Assembler( int argc, char *argv[] ):
+	m_facc( argc, argv )
 {
-    // Nothing else to do here at this point.
+	m_noError = true;
 }
 
 Assembler::~Assembler( )
@@ -57,11 +57,15 @@ void Assembler::PassI( )
         	continue;
 	    }
 
-        // If the instruction has a label, record it and its location in the
-        // symbol table.
+        // If the instruction has a label, record it and its location in the symbol tabel
+        // also add all the constant declared by dc opCode to the declared constant table 
+        // also add all the memory declared by ds opCode to the declared memory variable table 
         if( m_inst.IsLabel( ) ) 
         {
-            m_symtab.AddSymbol( m_inst.GetLabel(), loc, lineCounter, m_inst.GetOrgiInst() );
+            if (!m_symtab.AddSymbol(m_inst.GetLabel(), loc, lineCounter, m_inst.GetOrgiInst()))
+            {
+                m_noError = false;
+            }
 
             // storing the number declared by DC instruction
             if( m_inst.GetOpCodeNum() == 200 )
@@ -82,11 +86,10 @@ void Assembler::PassI( )
     }
 }
 
-bool Assembler::PassII()
+void Assembler::PassII()
 {
     int loc = 0;        // Tracks the location of the instructions to be generated.
     bool insufficentMemory = false; // track memory siuation
-    bool noError = true; // tracks if error was found or not;
 
     // rewinding back to the start of the file
     m_facc.Rewind();
@@ -108,9 +111,9 @@ bool Assembler::PassII()
         if( !m_facc.GetNextLine( line ) ) 
         {
             Errors::RecordError( Errors::ErrorTypes::ERROR_MissingEnd, "Line", lineCounter, "");
-            noError = false;
+            m_noError = false;
 
-            return noError;
+            return;
         }
 
         // Parse the line and get the instruction type.
@@ -119,21 +122,18 @@ bool Assembler::PassII()
         // check if there were any error while parseing the instruction
         if( st == Instruction::InstructionType::ST_Error )
         {
+			m_noError = false;
             std::vector<Errors::ErrorTypes>::iterator currErrorPtr = m_inst.GetErrorMsgTypeBegin();
 
             while(currErrorPtr != m_inst.GetErrorMsgTypeEnd() )
             {
                 Errors::RecordError(*currErrorPtr, "Line", lineCounter, m_inst.GetOrgiInst() );
-                noError = false;
-
                 ++currErrorPtr;
             }
 
-            // checking if error was found in fundamental variable
+            // checking if error was found in fundamental variable to append it ot the instruction table
             if( m_inst.IsErrorFundVar() )
             {
-                noError = false;
-
                 if( m_inst.IsErrorOpCode() )
                 {
                     m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, "????????????" );
@@ -150,6 +150,7 @@ bool Assembler::PassII()
 
                     m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), loc, content );
                 }
+
                 // computing next loc
                 ComputeNextLoc( loc, lineCounter, insufficentMemory );
                 continue;
@@ -171,39 +172,29 @@ bool Assembler::PassII()
             {
                 // adding END inst to the machineInstruction Table
                 m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst() );
-                return noError;
+                return;
             }
 
             // END statement is not the last statement.
             Errors::RecordError( Errors::ErrorTypes::ERROR_EndNotLast, "Line", lineCounter, m_inst.GetOrgiInst() );
-            noError = false;
+			m_noError = false;
         }
         // record error if the line is a machine instruction
         else if( st == Instruction::InstructionType::ST_MachineLanguage )
         {
+			m_noError = false;
             Errors::RecordError( Errors::ErrorTypes::ERROR_MachineLangInAssemLang, "Line", lineCounter, m_inst.GetOrgiInst() );
-            noError = false;
         }
         // it is assembly code
         else
         {
-            // checking if there was an erro
-            if( !TranslateInstruction( loc, lineCounter ) )
-            {
-                noError = false;
-            }
+			TranslateInstruction(loc, lineCounter);
         }
         
         ComputeNextLoc( loc, lineCounter, insufficentMemory );
     }
 
-    // check for insufficentMemory error
-    if( insufficentMemory )
-    {
-        noError = false;
-    }
-
-    return noError;
+    return;
 }
 
 void Assembler::DisplayDeclaredConstTab()
@@ -287,7 +278,7 @@ void Assembler::RunProgramInEmulator()
 
 }
 
-bool Assembler::InsertInstToEmulator()
+void Assembler::InsertInstToEmulator()
 {
     std::vector<MachineInstructionTable::Stuct_MachineInstruction>::iterator currInst = m_machInstTab.GetMachineInstTabBegin();
     
@@ -315,13 +306,13 @@ bool Assembler::InsertInstToEmulator()
         if( !m_emul.InsertMemory( currInst->m_Location, currNumContent ) )
         {
             Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidLoc, "Line", currInst->m_Location, currInst->m_Content );
-            return false;
+			m_noError = false;
         }
 
         ++currInst;
     }
 
-    return true;
+    return;
 }
 
 void Assembler::SmartFillContent( std::string &a_TranslatedContent,int a_ToAppendNum, int a_LengthToFill)
@@ -335,7 +326,6 @@ void Assembler::SmartFillContent( std::string &a_TranslatedContent,int a_ToAppen
     }
     else
     {
-
         // apending filler '0' to the translatedContent according to length of toAppend 
         // before appending toAppend to the translatedContent
         for( int i = 0; i < ( a_LengthToFill - toAppend.size() ); ++i )
@@ -371,10 +361,8 @@ bool Assembler::LookupDeclaredVarMem( const std::string& a_symbol )
     return true;
 }
 
-bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
+void Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
 {
-    bool noError = true; // tracks errors
-
     std::string translatedContent;  // stores translating the intruction into machine readable form
 
     int opCodeNum = m_inst.GetOpCodeNum(); // getting the opCodeNum of current instruction
@@ -387,12 +375,10 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
     // checking if both operand 1 and  operand 2 have error
     if( m_inst.IsErrorOperand1() && m_inst.IsErrorOperand2() )
     {
-        noError = false;
-        
         translatedContent.append( "??????????" );
         m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent );
 
-        return false;
+        return;
     }
    
     // for ORG, DS does not have content 
@@ -401,7 +387,6 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         // checking for error
         if( m_inst.IsErrorOperand1() )
         {
-            noError = false;
             m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "00?????00000" );
         }
         else
@@ -415,7 +400,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         // checking error
         if( m_inst.IsErrorOperand1() )
         {
-            noError = false;
+			m_noError = false;
             translatedContent.append ("?????00000") ;
         }
         else
@@ -427,7 +412,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
 
         // adding it to the  machine inst table
         m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent );
-        return noError;
+        return;
     }
     // for halt content is 13|00000|00000
     else if( opCodeNum == 13 )
@@ -435,7 +420,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         // checking error
         if( m_inst.IsErrorOperand1() )
         {
-            noError = false;
+			m_noError = false;
             m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "13?????00000" );
         }
         else
@@ -445,7 +430,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
             m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, "130000000000" );
         }
 
-        return noError;
+        return;
     }
     else
     {
@@ -465,13 +450,13 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         // checking if error
         if( m_inst.IsErrorOperand1() )
         {
-            noError = false;
+			m_noError = false;
             translatedContent.append( "?????" );
         }
         else if( !m_symtab.LookupSymbol( label, labelLoc ) )
         {
             // label not found
-            noError = false;
+			m_noError = false;
             Errors::RecordError( Errors::ErrorTypes::ERROR_UndefinedLabel, "Line", a_LineCounter, m_inst.GetOrgiInst() );
             translatedContent.append( "?????" );
         }
@@ -492,7 +477,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
                 }
                 else
                 {
-                    noError = false;
+					m_noError = false;
                     Errors::RecordError( Errors::ErrorTypes::ERROR_NotLabelConst, "Line", a_LineCounter, m_inst.GetOrgiInst() );
                     translatedContent.append( "?????" );
                 }
@@ -503,7 +488,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         // operand 2 can be label which points to a memory variable or empty
         if( m_inst.IsErrorOperand2() )
         {
-            noError = false;
+			m_noError = false;
             translatedContent.append( "?????" );
         }
         else if( m_inst.GetOperand2() == "" )
@@ -524,7 +509,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
             if( !m_symtab.LookupSymbol( label2, label2Loc ) )
             {
                 // label not found
-                noError = false;
+				m_noError = false;
                 Errors::RecordError( Errors::ErrorTypes::ERROR_UndefinedLabel, "Line", a_LineCounter, m_inst.GetOrgiInst() );
                 translatedContent.append( "?????" );
             }
@@ -536,7 +521,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
                 }
                 else
                 {
-                    noError = false;
+					m_noError = false;
                     Errors::RecordError( Errors::ErrorTypes::ERROR_NotLabelConst, "Line", a_LineCounter, m_inst.GetOrgiInst() );
                     translatedContent.append( "?????" );
                 }
@@ -546,7 +531,7 @@ bool Assembler::TranslateInstruction( int a_Loc, int a_LineCounter )
         m_machInstTab.AddMachineIntr( m_inst.GetOrgiInst(), a_Loc, translatedContent);
     }
 
-    return noError;
+	return;
 }
 
 void Assembler::ComputeNextLoc( int& a_loc, int& a_LineCounter, bool& a_insufficentMemory )

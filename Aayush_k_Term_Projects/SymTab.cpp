@@ -1,10 +1,21 @@
+/*************************************************************************************/
+/// 
+/// @file SymTab.cpp 
+/// 
+/// @brief  This file is a source file for SymbolTable class.
+/// 
+/// It contains all of the defination  of the member funciton.
 ///
-///	Implementation of the symbol table class.  This is the format I want for commenting functions.
+/// @author Aayush Karki
+/// 
+/// @date  November 12, 2021 
 ///
+/*************************************************************************************/
+
 #include "stdafx.h"
 #include "SymTab.h"
 
-void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst )
+bool SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst )
 {
     // If the symbol is already in the symbol table, record it as multiply defined.
     std::map<std::string, int>::iterator st = m_symbolTable.find( a_symbol );
@@ -12,10 +23,12 @@ void SymbolTable::AddSymbol( const std::string &a_symbol, int a_loc, int a_LineC
 
         // report the error
         Errors::RecordError( Errors::ErrorTypes::ERROR_MultipleLabel, "Line", a_LineCounter, a_orgiInst );
-        return;
+        return false;
     }
     // Record a the  location in the symbol table.
     m_symbolTable[a_symbol] = a_loc;
+
+    return true;
 }
 
 void SymbolTable::DisplaySymbolTable()
@@ -27,16 +40,16 @@ void SymbolTable::DisplaySymbolTable()
 
     // formating the table and printing the table headign
     std::cout << std::left;
-    std::cout << std::setw( MAX_SYMBOL_LENGTH + 1 ) << "Symbol# "
-        << std::setw( MAX_SYMBOL_LENGTH + 1 ) << "Symbol"
-        << " Location" << std::endl;
+	std::cout << std::setw( m_MAX_SYMBOL_LENGTH + 1 ) << "Symbol# "
+		<< std::setw( m_MAX_SYMBOL_LENGTH + 1 ) << "Symbol"
+		<< " Location" << std::endl;
 
     // printing the values
     while (currSymbolIte != m_symbolTable.end())
     {
-        std::cout << " " << std::setw( 6 ) << symIndex << "\t    "
-            << std::setw( MAX_SYMBOL_LENGTH + 1 ) << currSymbolIte->first
-            << " " << currSymbolIte->second << std::endl;
+		std::cout << " " << std::setw( 6 ) << symIndex << "\t    "
+			<< std::setw( m_MAX_SYMBOL_LENGTH + 1 ) << currSymbolIte->first
+			<< " " << currSymbolIte->second << std::endl;
         ++symIndex; 
         currSymbolIte++;
     }

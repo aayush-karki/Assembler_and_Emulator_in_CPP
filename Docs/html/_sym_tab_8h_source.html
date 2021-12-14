@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('_sym_tab_8h_source.html',''); initResi
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_errors_8h.html">Errors.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// This class is our symbol table.</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_symbol_table.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_symbol_table.html">SymbolTable</a> {</div>
@@ -102,22 +102,23 @@ $(document).ready(function(){initNavTree('_sym_tab_8h_source.html',''); initResi
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> multiplyDefinedSymbol = -999;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Add a new symbol to the symbol table.</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_symbol_table.html#a1573b1ff30e8ce004acf8d5473d58a70">AddSymbol</a>( <span class="keyword">const</span> std::string &amp;a_symbol, <span class="keywordtype">int</span> a_loc );</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Display the symbol table.</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> DisplaySymbolTable() {};</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Lookup a symbol in the symbol table.</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">bool</span> LookupSymbol( <span class="keyword">const</span> std::string &amp;a_symbol, <span class="keywordtype">int</span> &amp;a_loc );</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// This is the actual symbol table.  The symbol is the key to the map.  The value is the location.</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::map&lt;std::string, int&gt; m_symbolTable;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">AddSymbol</a>( <span class="keyword">const</span> std::string&amp; a_symbol, <span class="keywordtype">int</span> a_loc, <span class="keywordtype">int</span> a_LineCounter, std::string a_orgiInst );</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_symbol_table.html#a0d767f82287626f857b563da0adde783">DisplaySymbolTable</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_symbol_table.html#abca195d5f0ae45089761f09d014e5c06">LookupSymbol</a>(<span class="keyword">const</span> std::string &amp;a_symbol, <span class="keywordtype">int</span>&amp; a_loc);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// This is the actual symbol table.  The symbol is the key to the map.  The value is the location.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::map&lt;std::string, int&gt; m_symbolTable;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> MAX_SYMBOL_LENGTH = 10;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="ttc" id="a_errors_8h_html"><div class="ttname"><a href="_errors_8h.html">Errors.h</a></div><div class="ttdoc">This file is a header file for Errors class.</div></div>
 <div class="ttc" id="aclass_symbol_table_html"><div class="ttname"><a href="class_symbol_table.html">SymbolTable</a></div><div class="ttdef"><b>Definition:</b> SymTab.h:9</div></div>
-<div class="ttc" id="aclass_symbol_table_html_a1573b1ff30e8ce004acf8d5473d58a70"><div class="ttname"><a href="class_symbol_table.html#a1573b1ff30e8ce004acf8d5473d58a70">SymbolTable::AddSymbol</a></div><div class="ttdeci">void AddSymbol(const std::string &amp;a_symbol, int a_loc)</div><div class="ttdef"><b>Definition:</b> SymTab.cpp:22</div></div>
+<div class="ttc" id="aclass_symbol_table_html_a0d767f82287626f857b563da0adde783"><div class="ttname"><a href="class_symbol_table.html#a0d767f82287626f857b563da0adde783">SymbolTable::DisplaySymbolTable</a></div><div class="ttdeci">void DisplaySymbolTable()</div><div class="ttdoc">DisplaySymbolTable Display the symbol table to the screen.</div><div class="ttdef"><b>Definition:</b> SymTab.cpp:23</div></div>
+<div class="ttc" id="aclass_symbol_table_html_a85b1952180dcf0db9a715aef4db0ce4d"><div class="ttname"><a href="class_symbol_table.html#a85b1952180dcf0db9a715aef4db0ce4d">SymbolTable::AddSymbol</a></div><div class="ttdeci">bool AddSymbol(const std::string &amp;a_symbol, int a_loc, int a_LineCounter, std::string a_orgiInst)</div><div class="ttdoc">AddSymbol adds a new symbol to the symbol table.</div><div class="ttdef"><b>Definition:</b> SymTab.cpp:7</div></div>
+<div class="ttc" id="aclass_symbol_table_html_abca195d5f0ae45089761f09d014e5c06"><div class="ttname"><a href="class_symbol_table.html#abca195d5f0ae45089761f09d014e5c06">SymbolTable::LookupSymbol</a></div><div class="ttdeci">bool LookupSymbol(const std::string &amp;a_symbol, int &amp;a_loc)</div><div class="ttdoc">Lookup a symbol in the symbol table.</div><div class="ttdef"><b>Definition:</b> SymTab.cpp:56</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

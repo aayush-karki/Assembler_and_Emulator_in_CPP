@@ -1,6 +1,18 @@
+/*************************************************************************************/
+/// 
+/// @file FileAccess.cpp 
+/// 
+/// @brief  This file is a source file for FileAccess class.
+/// 
+/// It contains all of the defination of  the member funciton.
+/// It also contains the defination of the static member variable
 ///
-/// Implementation of file access class.
+/// @author Victor Miller
+/// 
+/// @date  November 10, 2021 
 ///
+/*************************************************************************************/
+
 #include "stdafx.h"
 #include "FileAccess.h"
 

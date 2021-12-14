@@ -1,4 +1,16 @@
-//    Implementation of the Emulator class.
+/*************************************************************************************/
+/// 
+/// @file Emulator.cpp 
+/// 
+/// @brief  This file is a source file for Emulator class.
+/// 
+/// It contains all of the defination  of the member funciton.
+///
+/// @author Aayush Karki
+/// 
+/// @date  December 03, 2021
+///
+/*************************************************************************************/
 
 #include "stdafx.h"
 #include "Emulator.h"
@@ -6,8 +18,7 @@
 
 bool Emulator::InsertMemory( int a_location, long long a_contents )
 {
-
-    // insert only if valid location
+    // insert only if  location is valid
     if( a_location >= 0 && a_location <= MEMSZ )
     {
         m_memory.at( a_location ) = a_contents;
@@ -24,13 +35,6 @@ bool Emulator::RunProgram()
 
     while( currAddr <= MEMSZ)
     {
-        //// if content is 0 skip it
-        //if( m_memory.at( currAddr ) == 0 )
-        //{
-        //    ++currAddr;
-        //    continue;
-        //}
-
         // extracting the instruction from current memory
         long long curVal = m_memory.at( currAddr );
         int opCode = m_memory.at( currAddr ) / 10'000'000'000;
@@ -78,7 +82,7 @@ bool Emulator::RunProgram()
                     return false;
                 }
 
-                m_memory.at( operand1 ) = std::stoi(userInput);
+                m_memory.at( operand1 ) = std::stoll(userInput);
 
                 break;
             }
@@ -94,7 +98,7 @@ bool Emulator::RunProgram()
                 currAddr = operand1;
                 continue;
 
-                break;
+                break; // just for my sanity
             }
             case ( 10 ):
             {
@@ -104,6 +108,7 @@ bool Emulator::RunProgram()
                     currAddr = operand1;
                     continue;
                 }
+
                 break;
             }
             case ( 11 ):
@@ -114,7 +119,8 @@ bool Emulator::RunProgram()
                     currAddr = operand1;
                     continue;
                 }
-                break;
+
+				break; // just for my sanity
             }
             case( 12 ) :
             {
@@ -124,27 +130,34 @@ bool Emulator::RunProgram()
                     currAddr = operand1;
                     continue;
                 }
-                break;
-            }
+
+				break; // just for my sanity
+			}
             case( 13 ):
             {
                 // halt
                 return true;
-                break;
+
+				break; // just for my sanity
             }
             default:
             {
                 // not recognised opcode
-                Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInstruction,"Loc", currAddr, std::to_string(m_memory.at(currAddr)));
-                return false;
+                Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInstruction,"Loc", 
+									currAddr, std::to_string(m_memory.at(currAddr)));
+				return false;
+				
+				break; // just for my sanity
             }
         }
     
         ++currAddr;
     }
 
-    //halt not found out of memory bounds
-    Errors::RecordError( Errors::ErrorTypes::ERROR_MissingHalt, "Loc", currAddr, std::to_string( m_memory.at( currAddr ) ) );
+    // halt not found when memory went out bounds
+    Errors::RecordError( Errors::ErrorTypes::ERROR_MissingHalt, "Loc", 
+						currAddr, std::to_string( m_memory.at( currAddr ) ) );
+
     return false;
 }
 
@@ -169,40 +182,24 @@ bool Emulator::ReadFromUser(std::string &a_userInput, int a_currAddr)
     // checking if all the char are num
     if( !std::all_of( a_userInput.begin(), a_userInput.end(), isdigit ) )
     {
-        // error
-        Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputSyn, "Loc", a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );
+        Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputSyn, "Loc", 
+							a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );
 
         return false;
     }
-
-    // chekcing if the string can successfully convert in to an int
-    // valid input is (+/-)2147483647
     
-    // chekcing for length of the string, max is 10 cause int can only handel (+/-)2147483647
-    if( a_userInput.size() > 10 )
+    // checking for length of the string, max is 12 cause word of VC1600 
+	// memory can only handel 12 digits; which is be (+/-)999,999,999,999
+    if( a_userInput.size() > 12 )
     {
-        Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputLen, "Loc", a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );
+        Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputRange, "Loc", 
+							a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );
         return false;
-    }
-    else if( a_userInput.size() == 10 )
-    {
-        // checking if it is bigger than 2147483647
-        if( a_userInput.at( 0 ) > '2' )
-        {
-            Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputRange, "Loc", a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );
-            return false;
-        }
-        else if( a_userInput.at( 0 ) == '2' && a_userInput.at( 9 ) > '7')
-        {
-            Errors::RecordError( Errors::ErrorTypes::ERROR_InvalidInputRange, "Loc", a_currAddr, std::to_string( m_memory.at( a_currAddr ) ) );
-            return false;
-        }
     }
 
     // input is valid
 
-    // every thing is digit
-    // adding the first char back
+    // every thing is digit, so, adding the first char back
     // if it was not a sign, then default vaule of 0 will be added, which should not create any problem
     a_userInput = sign + a_userInput;
 

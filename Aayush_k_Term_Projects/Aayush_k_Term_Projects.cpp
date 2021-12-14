@@ -1,20 +1,25 @@
-/*
- * Assembler main program.
- */
- /*****************************************************************/
+/*****************************************************************/
 ///
-/// @brief  this file contains the main which executes the assembler program and emulator program
+/// @brief  This file contains the main which executes the assembler program and emulator program
 /// 
 /// This assembler and emulator for the VC1620 computer. 
-/// @note this is similar to the IBM 1620 that was popular in the 1960s.
+/// This is similar to the IBM 1620 that was popular in the 1960s.
+/// 
+/// @note even though the memory is 12 digit long as each operands are 5 digit long,
+///			a range a constant declared by DC operantion code is 99'999
+/// 
+/// @todo make operand handel -ve value
+/// @todo check the for emulator if the value has gone over the memory, 
+///		like after adding subtraction and stuff
+/// @todo improve dc handeling to handeling 12 digit operation that means operand2 should also 
+///		 be able to handel 12 digit addition and stuff
 /// 
 /// @author Aayush Karki
+/// @author Victor Miller
 /// 
-/// @date  December
+/// @date  November 10, 2021 
 ///  
 /**********************************************************************/
-
- // todo: add author and date in every function documentation
 
 #include "stdafx.h"     // This must be present if you use precompiled headers which you will use. 
 #include <stdio.h>
@@ -35,7 +40,9 @@ int main( int argc, char* argv[] )
     assem.DisplaySymbolTable();
 
     // generate the translation.
-    if( !assem.PassII() )
+	assem.PassII();
+
+	if(!assem.GetNoError() )
     {
         // display error messages if any
         Errors::DisplayAllErrors();
