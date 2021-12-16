@@ -557,7 +557,7 @@ void Assembler::ComputeNextLoc( int& a_loc, int& a_LineCounter, bool& a_insuffic
 	a_loc = m_inst.LocationNextInstruction( a_loc );
 
 	// checking for storage
-	if( a_loc > Emulator::MEMSZ && !a_insufficentMemory )
+	if( a_loc > Emulator::MEMSZ || !a_insufficentMemory )
 	{
 		// insufficent memory
 		Errors::RecordError( Errors::ErrorTypes::ERROR_InsufficentMemory, "Line", a_LineCounter, m_inst.GetOrgiInst() );

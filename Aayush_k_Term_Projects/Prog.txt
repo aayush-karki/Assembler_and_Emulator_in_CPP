@@ -1,11 +1,11 @@
 ;this is a test
-        org  100  
+        org    100
 hi     read    x;comment immediately after statement       
-hay  copY   y, x ; This is the another comment.
-        WRITE    x; to show that operation codes are case insensitive
+hi  copy   y, x z; This is the another comment.
+hay        WRITE    x y; to show that operation codes are case insensitive
           bp      hi y; shows we don't have to have everything line up.
         halt
-
+		;end
 ;test
 x      dc      5
 y      ds      1

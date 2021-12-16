@@ -19,7 +19,7 @@ newConst dc 999999      ; operand 1 length is more than 5
 notNewConst dc 10       ; label length is more than 10
 1constant dc 5          ; first char of label is not a alphabet
 nextCon$t dc 20         ; label is not composed of only alphaNumerical 
-;vec      ds      99999 ; insufficent memory
+vec      ds      99999 ; insufficent memory
 asdasd                  ; invalid opcode
 veryMewConst dc 100000000000 ; constant out of range
 
